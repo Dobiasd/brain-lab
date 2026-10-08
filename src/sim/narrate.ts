@@ -58,7 +58,8 @@ const fullPhrase: Record<string, string> = {
 const keepCase = new Set(['methylphenidate', 'diazepam', 'mdma', 'thc', 'naloxone']);
 const midSentence = (id: string) => {
   const name = drugPlainName(id);
-  return keepCase.has(id) ? name : name.charAt(0).toLowerCase() + name.slice(1);
+  // keep names and acronyms ("CBD", "THC") as they are
+  return keepCase.has(id) || /^[A-Z]{2}/.test(name) ? name : name.charAt(0).toLowerCase() + name.slice(1);
 };
 
 /** "caffeine is blocking …" when a drug acts on this receptor in the observed direction. */

@@ -131,6 +131,26 @@ export const scenarios: Scenario[] = [
     config: { profile: 'autism', days: 1, doses: [], events: [ev('sensory', 0, 11, 3, 1)] },
     focus: ['state:sensory_load', 'pool:glu', 'read:anxiety', 'fire:lc', 'read:focus'] },
 
+  { id: 'thc_busy', name: 'Cannabis in a busy place (autism)',
+    story: [
+      'A joint at 10:45, then a loud, bright shopping centre from 11:00 to 14:00, with the autism profile.',
+      'THC turns sensory input up and, at this dose, adds to anxiety while it peaks; it lifts mood and blurs focus.',
+      'The high fades within about two hours; the overload from the place itself stays until you leave.',
+      'Compare the dashed line (the same busy day without cannabis).',
+    ],
+    config: { profile: 'autism', days: 1, events: [ev('sensory', 0, 11, 3, 1)], doses: [dose('thc', 0, 10.75)] },
+    focus: ['state:sensory_load', 'read:anxiety', 'read:perception', 'read:focus', 'drug:thc'] },
+
+  { id: 'cbd', name: 'CBD: shop dose vs study dose',
+    story: [
+      'Day 1: 25 mg CBD oil at 9:00, the dose sold in shops. Day 2: about 400 mg at 9:00, the size used in anxiety studies.',
+      'A stressful hour at 12:00 on both days.',
+      'The shop dose does practically nothing. The large dose calms a little, without any high.',
+    ],
+    config: { profile: 'typical', days: 3, events: [ev('stress', 0, 12, 1), ev('stress', 1, 12, 1)],
+      doses: [dose('cbd', 0, 9), dose('cbd', 1, 9, 16)] },
+    focus: ['read:anxiety', 'read:perception', 'pool:anandamide', 'drug:cbd'] },
+
   { id: 'ozempic', name: 'Ozempic over 6 weeks',
     story: [
       'A weekly semaglutide injection, every Monday morning.',

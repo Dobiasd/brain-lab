@@ -137,3 +137,22 @@ describe('labels', () => {
     }
   });
 });
+
+describe('cannabis tours tell the model\'s story', () => {
+  const deltaAt = (tourId: string, stepIdx: number, feeling: string) => {
+    const t = tourById[tourId], s = t.steps[stepIdx];
+    const cfg = scenarioById[t.scenario].config;
+    const main = runSim(cfg), base = runSim(compareConfig(cfg, t.compare)!);
+    const i = indexAt(main.t, (s.day * 24 + s.hour) * 60);
+    return main.series[`read:${feeling}`][i] - base.series[`read:${feeling}`][i];
+  };
+  test('THC in a busy place: more anxious at the peak, about the same later', () => {
+    expect(deltaAt('thc_busy', 0, 'anxiety')).toBeGreaterThan(3);
+    expect(Math.abs(deltaAt('thc_busy', 1, 'anxiety'))).toBeLessThan(3);
+  });
+  test('CBD: a shop dose does nothing, a study dose calms a little without a high', () => {
+    expect(Math.abs(deltaAt('cbd', 0, 'anxiety'))).toBeLessThan(2);
+    expect(deltaAt('cbd', 1, 'anxiety')).toBeLessThan(-3);
+    expect(Math.abs(deltaAt('cbd', 1, 'perception'))).toBeLessThan(1);
+  });
+});

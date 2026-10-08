@@ -6,7 +6,7 @@ const shelves: { id: string; title: string; blurb: string; tours: string[] }[] =
   { id: 'everyday', title: 'Everyday life', blurb: 'Coffee, drinks, sleep and a good day.', tours: ['coffee', 'tolerance', 'hangxiety', 'healthy'] },
   { id: 'stress', title: 'Stress and different brains', blurb: 'Why the same day feels different to different people.', tours: ['stress', 'chronic', 'sensory'] },
   { id: 'meds', title: 'Medication', blurb: 'What it changes, and why some take weeks.', tours: ['adhd', 'ssri', 'ketamine', 'ozempic'] },
-  { id: 'drugs', title: 'Drugs and dependence', blurb: 'Highs, dips, tolerance and withdrawal.', tours: ['opioids', 'mdma'] },
+  { id: 'drugs', title: 'Drugs and cannabis', blurb: 'Highs, dips, tolerance, withdrawal, and what cannabis and CBD do.', tours: ['opioids', 'mdma', 'thc_busy', 'cbd'] },
 ];
 // a question that is not on a shelf yet still shows up, on the last one
 const shelved = new Set(shelves.flatMap((s) => s.tours));
