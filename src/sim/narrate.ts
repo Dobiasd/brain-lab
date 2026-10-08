@@ -46,6 +46,7 @@ const fullPhrase: Record<string, string> = {
   'agon:cb1': 'THC is acting on cannabinoid receptors',
   'state:sensory_load': 'the surroundings are overloading your senses',
   'state:hangover': 'you have a hangover',
+  'state:afterglow': 'you are in the afterglow of exercise',
   'input:pain': 'you are in pain',
   'input:exercise': 'you are exercising',
   'input:food': 'you are enjoying tasty food',

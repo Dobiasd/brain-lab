@@ -2,3 +2,4 @@ node_modules
 dist
 /n-*.png
 *.log
+/src/sim/z*.test.ts

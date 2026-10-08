@@ -1,6 +1,6 @@
 {
  "activities.json": {
-  "pass": 31,
+  "pass": 33,
   "of": 40
  },
  "depressants.json": {
@@ -16,7 +16,7 @@
   "of": 61
  },
  "holdout_a.json": {
-  "pass": 50,
+  "pass": 51,
   "of": 60
  },
  "holdout_b.json": {
@@ -44,7 +44,7 @@
   "of": 40
  },
  "timecourse.json": {
-  "pass": 24,
+  "pass": 27,
   "of": 54
  }
 }

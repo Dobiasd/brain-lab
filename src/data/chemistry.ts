@@ -161,7 +161,6 @@ export const nuclei: (Nucleus & { base?: number })[] = [
     { ref: 'input:food', w: 0.35, note: 'food reward' },
     { ref: 'receptor:ghsr', w: 0.15, note: 'hunger makes rewards more tempting' },
     { ref: 'receptor:glp1r', w: -0.25, note: 'fullness signals dampen reward "wanting"' },
-    { ref: 'input:exercise', w: 0.2, note: 'exercise' },
     { ref: 'input:stress', w: -0.2, note: 'stress suppresses reward drive' },
     { ref: 'state:asleep', w: -0.4, note: 'quieter in sleep' },
   ] },
@@ -252,8 +251,8 @@ export const nuclei: (Nucleus & { base?: number })[] = [
     { ref: 'receptor:beta', w: 0.3, note: 'β1 noradrenergic drive (why beta-blockers lower melatonin)' },
   ] },
   { id: 'pomc', region: 'hypothalamus', name: 'POMC (endorphin) neurons', modulators: [
-    { ref: 'input:exercise', w: 0.4, note: 'exercise' },
-    { ref: 'input:exercise', w: 1.0, above: 0.5, note: 'hard exercise (endorphin release needs high intensity)' },
+    { ref: 'input:exercise', w: 0.3, note: 'exercise' },
+    { ref: 'input:exercise', w: 0.8, above: 0.6, note: 'hard exercise (endorphin release needs high intensity)' },
     { ref: 'input:pain', w: 0.8, note: 'pain' },
     { ref: 'input:social', w: 0.4, note: 'laughter / social contact' },
     { ref: 'input:stress', w: 0.2, note: 'stress-induced analgesia' },
@@ -265,7 +264,7 @@ export const nuclei: (Nucleus & { base?: number })[] = [
   { id: 'ecb', region: 'hippocampus', name: 'Endocannabinoid synthesis', modulators: [
     { ref: 'receptor:oxtr', w: 0.15, note: 'oxytocin triggers anandamide release in the reward system (why company feels good)' },
     { ref: 'pool:glu', w: 0.3, note: 'made on demand when neurons are very active (retrograde brake)' },
-    { ref: 'input:exercise', w: 0.8, note: 'exercise (the "runner\'s high" is largely endocannabinoid)' },
+    { ref: 'input:exercise', w: 0.6, note: 'exercise (the "runner\'s high" is largely endocannabinoid)' },
     { ref: 'input:exercise', w: -1.2, above: 1, note: 'very hard exercise makes fewer endocannabinoids than moderate exercise' },
     { ref: 'input:stress', w: -0.4, note: 'acute stress depletes anandamide' },
     { ref: 'input:pain', w: 0.3, note: 'pain' },

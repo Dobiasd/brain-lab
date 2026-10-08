@@ -137,7 +137,7 @@ const MAO_STORE = 2;
 const poolHasMao = pools.map((p) => p.clearance.some((c) => c.by === 'mao'));
 
 type ModRef = { kind: 'rec' | 'pool' | 'input' | 'state'; idx: number; key: string; w: number; log?: boolean; above?: number };
-const STATE_KEYS = ['asleep', 'circadian', 'hpa_rhythm', 'car', 'dark', 'satiety', 'meal', 'hangover', 'inertia'] as const;
+const STATE_KEYS = ['asleep', 'circadian', 'hpa_rhythm', 'car', 'dark', 'satiety', 'meal', 'hangover', 'inertia', 'afterglow'] as const;
 const ALCOHOL = drugs.findIndex((d) => d.id === 'alcohol');
 /** Automatic meals (clock hours, 30 min each), eaten only while awake. */
 export const MEALS = [7.5, 12.5, 19];
@@ -193,6 +193,7 @@ export interface State {
   grSlow: number; // 3-day average of cortisol (GR) signalling: chronic stress, not the daily rhythm
   satiety: number;
   hangover: number;
+  afterglow: number; // post-exercise lift, builds while exercising and fades over a couple of hours
   lastWake: number;
   wasAsleep: boolean;
 }
@@ -216,6 +217,7 @@ function freshState(): State {
     htSlow: 1,
     satiety: 0.3,
     hangover: 0,
+    afterglow: 0,
     lastWake: -10000,
     wasAsleep: false,
   };
@@ -224,7 +226,7 @@ function freshState(): State {
 function cloneState(s: State): State {
   return {
     level: s.level.slice(), store: s.store.slice(), density: s.density.slice(), stimSlow: s.stimSlow.slice(),
-    plasticity: s.plasticity, gut: s.gut.slice(), c1: s.c1.slice(), c2: s.c2.slice(), ce: s.ce.slice(), tol: s.tol.slice(), conc: s.conc.slice(), enzyme: s.enzyme.slice(), gluSlow: s.gluSlow, grSlow: s.grSlow, htSlow: s.htSlow, satiety: s.satiety, hangover: s.hangover, lastWake: s.lastWake, wasAsleep: s.wasAsleep,
+    plasticity: s.plasticity, gut: s.gut.slice(), c1: s.c1.slice(), c2: s.c2.slice(), ce: s.ce.slice(), tol: s.tol.slice(), conc: s.conc.slice(), enzyme: s.enzyme.slice(), gluSlow: s.gluSlow, grSlow: s.grSlow, htSlow: s.htSlow, satiety: s.satiety, hangover: s.hangover, afterglow: s.afterglow, lastWake: s.lastWake, wasAsleep: s.wasAsleep,
   };
 }
 
@@ -358,6 +360,9 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   const alc = s.conc[ALCOHOL];
   s.hangover += (0.0012 * alc - s.hangover / 600) * dt;
   sc.states[7] = s.hangover * Math.exp(-2 * alc);
+  // exercise afterglow: the better mood and calm that outlast a workout by an hour or two
+  s.afterglow += (0.012 * Math.min(1.6, sc.inputs[INPUT_IDS.indexOf('exercise')]) - s.afterglow / 100) * dt;
+  sc.states[9] = s.afterglow;
 
   // --- receptor signals ---
   sc.agonHt2a = 0; sc.blockNmda = 0; sc.agonCb1 = 0; sc.agonMu = 0; sc.blockA2a = 0;
@@ -555,7 +560,7 @@ export function seriesKeys(): string[] {
     ...readoutDefs.map((r) => `read:${r.id}`),
     ...INPUT_IDS.map((i) => `input:${i}`),
     'state:asleep', 'state:circadian', 'state:sensory_load',
-    'state:hpa_rhythm', 'state:car', 'state:dark', 'state:satiety', 'state:meal', 'state:hangover', 'state:inertia',
+    'state:hpa_rhythm', 'state:car', 'state:dark', 'state:satiety', 'state:meal', 'state:hangover', 'state:inertia', 'state:afterglow',
     'agon:ht2a', 'block:nmda', 'agon:cb1', 'agon:mu', 'block:a2a', 'plasticity', 'ei:inhib',
   ];
 }
@@ -602,6 +607,7 @@ export function runSim(cfg: SimConfig): SimResult {
     vals['state:satiety'] = sc.states[5];
     vals['state:meal'] = sc.states[6];
     vals['state:hangover'] = sc.states[7];
+    vals['state:afterglow'] = sc.states[9];
     vals['agon:ht2a'] = sc.agonHt2a;
     vals['block:nmda'] = sc.blockNmda;
     vals['agon:cb1'] = sc.agonCb1;

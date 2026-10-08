@@ -47,6 +47,7 @@ const statePlain: Record<string, { icon: string; up: string; down: string }> = {
   dark: { icon: '🌙', up: 'Darkness', down: 'Daylight' },
   satiety: { icon: '🍽️', up: 'A recent meal', down: 'Empty stomach' },
   hangover: { icon: '🤢', up: 'Hangover', down: 'No hangover' },
+  afterglow: { icon: '🌤️', up: 'Exercise afterglow', down: 'No afterglow' },
 };
 
 const pumpPlain: Record<string, string> = {

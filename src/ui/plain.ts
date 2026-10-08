@@ -34,6 +34,7 @@ const plainNames: Record<string, string> = {
   'rec:glp1r': 'Fullness signal (GLP-1 receptors)',
   'state:satiety': 'How full your stomach is',
   'state:hangover': 'Hangover',
+  'state:afterglow': 'Exercise afterglow',
   'ei:inhib': 'Brain brakes vs excitement',
   'pool:ach': 'Attention chemical (acetylcholine)',
   'pool:glu': 'Brain excitement (glutamate)',
