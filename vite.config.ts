@@ -6,5 +6,6 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 // worker inlined), so dist/index.html also works when opened via file://.
 export default defineConfig({
   plugins: [react(), viteSingleFile()],
-  test: { environment: 'node' },
+  // long simulations (60 days, many profiles) need more than the default 5 s on slower CI machines
+  test: { environment: 'node', testTimeout: 120000 },
 } as any);
