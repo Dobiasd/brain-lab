@@ -187,7 +187,7 @@ export type Getter = (key: string) => number;
 export const focusParams = {
   peak: 1.15, width: 0.5, widthHigh: 1.22,
   nicotine: 0.12, sleepy: 1.64, sleepyFrom: 0.2, anxiety: 0.5, anxietyFrom: 55,
-  sensory: 0.25, thc: 0.75, nmda: 0.8, plasticity: 0.4,
+  sensory: 0.25, thc: 0.8, nmda: 0.8, plasticity: 0.4,
 };
 export const focusCurve = (c: number) => {
   const f = focusParams;
