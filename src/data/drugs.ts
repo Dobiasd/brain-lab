@@ -6,14 +6,16 @@ const D = 24 * H;
 // ec50 is in units of "peak concentration after one standard dose", so
 // occupancy at the peak of one dose is 1 / (1 + ec50).
 export const drugs: Drug[] = [
-  { id: 'caffeine', name: 'Caffeine', category: 'Stimulant', standardDose: '1 coffee (~100 mg)', tmax: 45, halfLife: 5 * H, effectDelay: 15,
+  { id: 'caffeine', name: 'Caffeine', category: 'Stimulant', standardDose: '1 coffee (~100 mg)',
+    doseOptions: [{ amount: 0.5, label: 'tea or cola (~50 mg)' }, { amount: 1, label: '1 coffee (~100 mg)' }, { amount: 2, label: 'strong coffee or energy drink (~200 mg)' }], tmax: 45, halfLife: 5 * H, effectDelay: 15,
     targets: [
       { target: 'a1', action: 'antagonist', ec50: 4.0 },
       { target: 'a2a', action: 'antagonist', ec50: 1.5 },
       { target: 'crh', action: 'releaser', ec50: 1.5, efficacy: 0.8, note: 'a small cortisol rise (mostly in people who rarely drink coffee)' },
     ],
     summary: 'Blocks adenosine receptors, so the sleep-pressure signal is hidden, not removed. Adenosine keeps accumulating and hits once caffeine wears off. Daily use upregulates adenosine receptors (tolerance), and stopping causes withdrawal fatigue and headaches.' },
-  { id: 'methylphenidate', name: 'Methylphenidate (Ritalin)', category: 'ADHD medication', standardDose: '10–20 mg IR', tmax: 90, halfLife: 3 * H, effectDelay: 20, acuteTolerance: { strength: 0.6, on: 90, off: 360 },
+  { id: 'methylphenidate', name: 'Methylphenidate (Ritalin)', category: 'ADHD medication', standardDose: '10–20 mg IR',
+    doseOptions: [{ amount: 0.75, label: '10 mg' }, { amount: 1.5, label: '20 mg' }, { amount: 2.25, label: '30 mg' }], tmax: 90, halfLife: 3 * H, effectDelay: 20, acuteTolerance: { strength: 0.6, on: 90, off: 360 },
     targets: [
       { target: 'dat', action: 'reuptake_inhibitor', ec50: 0.6 },
       { target: 'net', action: 'reuptake_inhibitor', ec50: 0.5 },
@@ -51,7 +53,8 @@ export const drugs: Drug[] = [
   { id: 'nicotine', name: 'Nicotine', category: 'Stimulant', standardDose: '1 cigarette / vape session', tmax: 5, halfLife: 2 * H, effectDelay: 2, acuteTolerance: { strength: 0.85, on: 15, off: 120 },
     targets: [{ target: 'nachr', action: 'agonist', ec50: 0.14, efficacy: 1 }],
     summary: 'Activates nicotinic receptors on VTA dopamine neurons, which gives a quick dopamine and alertness hit. The receptors desensitise within minutes, so the hit fades fast even though nicotine stays bound. Over weeks the brain adapts, and between cigarettes smokers feel flat, edgy and hungry, which is why they redose.' },
-  { id: 'alcohol', name: 'Alcohol', category: 'Depressant', standardDose: '2 drinks', tmax: 20, halfLife: 2 * H, saturable: { vmax: 0.0055, km: 0.2 }, effectDelay: 15, acuteTolerance: { strength: 0.25, on: 60, off: 240 },
+  { id: 'alcohol', name: 'Alcohol', category: 'Depressant', standardDose: '2 drinks',
+    doseOptions: [{ amount: 0.5, label: '1 drink' }, { amount: 1, label: '2 drinks' }, { amount: 3, label: '6 drinks' }], tmax: 20, halfLife: 2 * H, saturable: { vmax: 0.0055, km: 0.2 }, effectDelay: 15, acuteTolerance: { strength: 0.25, on: 60, off: 240 },
     targets: [
       { target: 'gabaa_ex', action: 'pam', ec50: 0.8, efficacy: 4.0 },
       { target: 'gabaa', action: 'pam', ec50: 1.5, efficacy: 1.2 },
@@ -89,7 +92,8 @@ export const drugs: Drug[] = [
     ],
     summary: 'Reverses SERT and dumps serotonin, plus oxytocin release (warmth, empathy). The serotonin stores take days to refill. Many users report a mid-week low ("Tuesday blues"), though human studies are mixed on how consistent it is.',
     notModelled: 'The main dangers: overheating, dangerously low blood sodium from drinking too much water, serotonin syndrome when mixed with antidepressants (especially MAO inhibitors), and harm from high or repeated doses.' },
-  { id: 'thc', name: 'THC (cannabis)', category: 'Cannabinoid', standardDose: '1 joint (moderate)', tmax: 10, halfLife: 20 * H, fastPhase: { frac: 0.96, halfLife: 60 }, effectDelay: 10,
+  { id: 'thc', name: 'THC (cannabis)', category: 'Cannabinoid', standardDose: '1 joint (moderate)',
+    doseOptions: [{ amount: 0.5, label: 'a few puffs' }, { amount: 1, label: '1 joint' }, { amount: 3, label: 'heavy (strong or several joints)' }], tmax: 10, halfLife: 20 * H, fastPhase: { frac: 0.96, halfLife: 60 }, effectDelay: 10,
     targets: [{ target: 'cb1', action: 'agonist', ec50: 0.6, efficacy: 0.6 }],
     summary: 'Partial CB1 agonist. Biphasic: a low dose usually calms, while more often causes anxiety or paranoia. It releases the brake on VTA dopamine, impairs working memory and attention, and can make sounds and colours feel more intense. Daily use downregulates CB1, and about 1 in 10 users becomes dependent. High-potency or daily use, especially in teenagers, raises the risk of psychosis.',
     notModelled: 'Stored in fat with a very long terminal half-life (modelled as a fast redistribution from blood, ~1 h, which ends the high, plus a slow release from fat stores that matters for daily users). Some surveys of autistic adults report less anxiety and sensory overload with cannabis, but controlled trials are few and mostly test CBD-rich products, so the evidence is weak.' },
@@ -124,7 +128,8 @@ export const drugs: Drug[] = [
     ],
     summary: 'Like psilocybin, it switches on serotonin 2A receptors, but it stays locked in the receptor for hours, so a trip lasts 8–12 h. It also touches dopamine receptors a little. Tolerance after one dose lasts a few days.',
     notModelled: 'How LSD stays bound so long (a "lid" seen in the crystal structure; here its high potency), and set and setting, which matter hugely for the experience.' },
-  { id: 'cbd', name: 'CBD (cannabidiol)', category: 'Cannabinoid', standardDose: '25 mg oil', tmax: 2.5 * H, halfLife: 18 * H,
+  { id: 'cbd', name: 'CBD (cannabidiol)', category: 'Cannabinoid', standardDose: '25 mg oil',
+    doseOptions: [{ amount: 1, label: '25 mg (shop dose)' }, { amount: 4, label: '100 mg' }, { amount: 16, label: '400 mg (study dose)' }], tmax: 2.5 * H, halfLife: 18 * H,
     targets: [
       { target: 'faah', action: 'enzyme_inhibitor', ec50: 25 },
       { target: 'ht1a_post', action: 'agonist', ec50: 15, efficacy: 0.6 },

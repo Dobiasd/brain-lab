@@ -4,7 +4,7 @@ import { inputById } from '../data/profiles';
 import { doseLevel, type SimConfig, type SimResult } from '../sim/engine';
 import { fmtTime } from './labels';
 import { drugIcon, drugPlainName, inputIcon } from './plain';
-import { paletteByKey, snap, type Planner } from './planner';
+import { doseLabel, doseOptions, palette, paletteByKey, snap, type Planner } from './planner';
 
 type Kind = 'dose' | 'event' | 'meal';
 type Drag = { kind: Kind; index: number; startX: number; dx: number; width: number };
@@ -142,10 +142,15 @@ export function Timeline({ main, cursor, onCursor, planner }: {
           return (
             <button key={`d${i}`} type="button" className={`tl-dose${level > 0.15 ? ' live' : ''}${many ? ' tiny' : ''}${sel?.kind === 'dose' && sel.index === i ? ' sel' : ''}`}
               style={{ left: `calc(${pct(d.at)}% + ${dragOff('dose', i) + stack * 20}px)`, ['--glow' as string]: level }}
-              aria-label={`${drugPlainName(d.drug)}, ${fmtTime(d.at)}. Enter to select, Delete to remove.`}
-              title={`${drugPlainName(d.drug)} · ${fmtTime(d.at)}`}
+              aria-label={`${drugPlainName(d.drug)}, ${doseLabel(drugById[d.drug], d.amount)}, ${fmtTime(d.at)}. Enter to select, Delete to remove.`}
+              title={`${drugPlainName(d.drug)} (${doseLabel(drugById[d.drug], d.amount)}) · ${fmtTime(d.at)}`}
               onPointerDown={itemDown('dose', i)} onKeyDown={itemKey('dose', i)}>
               {!many && (drugIcon[d.drug] ?? '💊')}
+              {!many && (() => {
+                // a small badge when the dose differs from what the palette places
+                const k = d.amount / (palette.find((p) => p.drug === d.drug)?.amount ?? 1);
+                return Math.abs(k - 1) > 1e-9 && <span className="tl-amt" aria-hidden>{Math.abs(k - 0.5) < 1e-9 ? '½' : `×${+k.toFixed(1)}`}</span>;
+              })()}
             </button>
           );
         })}
@@ -163,8 +168,21 @@ export function Timeline({ main, cursor, onCursor, planner }: {
           {sel.kind === 'meal'
             ? <span>🍲 <b>Meal</b> · {fmtTime(selItem.at)}</span>
             : sel.kind === 'dose'
-            ? <span>{drugIcon[(selItem as SimConfig['doses'][number]).drug]} <b>{drugPlainName((selItem as SimConfig['doses'][number]).drug)}</b> ({drugById[(selItem as SimConfig['doses'][number]).drug].standardDose}) · {fmtTime(selItem.at)}</span>
+            ? <span>{drugIcon[(selItem as SimConfig['doses'][number]).drug]} <b>{drugPlainName((selItem as SimConfig['doses'][number]).drug)}</b> · {doseLabel(drugById[(selItem as SimConfig['doses'][number]).drug], (selItem as SimConfig['doses'][number]).amount)} · {fmtTime(selItem.at)}</span>
             : <span>{inputIcon[(selItem as SimConfig['events'][number]).input]} <b>{inputById[(selItem as SimConfig['events'][number]).input].name}</b> · {fmtTime(selItem.at)}</span>}
+          {sel.kind === 'dose' && (() => {
+            const dz = selItem as SimConfig['doses'][number];
+            return (
+              <span className="row dose-pick" role="group" aria-label="Dose size">
+                {doseOptions(drugById[dz.drug]).map((o) => (
+                  <button key={o.amount} className={`btn${Math.abs(o.amount - dz.amount) < 1e-9 ? ' primary' : ''}`}
+                    aria-pressed={Math.abs(o.amount - dz.amount) < 1e-9} onClick={() => planner.setAmount(sel.index, o.amount)}>
+                    {o.label}
+                  </button>
+                ))}
+              </span>
+            );
+          })()}
           <span className="row" style={{ gap: 4, flex: '0 0 auto' }} role="group" aria-label="Move">
             {[-60, -15, 15, 60].map((dm) => (
               <button key={dm} className="btn" onClick={() => planner.shift(sel, dm)} aria-label={`Move ${dm < 0 ? 'earlier' : 'later'} by ${Math.abs(dm)} minutes`}>

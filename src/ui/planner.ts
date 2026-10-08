@@ -1,7 +1,7 @@
 // Shared state and actions for editing "your day": used by the editing card
 // (palette, nights, notes) and by the timeline you play and edit on.
 import { useState } from 'react';
-import type { InputId } from '../data/types';
+import type { Drug, InputId } from '../data/types';
 import { defaultMeals, type SimConfig } from '../sim/engine';
 
 export interface PaletteItem {
@@ -24,7 +24,7 @@ export const palette: PaletteItem[] = [
   { group: 'Everyday', key: 'wine', icon: '🍷', label: '2 drinks', drug: 'alcohol', amount: 1, hint: 'Relaxes, then rebounds; lighter sleep.' },
   { group: 'Everyday', key: 'cig', icon: '🚬', label: 'Cigarette', drug: 'nicotine', amount: 1, hint: 'A quick dopamine and alertness hit.' },
   { group: 'Everyday', key: 'joint', icon: '🌿', label: 'Joint (THC)', drug: 'thc', amount: 1, hint: 'Cannabis: relaxed, hungry, altered perception.' },
-  { group: 'Everyday', key: 'cbd', icon: '🧴', label: 'CBD oil', drug: 'cbd', amount: 1, hint: 'Non-intoxicating; small effects.' },
+  { group: 'Everyday', key: 'cbd', icon: '🧴', label: 'CBD oil', drug: 'cbd', amount: 1, hint: 'Non-intoxicating. The 25 mg shop dose does almost nothing; click it on the timeline to try the 400 mg study dose.' },
   { group: 'Medication', key: 'ritalin', icon: '💊', label: 'Ritalin', drug: 'methylphenidate', amount: 1.5, hint: 'ADHD medication (20 mg).' },
   { group: 'Medication', key: 'ssri', icon: '💊', label: 'Antidepressant', drug: 'sertraline', amount: 1, hint: 'An SSRI. Takes weeks, so tick "every day".' },
   { group: 'Medication', key: 'valium', icon: '💊', label: 'Valium', drug: 'diazepam', amount: 1, hint: 'Calming medication; lasts days. Never combine with opioids or alcohol.' },
@@ -48,6 +48,16 @@ export const palette: PaletteItem[] = [
   { group: 'Activities', key: 'busy', icon: '🔊', label: 'Busy place (2 h)', input: 'sensory', hours: 2, intensity: 1, hint: 'Noise, light, crowds.' },
   { group: 'Activities', key: 'pain', icon: '🤕', label: 'Pain (2 h)', input: 'pain', hours: 2, intensity: 1, hint: 'An injury or headache.' },
 ];
+/** The dose sizes the planner offers for a drug. */
+export const doseOptions = (d: Drug) => d.doseOptions ?? [
+  { amount: 0.5, label: 'half dose' }, { amount: 1, label: `usual (${d.standardDose})` }, { amount: 2, label: 'double dose' },
+];
+/** A placed dose in words, e.g. "400 mg (study dose)" or "2× 10 mg". */
+export function doseLabel(d: Drug, amount: number) {
+  const o = doseOptions(d).find((x) => Math.abs(x.amount - amount) < 1e-9);
+  if (o) return o.label.replace(/^usual \((.*)\)$/, '$1');
+  return `${+amount.toFixed(2)}× ${d.standardDose}`;
+}
 export const paletteByKey = Object.fromEntries(palette.map((p) => [p.key, p]));
 export const paletteGroups = Array.from(new Set(palette.map((p) => p.group)));
 
@@ -110,9 +120,13 @@ export function usePlanner(cfg: SimConfig, setCfg: (c: SimConfig) => void) {
     }
   };
 
+  /** change the size of a placed dose */
+  const setAmount = (index: number, amount: number) =>
+    setCfg({ ...cfg, doses: cfg.doses.map((x, i) => (i === index ? { ...x, amount } : x)) });
+
   const meals = cfg.meals ?? defaultMeals(cfg.days);
 
-  return { cfg, meals, armed, setArmed, everyDay, setEveryDay, sel, setSel, place, remove, shift };
+  return { cfg, meals, armed, setArmed, everyDay, setEveryDay, sel, setSel, place, remove, shift, setAmount };
 }
 
 export type Planner = ReturnType<typeof usePlanner>;

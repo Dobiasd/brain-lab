@@ -64,7 +64,7 @@ export function DayPlanner({ cfg, setCfg, planner }: { cfg: SimConfig; setCfg: (
         <button className="btn ghost" style={{ flex: '0 0 auto' }} onClick={() => setCfg({ ...cfg, doses: [], events: [], sleepOverrides: [], meals: undefined })}>Clear all</button>
       </div>
       <p className="muted">Pick something, then click on the timeline below (it stays at the top of the screen) or drag it there.
-        Drag placed icons to move them; click one to move it by buttons or remove it.</p>
+        Drag placed icons to move them; click one to change its dose, move it by buttons or remove it.</p>
       {paletteGroups.map((g) => (
         <div key={g} className="palgroup">
           <span className="palhead">{g}</span>
