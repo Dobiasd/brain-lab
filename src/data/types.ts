@@ -113,6 +113,9 @@ export interface Drug {
   name: string;
   category: string;
   standardDose: string;
+  /** Steepness of the response to falling levels (Hill coefficient, default 1). Above 1 the felt effect
+   * switches off more sharply as the level drops, as for drugs whose effect fades well before the drug is gone. */
+  hill?: number;
   /** Dose sizes offered in the day planner, as multiples of the standard dose (default: half, usual, double). */
   doseOptions?: { amount: number; label: string }[];
   /** Time to peak (minutes) and elimination half-life (minutes). */

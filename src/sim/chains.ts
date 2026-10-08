@@ -7,7 +7,7 @@ import { inputById, profileById } from '../data/profiles';
 import type { Profile } from '../data/types';
 import { applyPersonality } from '../data/personality';
 import { contributions, readout } from './readouts';
-import type { Dose, InputEvent } from './engine';
+import { occupancy, type Dose, type InputEvent } from './engine';
 import { drugIcon, drugPlainName, feelingById, inputIcon, plainLabel } from '../ui/plain';
 
 type Get = (k: string) => number;
@@ -69,7 +69,7 @@ const fmtRatio = (r: number) => {
   return pct === 0 ? '±0%' : `${pct > 0 ? '+' : '−'}${Math.abs(pct)}%`;
 };
 const ratio = (a: number, b: number) => (Math.max(a, 1e-3)) / Math.max(b, 1e-3);
-const occ = (conc: number, ec50: number) => (conc > 0 ? conc / (conc + ec50) : 0);
+const occ = (conc: number, ec50: number, hill?: number) => (conc > 0 ? occupancy(conc, ec50, hill) : 0);
 
 /** A getter describing a typical brain at the same moment, used when there's no dashed-line comparison. */
 export function typicalGetter(a: Get): Get {
@@ -227,7 +227,7 @@ export function traceFeeling(feelingId: string, a: Get, b: Get, profileA: Profil
         if (c < 0.03) continue;
         for (const t of dd.targets) {
           if (t.target !== id) continue;
-          const o = occ(c, t.ec50);
+          const o = occ(c, t.ec50, dd.hill);
           const fits = up ? t.action === 'agonist' || t.action === 'pam' : t.action === 'antagonist' || t.action === 'nam';
           if (fits && o > 0.05 && (!best || o > best.o)) {
             const verb = t.action === 'antagonist' ? 'blocks' : t.action === 'nam' ? 'dampens' : t.action === 'pam' ? 'amplifies' : 'switches on';
@@ -279,20 +279,20 @@ export function traceFeeling(feelingId: string, a: Get, b: Get, profileA: Profil
       cands.push({ what: 'store', v: Math.log(ratio(a(`store:${id}`), b(`store:${id}`))),
         node: { kind: 'store', icon: '🪫', label: `${p.name.split(' (')[0]} reserves${drainer ? ` (emptied by ${drugPlainName(drainer.drug)}, ${hoursAgo(history!.now - drainer.at)})` : ''}`, change: fmtRatio(ratio(a(`store:${id}`), b(`store:${id}`))), note: 'reserves were drained and refill slowly' } });
       const boost = (g: Get) => drugs.reduce((acc, dd) => acc + dd.targets.filter((t) => t.target === id && t.action === 'releaser')
-        .reduce((x, t) => x + occ(g(`drug:${dd.id}`), t.ec50) * (t.efficacy ?? 4), 0), 0);
+        .reduce((x, t) => x + occ(g(`drug:${dd.id}`), t.ec50, dd.hill) * (t.efficacy ?? 4), 0), 0);
       const rel = drugs.map((dd) => ({ dd, t: dd.targets.find((t) => t.target === id && t.action === 'releaser') })).filter((x) => x.t && a(`drug:${x.dd.id}`) > 0.03)
-        .sort((x, y) => occ(a(`drug:${y.dd.id}`), y.t!.ec50) - occ(a(`drug:${x.dd.id}`), x.t!.ec50))[0];
+        .sort((x, y) => occ(a(`drug:${y.dd.id}`), y.t!.ec50, y.dd.hill) - occ(a(`drug:${x.dd.id}`), x.t!.ec50, x.dd.hill))[0];
       if (rel) cands.push({ what: 'releaser', v: Math.log((1 + boost(a)) / (1 + boost(b))),
         node: { kind: 'drug', icon: drugIcon[rel.dd.id] ?? '💊', label: drugPlainName(rel.dd.id), change: '', note: 'forces neurons to dump their stores' } });
       // clearance: k ∝ Σ frac · activity · (1 − block)
       const k = (g: Get, prof: Profile) => p.clearance.reduce((acc, c) => {
         let block = 0;
-        for (const dd of drugs) for (const t of dd.targets) if (t.target === c.by && (t.action === 'reuptake_inhibitor' || t.action === 'enzyme_inhibitor')) block += occ(g(`drug:${dd.id}`), t.ec50);
+        for (const dd of drugs) for (const t of dd.targets) if (t.target === c.by && (t.action === 'reuptake_inhibitor' || t.action === 'enzyme_inhibitor')) block += occ(g(`drug:${dd.id}`), t.ec50, dd.hill);
         return acc + c.frac * (prof.clearers?.[c.by] ?? 1) * (1 - Math.min(block, 0.97));
       }, 0);
       const kr = k(a, profileA) / k(b, profileB);
       const blocker = drugs.flatMap((dd) => dd.targets.filter((t) => p.clearance.some((c) => c.by === t.target) && (t.action === 'reuptake_inhibitor' || t.action === 'enzyme_inhibitor'))
-        .map((t) => ({ dd, t, o: occ(a(`drug:${dd.id}`), t.ec50) }))).sort((x, y) => y.o - x.o)[0];
+        .map((t) => ({ dd, t, o: occ(a(`drug:${dd.id}`), t.ec50, dd.hill) }))).sort((x, y) => y.o - x.o)[0];
       if (blocker && blocker.o > 0.05) cands.push({ what: 'clearance', v: -Math.log(kr),
         node: { kind: 'drug', icon: drugIcon[blocker.dd.id] ?? '💊', label: drugPlainName(blocker.dd.id), change: '',
           note: `blocks ${Math.round(blocker.o * 100)}% of the ${pumpPlain[blocker.t.target] ?? blocker.t.target} that ${blocker.t.action === 'reuptake_inhibitor' ? 'clears it away' : 'breaks it down'}` } });

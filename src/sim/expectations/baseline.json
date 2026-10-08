@@ -8,15 +8,15 @@
   "of": 40
  },
  "effects_contexts.json": {
-  "pass": 45,
+  "pass": 46,
   "of": 60
  },
  "effects_coverage.json": {
-  "pass": 58,
+  "pass": 59,
   "of": 61
  },
  "holdout_a.json": {
-  "pass": 52,
+  "pass": 53,
   "of": 60
  },
  "holdout_b.json": {
@@ -44,7 +44,7 @@
   "of": 40
  },
  "timecourse.json": {
-  "pass": 32,
+  "pass": 37,
   "of": 54
  }
 }

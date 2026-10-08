@@ -1,6 +1,7 @@
 import { receptors } from '../data/chemistry';
 import { drugs } from '../data/drugs';
 import { contributions, readoutById, readoutDefs } from '../sim/readouts';
+import { occupancy } from '../sim/engine';
 import { actionText } from '../data/graph';
 import { clearerById, poolById, receptorById } from '../data/chemistry';
 
@@ -79,7 +80,7 @@ export function Explain({ readoutId, get, getBase, profileId }: { readoutId: str
               <b>{d.name}</b> <span className="muted">({c.toFixed(2)}× peak of one dose)</span>
               <ul className="story" style={{ marginTop: 2 }}>
                 {d.targets.map((t) => (
-                  <li key={t.target}>{actionText[t.action]} {targetName(t.target)}: <b>{Math.round((100 * c) / (c + t.ec50))}%</b></li>
+                  <li key={t.target}>{actionText[t.action]} {targetName(t.target)}: <b>{Math.round(100 * occupancy(c, t.ec50, d.hill))}%</b></li>
                 ))}
               </ul>
             </div>

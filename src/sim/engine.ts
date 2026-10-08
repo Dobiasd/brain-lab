@@ -43,6 +43,10 @@ const TAU_PLAST = 14 * MIN_PER_DAY;
 const GR_TYPICAL = 1.52;
 const INPUT_IDS: InputId[] = ['stress', 'exercise', 'sunlight', 'social', 'food', 'sensory', 'pain'];
 
+/** Fraction of a target a drug occupies at brain level `c` (Hill equation). */
+export const occupancy = (c: number, ec50: number, hill = 1) =>
+  hill === 1 ? c / (c + ec50) : 1 / (1 + Math.pow(ec50 / c, hill));
+
 // ---------- PK ----------
 // Per drug: gut → blood (a fast-leaving and a slow-leaving share) → brain (effect site, lagging behind blood),
 // plus acute tolerance. Concentrations are in units of one standard dose's peak at the effect site.
@@ -157,14 +161,14 @@ const poolSource = pools.map((p) => (p.id === 'adenosine' ? -1 : nucIdx[p.source
 const recPool = receptors.map((r) => poolIdx[r.pool]);
 
 // Drug effects grouped by target, so each step is a flat loop.
-interface Eff { id: number; drug: number; action: Action; ec50: number; eff: number; endo: number; irr?: { kinact: number; ksyn: number } }
+interface Eff { id: number; drug: number; action: Action; ec50: number; hill: number; eff: number; endo: number; irr?: { kinact: number; ksyn: number } }
 const allEffs: Eff[] = [];
 const recEffs: Eff[][] = receptors.map(() => []);
 const clrEffs: Eff[][] = clearerIds.map(() => []);
 const poolEffs: Eff[][] = pools.map(() => []);
 drugs.forEach((d, di) => {
   for (const t of d.targets) {
-    const e: Eff = { id: allEffs.length, drug: di, action: t.action, ec50: t.ec50, eff: t.efficacy ?? (t.action === 'releaser' ? 4 : 1), endo: t.endogenous ?? 1,
+    const e: Eff = { id: allEffs.length, drug: di, action: t.action, ec50: t.ec50, hill: d.hill ?? 1, eff: t.efficacy ?? (t.action === 'releaser' ? 4 : 1), endo: t.endogenous ?? 1,
       irr: t.irreversible ? { kinact: t.irreversible.inactivation, ksyn: Math.LN2 / t.irreversible.recovery } : undefined };
     allEffs.push(e);
     if (t.target in recIdx) recEffs[recIdx[t.target]].push(e);
@@ -317,12 +321,12 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   const occRaw = (e: Eff) => {
     if (e.irr) return 1 - s.enzyme[e.id];
     const c = s.conc[e.drug];
-    return c > 0 ? c / (c + e.ec50) : 0;
+    return c > 0 ? occupancy(c, e.ec50, e.hill) : 0;
   };
   const occOf = (e: Eff) => {
     if (e.irr) return 1 - s.enzyme[e.id];
     const c = s.conc[e.drug];
-    return c > 0 ? (c / (c + e.ec50)) * sc.tolf[e.drug] : 0;
+    return c > 0 ? occupancy(c, e.ec50, e.hill) * sc.tolf[e.drug] : 0;
   };
 
   // --- clock & states ---
