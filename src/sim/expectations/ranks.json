@@ -1,0 +1,1262 @@
+[
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Alertness and reaction-time gains from caffeine grow with dose across the 50-200 mg range.",
+  "source": "Smith 2002 Food Chem Toxicol 40:1243; Lieberman et al. 1987 Psychopharmacology 92:308"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Even 32-64 mg caffeine raises alertness, but 100 mg does so more.",
+  "source": "Lieberman et al. 1987 Psychopharmacology 92:308; Smit & Rogers 2000 Psychopharmacology 152:167"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 4,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Caffeine is anxiogenic mainly at high doses (~300-500 mg); a single coffee barely changes anxiety in healthy people.",
+  "source": "Childs & de Wit 2006 Psychopharmacology 185:514; Smith 2002 Food Chem Toxicol 40:1243"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "high",
+  "why": "Sedation from alcohol rises steeply with blood alcohol; four drinks make people much sleepier than two.",
+  "source": "Holdstock & de Wit 1998 Alcohol Clin Exp Res 22:1903; Roehrs & Roth 2001 Sleep Med Rev 5:287"
+ },
+ {
+  "kind": "rank",
+  "feeling": "focus",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Attention and psychomotor impairment by alcohol is dose-dependent with blood alcohol concentration.",
+  "source": "Holloway 1995 (NHTSA DOT HS 808 238) review of BAC and performance; Dry et al. 2012 Psychopharmacology 222:393"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Feeling drunk/intoxicated (subjective 'high') scales with blood alcohol concentration.",
+  "source": "Holdstock & de Wit 1998 Alcohol Clin Exp Res 22:1903; King et al. 2011 Arch Gen Psychiatry 68:389"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 3
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 3
+  },
+  "confidence": "medium",
+  "why": "Alcohol is biphasic: stimulating on the rising limb but sedating on the falling limb; at 3 h the drop in alertness is larger after the higher dose.",
+  "source": "Martin et al. 1993 Alcohol Clin Exp Res 17:140 (Biphasic Alcohol Effects Scale); Holdstock & de Wit 1998"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "thc",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "confidence": "medium",
+  "why": "Subjective high and perceptual change from smoked THC increase with dose.",
+  "source": "Hart et al. 2001 Neuropsychopharmacology 25:757; Chait & Zacny 1992 Psychopharmacology 107:255"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "thc",
+   "amount": 3,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Cannabinoids are biphasic for anxiety: low THC doses can be calming or neutral, high doses reliably cause anxiety and paranoia.",
+  "source": "Childs, Lutz & de Wit 2017 Drug Alcohol Depend 177:136 (7.5 mg vs 12.5 mg THC); D'Souza et al. 2004 Neuropsychopharmacology 29:1558"
+ },
+ {
+  "kind": "rank",
+  "feeling": "analgesia",
+  "bigger": {
+   "what": "morphine",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Opioid pain relief follows a graded dose-response in the clinical range.",
+  "source": "Goodman & Gilman's Pharmacological Basis of Therapeutics, opioid chapter; Walsh et al. 2008 Clin Pharmacol Ther"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "morphine",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Respiratory depression by mu-opioids increases with dose without a ceiling.",
+  "source": "Dahan et al. 2010 Anesthesiology 112:226; Pattinson 2008 Br J Anaesth 100:747"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "heroin",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "confidence": "high",
+  "why": "A double heroin dose produces much deeper respiratory depression; this is the mechanism of overdose.",
+  "source": "Dahan et al. 2010 Anesthesiology 112:226; White & Irvine 1999 Addiction 94:961"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "heroin",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "confidence": "medium",
+  "why": "Rated euphoria/drug liking from heroin increases with dose.",
+  "source": "Comer et al. 1999 Psychopharmacology 143:327; Jones et al. 2011 Drug Alcohol Depend"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "diazepam",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Sedation from diazepam is clearly greater at 10 mg than 5 mg.",
+  "source": "de Visser et al. 2003 Br J Clin Pharmacol 55:39 (benzodiazepine dose-effect review); Mattila et al. 1988"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "diazepam",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "low",
+  "why": "Anxiolysis from diazepam is dose-related, though 2.5 mg has small effects in non-anxious people.",
+  "source": "Goodman & Gilman's, benzodiazepine chapter; de Visser et al. 2003 Br J Clin Pharmacol 55:39"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "methylphenidate",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "methylphenidate",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "medium",
+  "why": "Stimulant-like subjective effects and alertness rise with methylphenidate dose.",
+  "source": "Kollins et al. 1998 Exp Clin Psychopharmacol 6:367; Volkow et al. 1999 Am J Psychiatry 156:1440"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "mdma",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "mdma",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "medium",
+  "why": "Euphoria/'good drug effect' from MDMA is dose-dependent between 50 and 125 mg.",
+  "source": "Harris et al. 2002 Psychopharmacology 162:396; Kirkpatrick et al. 2014 Psychopharmacology"
+ },
+ {
+  "kind": "rank",
+  "feeling": "bonding",
+  "bigger": {
+   "what": "mdma",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "mdma",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "medium",
+  "why": "Feelings of closeness and sociability grow with MDMA dose.",
+  "source": "Kirkpatrick et al. 2014 Psychopharmacology 231:2161; Bershad et al. 2016"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "psilocybin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "psilocybin",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "high",
+  "why": "Altered-state ratings (5D-ASC) from psilocybin are strongly dose-dependent.",
+  "source": "Hasler et al. 2004 Psychopharmacology 172:145; Griffiths et al. 2011 Psychopharmacology 218:649"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "nicotine",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "nicotine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "confidence": "low",
+  "why": "Subjective stimulation from nicotine rises with dose, though nausea limits higher doses in non-users.",
+  "source": "Perkins et al. 1994 Psychopharmacology 115:185; Heishman et al. 2010 Psychopharmacology 210:453"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "methamphetamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "amphetamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "medium",
+  "why": "A recreational methamphetamine dose (often 25-100 mg, partly smoked/injected) stimulates far more than 10 mg oral dexamphetamine.",
+  "source": "Mendelson et al. 2006 Clin Pharmacol Ther 80:403; Kirkpatrick et al. 2012 Psychopharmacology"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "methamphetamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Methamphetamine is a far stronger wakefulness promoter than a coffee.",
+  "source": "Hart et al. 2008 Psychopharmacology 196:571; Smith 2002 Food Chem Toxicol"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "A street dose of injected/smoked heroin hits the brain fast and hard; 10 mg oral morphine causes only mild respiratory slowing.",
+  "source": "Dahan et al. 2010 Anesthesiology 112:226; Darke & Hall 2003 J Urban Health 80:189"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Rapid-onset injected heroin gives an intense rush; oral morphine gives mild, slow euphoria.",
+  "source": "Comer et al. 1999 Psychopharmacology 143:327; de Wit et al. 1992 on rate of delivery and euphoria"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "cocaine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Intranasal cocaine produces marked euphoria; caffeine only slight mood lift.",
+  "source": "Fischman et al. 1976 Arch Gen Psychiatry; Smit & Rogers 2000 Psychopharmacology 152:167"
+ },
+ {
+  "kind": "rank",
+  "feeling": "motivation",
+  "bigger": {
+   "what": "cocaine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Cocaine strongly raises drive and 'wanting' through large striatal dopamine release; caffeine's effect is modest.",
+  "source": "Volkow et al. 1997 Nature 386:827; Volkow et al. 2015 Transl Psychiatry (caffeine)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "psilocybin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2.5
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "confidence": "high",
+  "why": "Psilocybin produces full psychedelic perceptual changes; a moderate joint gives mild perceptual alteration.",
+  "source": "Hasler et al. 2004 Psychopharmacology 172:145; D'Souza et al. 2004 Neuropsychopharmacology 29:1558"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "lsd",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 3
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "confidence": "high",
+  "why": "100 \u00b5g LSD causes strong visual and perceptual alterations, well beyond a moderate joint.",
+  "source": "Schmid et al. 2015 Biol Psychiatry 78:544; Holze et al. 2021 Neuropsychopharmacology"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "ketamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.6
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Sub-anaesthetic ketamine produces clear dissociative and perceptual changes (CADSS); two drinks do not.",
+  "source": "Krystal et al. 1994 Arch Gen Psychiatry 51:199; Krystal et al. 1998 (ketamine vs ethanol)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "psilocybin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2.5
+  },
+  "smaller": {
+   "what": "mdma",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "high",
+  "why": "MDMA's perceptual changes are mild compared with psilocybin's.",
+  "source": "Liechti et al. 2001 Neuropsychopharmacology; Holze et al. 2020 Neuropsychopharmacology 45:462 (MDMA vs LSD)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "bonding",
+  "bigger": {
+   "what": "mdma",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "MDMA strongly increases feelings of closeness and trust; alcohol mainly increases talkativeness.",
+  "source": "Kirkpatrick & de Wit 2015 Psychopharmacology 232:1155; Dolder et al. 2018 Front Pharmacol 9:1258"
+ },
+ {
+  "kind": "rank",
+  "feeling": "bonding",
+  "bigger": {
+   "what": "mdma",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "methylphenidate",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "In head-to-head studies MDMA raised closeness and empathy, methylphenidate did not.",
+  "source": "Hysek et al. 2014 Soc Cogn Affect Neurosci 9:1645; Schmid et al. 2014 Psychopharmacology"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "stress",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "theanine",
+   "amount": 1,
+   "context": "stress",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Diazepam reliably dampens stress-induced anxiety; theanine's effect is small and inconsistent.",
+  "source": "Hoffman et al. 2005 benzodiazepine stress studies; Williams et al. 2020 Plant Foods Hum Nutr 75:12 (theanine review)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "analgesia",
+  "bigger": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Opioids give robust analgesia; THC's effect on acute pain is weak and inconsistent.",
+  "source": "Kraft et al. 2008 Anesthesiology 109:101; Whiting et al. 2015 JAMA 313:2456"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Benzodiazepines alone barely depress breathing in healthy people; heroin strongly does.",
+  "source": "White & Irvine 1999 Addiction 94:961; Gueye et al. 2002 Toxicol Sci"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "cocaine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "nicotine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "confidence": "medium",
+  "why": "Cocaine euphoria is much stronger than the mild pleasure of one cigarette in a non-smoker.",
+  "source": "Volkow et al. 1997 Nature 386:827; Perkins et al. 1994 Psychopharmacology 115:185"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "theanine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Caffeine raises alertness; theanine alone does not and may even relax.",
+  "source": "Haskell et al. 2008 Biol Psychol 77:113; Owen et al. 2008 Nutr Neurosci 11:193"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "morphine+naloxone",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Naloxone blocks mu-opioid receptors and reverses opioid respiratory depression.",
+  "source": "Dahan et al. 2010 Anesthesiology 112:226; Goodman & Gilman's"
+ },
+ {
+  "kind": "rank",
+  "feeling": "focus",
+  "bigger": {
+   "what": "methylphenidate",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "adhd",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "methylphenidate",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "medium",
+  "why": "Methylphenidate improves attention in both groups, but gains are larger in ADHD where baseline attention is lower.",
+  "source": "Faraone 2009 P&T 34:678; Ilieva et al. 2015 J Cogn Neurosci 27:1069 (small effects in healthy)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "sleep_deprived",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Caffeine's alerting effect is larger when there is sleep debt to counteract.",
+  "source": "Smith 2002 Food Chem Toxicol; McLellan, Caldwell & Lieberman 2016 Neurosci Biobehav Rev 71:294"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "anxiety",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 2,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "People with anxiety disorders are more sensitive to caffeine's anxiogenic effect.",
+  "source": "Boulenger et al. 1984 Arch Gen Psychiatry 41:1067; Charney et al. 1985 Arch Gen Psychiatry 42:233"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "anxiety",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "low",
+  "why": "Anxious individuals appear more prone to THC-induced anxiety and panic.",
+  "source": "Crippa et al. 2009 Hum Psychopharmacol 24:515; Sharpe et al. 2020 Neurosci Biobehav Rev"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "ketamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "depression",
+   "when_h": 24
+  },
+  "smaller": {
+   "what": "ketamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 24
+  },
+  "confidence": "high",
+  "why": "Ketamine's next-day mood lift is a robust antidepressant effect in depression but absent in healthy people.",
+  "source": "Zarate et al. 2006 Arch Gen Psychiatry 63:856; Krystal et al. 2019 Neuron"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "propranolol",
+   "amount": 1,
+   "context": "stress",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "propranolol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Propranolol blocks the bodily fear response, so it lowers anxiety mainly during stress; at rest it does little.",
+  "source": "Steenen et al. 2016 J Psychopharmacol 30:128; Brantigan et al. 1982 Am J Med 72:88"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "evening",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "At 22:00 sleep pressure is high, so caffeine has more sleepiness to remove than mid-morning.",
+  "source": "Landolt et al. 1995 Brain Res; Drake et al. 2013 J Clin Sleep Med 9:1195"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Habitual users largely just reverse withdrawal; their state is close to never-users, so the net gain is small.",
+  "source": "James & Rogers 2005 Psychopharmacology 182:1; Rogers et al. 2013 Psychopharmacology 226:229"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "nicotine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "nicotine",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "confidence": "medium",
+  "why": "Regular smokers develop tolerance; smoking mainly relieves withdrawal rather than raising them above non-smokers.",
+  "source": "Parrott 1999 Am Psychol 54:817; Perkins 1995 Psychopharmacology"
+ },
+ {
+  "kind": "rank",
+  "feeling": "analgesia",
+  "bigger": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "medium",
+  "why": "Analgesic tolerance builds with weeks of daily opioid use, and hyperalgesia can appear.",
+  "source": "Chu et al. 2006 J Pain 7:43; Morgan & Christie 2011 Br J Pharmacol 164:1322"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "smaller": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 0.25
+  },
+  "confidence": "medium",
+  "why": "Daily heroin users show large tolerance to euphoria and mostly dose to avoid withdrawal.",
+  "source": "Koob & Le Moal 2005 Nat Neurosci 8:1442; Comer et al. 1999 Psychopharmacology 143:327"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Tolerance to the sedative effect of benzodiazepines develops within days to weeks.",
+  "source": "Ashton 1994 Drugs 48:25; Vinkers & Olivier 2012 Adv Pharmacol Sci"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "low",
+  "why": "Some tolerance to anxiolysis develops with weeks of use, though slower than for sedation.",
+  "source": "Ashton 1994 Drugs 48:25; Lader 2011 Addiction 106:2086"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "medium",
+  "why": "Regular drinkers show tolerance to alcohol's sedative effects.",
+  "source": "King et al. 2011 Arch Gen Psychiatry 68:389 (heavy vs light drinkers); Kalant 1998 Alcohol Clin Exp Res"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "sertraline",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "depression",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "sertraline",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "depression",
+   "when_h": 4
+  },
+  "confidence": "high",
+  "why": "SSRIs lift mood in depression only after weeks; a first dose does not.",
+  "source": "Cipriani et al. 2018 Lancet 391:1357; Taylor et al. 2006 Arch Gen Psychiatry 63:1217"
+ },
+ {
+  "kind": "rank",
+  "feeling": "hunger",
+  "bigger": {
+   "what": "semaglutide",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "semaglutide",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 6
+  },
+  "confidence": "medium",
+  "why": "Semaglutide reaches steady state over weeks of dose escalation; appetite suppression is large at maintenance but small hours after a first injection.",
+  "source": "Blundell et al. 2017 Diabetes Obes Metab 19:1242; Friedrichsen et al. 2021 Diabetes Obes Metab 23:754"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "heroin+alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "confidence": "high",
+  "why": "Alcohol adds to opioid respiratory depression and is present in a large share of heroin overdose deaths.",
+  "source": "van der Schrier et al. 2017 Anesthesiology 126:534; Darke & Hall 2003 J Urban Health 80:189"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "morphine+diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Benzodiazepines potentiate opioid respiratory depression (FDA boxed warning).",
+  "source": "FDA 2016 Drug Safety Communication; Hernandez et al. 2018 JAMA Netw Open"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "alcohol+diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Alcohol and benzodiazepines are additive or supra-additive for sedation.",
+  "source": "Linnoila et al. 1990 Alcohol Alcohol; Tanaka 2002 J Toxicol Clin Toxicol 40:69"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": {
+   "what": "cocaine+alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.75
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.75
+  },
+  "confidence": "medium",
+  "why": "Adding cocaine to alcohol increases euphoria (cocaethylene forms) beyond alcohol alone.",
+  "source": "McCance-Katz et al. 1993 Biol Psychiatry 34:525; Farr\u00e9 et al. 1993 J Pharmacol Exp Ther 266:1364"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "cocaine+alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Cocaine offsets alcohol's sedation, which is why the combination feels less drunk.",
+  "source": "Farr\u00e9 et al. 1993 J Pharmacol Exp Ther 266:1364; Pennings et al. 2002 Addiction 97:773"
+ },
+ {
+  "kind": "rank",
+  "feeling": "focus",
+  "bigger": {
+   "what": "alcohol+thc",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Cannabis and alcohol impair attention and driving performance additively.",
+  "source": "Hartman et al. 2015 Addiction 110:1604; Ramaekers et al. 2000 Drug Alcohol Depend 57:57"
+ }
+]

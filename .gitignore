@@ -1,0 +1,4 @@
+node_modules
+dist
+/n-*.png
+*.log

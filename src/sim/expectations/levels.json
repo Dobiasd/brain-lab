@@ -1,0 +1,962 @@
+[
+ {
+  "kind": "level",
+  "what": "caffeine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "dopamine_striatum",
+  "fold": [
+   0.95,
+   1.3
+  ],
+  "confidence": "medium",
+  "why": "One coffee works mainly by blocking adenosine A2A receptors, which only indirectly and weakly changes striatal dopamine release; human PET displacement studies are largely negative.",
+  "source": "Volkow et al., Transl Psychiatry 2015 (caffeine raises D2/D3 receptor availability, not dopamine release); Ferre, J Neurochem 2008 (adenosine-dopamine receptor interactions)"
+ },
+ {
+  "kind": "level",
+  "what": "caffeine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "adenosine",
+  "fold": [
+   0.9,
+   1.15
+  ],
+  "confidence": "medium",
+  "why": "Caffeine is a competitive antagonist at adenosine receptors, so it blocks the signal without lowering (or raising) the amount of adenosine in the tissue.",
+  "source": "Fredholm et al., Pharmacol Rev 1999; Porkka-Heiskanen & Kalinchuk, Sleep Med Rev 2011"
+ },
+ {
+  "kind": "level",
+  "what": "caffeine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "noradrenaline",
+  "fold": [
+   1,
+   1.6
+  ],
+  "confidence": "medium",
+  "why": "Caffeine modestly raises sympathetic outflow and plasma/central noradrenaline, more in people who do not drink it regularly.",
+  "source": "Robertson et al., NEJM 1978; Lane et al., Psychosom Med 2002"
+ },
+ {
+  "kind": "level",
+  "what": "caffeine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "cortisol",
+  "fold": [
+   1.1,
+   2
+  ],
+  "confidence": "medium",
+  "why": "A ~100 mg dose produces a clear but moderate rise in cortisol in non-habituated people; regular drinkers show a much blunted response.",
+  "source": "Lovallo et al., Psychosom Med 2005; Lovallo et al., Pharmacol Biochem Behav 2006"
+ },
+ {
+  "kind": "level",
+  "what": "methylphenidate",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.3,
+   3
+  ],
+  "confidence": "medium",
+  "why": "An oral 10-20 mg dose blocks roughly half of striatal dopamine transporters and raises extracellular dopamine by a clear but sub-amphetamine amount.",
+  "source": "Volkow et al., J Neurosci 2001 (oral MPH, [11C]raclopride); Volkow et al., Am J Psychiatry 1998 (DAT occupancy)"
+ },
+ {
+  "kind": "level",
+  "what": "methylphenidate",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_pfc",
+  "fold": [
+   1.2,
+   2.5
+  ],
+  "confidence": "medium",
+  "why": "In prefrontal cortex methylphenidate raises dopamine mostly via noradrenaline-transporter blockade; rodent microdialysis shows a clear rise, scaled down for a therapeutic human dose.",
+  "source": "Berridge et al., Biol Psychiatry 2006; Hannestad et al., Biol Psychiatry 2010 (human NET occupancy)"
+ },
+ {
+  "kind": "level",
+  "what": "methylphenidate",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "noradrenaline",
+  "fold": [
+   1.3,
+   3
+  ],
+  "confidence": "medium",
+  "why": "Methylphenidate is a potent noradrenaline reuptake blocker with high human NET occupancy at clinical doses.",
+  "source": "Hannestad et al., Biol Psychiatry 2010; Berridge et al., Biol Psychiatry 2006"
+ },
+ {
+  "kind": "level",
+  "what": "methylphenidate",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "serotonin",
+  "fold": [
+   0.9,
+   1.2
+  ],
+  "confidence": "medium",
+  "why": "Methylphenidate has very low affinity for the serotonin transporter, so cortical serotonin is essentially unchanged.",
+  "source": "Han & Gu, BMC Pharmacol 2006 (transporter selectivity); Kuczenski & Segal, J Neurochem 1997"
+ },
+ {
+  "kind": "level",
+  "what": "amphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Dexamphetamine reverses the dopamine transporter and empties vesicles, producing a larger striatal dopamine rise than methylphenidate; human PET displacement at 0.2-0.3 mg/kg is robust.",
+  "source": "Drevets et al., Biol Psychiatry 2001 ([11C]raclopride, oral/IV amphetamine); Laruelle et al., Synapse 1995"
+ },
+ {
+  "kind": "level",
+  "what": "amphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_pfc",
+  "fold": [
+   1.4,
+   3.5
+  ],
+  "confidence": "medium",
+  "why": "Amphetamine raises prefrontal dopamine clearly, though with a flatter dose-response than striatum; rodent microdialysis scaled to a 10 mg human dose.",
+  "source": "Kuczenski & Segal, J Neurosci 1995; Narendran et al., Synapse 2014 (human cortical amphetamine challenge)"
+ },
+ {
+  "kind": "level",
+  "what": "amphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "noradrenaline",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Amphetamine is roughly as potent a noradrenaline releaser as a dopamine releaser.",
+  "source": "Rothman et al., Synapse 2001 (releasing potencies at DAT/NET/SERT)"
+ },
+ {
+  "kind": "level",
+  "what": "amphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "serotonin",
+  "fold": [
+   1,
+   1.6
+  ],
+  "confidence": "medium",
+  "why": "Dexamphetamine is roughly an order of magnitude weaker at releasing serotonin than catecholamines, so the serotonin rise at a 10 mg dose is small.",
+  "source": "Rothman et al., Synapse 2001; Kuczenski & Segal, J Neurochem 1997"
+ },
+ {
+  "kind": "level",
+  "what": "methamphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "dopamine_striatum",
+  "fold": [
+   2,
+   10
+  ],
+  "confidence": "low",
+  "why": "Methamphetamine is a more lipophilic and longer-acting releaser than amphetamine and produces the largest striatal dopamine rise of the common stimulants; rodent values are far higher and are shrunk here for a human recreational dose.",
+  "source": "Rothman et al., Synapse 2001; Melega et al., Synapse 1995 (primate); Kirkpatrick et al., Psychopharmacology 2012"
+ },
+ {
+  "kind": "level",
+  "what": "methamphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "noradrenaline",
+  "fold": [
+   1.8,
+   6
+  ],
+  "confidence": "low",
+  "why": "Methamphetamine is a potent noradrenaline releaser, which drives its cardiovascular and arousal effects; rodent values are higher and are shrunk here for a human recreational dose.",
+  "source": "Rothman et al., Synapse 2001 (releasing potencies at DAT/NET/SERT)"
+ },
+ {
+  "kind": "level",
+  "what": "methamphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "serotonin",
+  "fold": [
+   1.3,
+   4
+  ],
+  "confidence": "low",
+  "why": "Methamphetamine releases serotonin too, but several-fold less potently than dopamine, which is why it is less empathogenic than MDMA.",
+  "source": "Rothman et al., Synapse 2001; Baumann et al., Neuropsychopharmacology 2011"
+ },
+ {
+  "kind": "level",
+  "what": "cocaine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "Intranasal cocaine blocks 60-80% of striatal dopamine transporters, giving a large but transporter-limited dopamine rise (it blocks reuptake rather than forcing release).",
+  "source": "Volkow et al., Nature 1997 (human DAT occupancy); Hurd & Ungerstedt, Synapse 1989"
+ },
+ {
+  "kind": "level",
+  "what": "cocaine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "noradrenaline",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Cocaine blocks the noradrenaline transporter with similar affinity to DAT, raising cortical noradrenaline.",
+  "source": "Ritz et al., Science 1987; Rothman et al., Synapse 2001"
+ },
+ {
+  "kind": "level",
+  "what": "cocaine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "serotonin",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Unlike amphetamine, cocaine blocks the serotonin transporter about as well as DAT, so cortical serotonin rises clearly.",
+  "source": "Ritz et al., Science 1987; Bradberry et al., J Neurochem 1993"
+ },
+ {
+  "kind": "level",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "serotonin",
+  "fold": [
+   3,
+   15
+  ],
+  "confidence": "medium",
+  "why": "MDMA's defining action is massive carrier-mediated serotonin release; rodent microdialysis shows 10-20x at higher doses, shrunk here for 100 mg in a human.",
+  "source": "Rothman et al., Synapse 2001; Baumann et al., Neuropsychopharmacology 2008; Green et al., Pharmacol Rev 2003"
+ },
+ {
+  "kind": "level",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.3,
+   3
+  ],
+  "confidence": "medium",
+  "why": "MDMA also releases dopamine, but roughly ten-fold less potently than serotonin, which is why it feels different from amphetamine.",
+  "source": "Rothman et al., Synapse 2001; Green et al., Pharmacol Rev 2003"
+ },
+ {
+  "kind": "level",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "noradrenaline",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "MDMA is a strong noradrenaline releaser, which accounts for much of the heart-rate, blood-pressure and arousal response.",
+  "source": "Rothman et al., Synapse 2001; Hysek et al., Clin Pharmacol Ther 2012 (reboxetine blocks MDMA cardiostimulation)"
+ },
+ {
+  "kind": "level",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "oxytocin",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "MDMA reliably raises plasma oxytocin in controlled human studies, and the rise tracks the feeling of closeness.",
+  "source": "Dumont et al., Soc Neurosci 2009; Kirkpatrick et al., Psychopharmacology 2014; Hysek et al., SCAN 2014"
+ },
+ {
+  "kind": "level",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "cortisol",
+  "fold": [
+   1.8,
+   6
+  ],
+  "confidence": "medium",
+  "why": "MDMA produces one of the largest drug-induced cortisol rises measured in humans, severalfold above baseline.",
+  "source": "Mas et al., J Pharmacol Exp Ther 1999; Harris et al., Psychopharmacology 2002; Seibert et al., Psychopharmacology 2014"
+ },
+ {
+  "kind": "level",
+  "what": "sertraline",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "serotonin",
+  "fold": [
+   1.1,
+   2
+  ],
+  "confidence": "medium",
+  "why": "A single 50 mg dose blocks the serotonin transporter, but 5-HT1A autoreceptor feedback damps the rise, so forebrain serotonin goes up only modestly on day one.",
+  "source": "Meyer et al., Am J Psychiatry 2004 (human SERT occupancy); Bel & Artigas, Eur J Pharmacol 1993; Invernizzi et al., Brain Res 1992"
+ },
+ {
+  "kind": "level",
+  "what": "sertraline",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "dopamine_striatum",
+  "fold": [
+   0.9,
+   1.2
+  ],
+  "confidence": "medium",
+  "why": "Sertraline has some DAT affinity in vitro, but at 50 mg the occupancy is negligible and striatal dopamine is essentially unchanged acutely.",
+  "source": "Kugaya et al., Am J Psychiatry 2003 (no measurable DAT occupancy at clinical sertraline doses); Owens et al., J Pharmacol Exp Ther 1997"
+ },
+ {
+  "kind": "level",
+  "what": "sertraline",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "serotonin",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "After weeks of dosing the 5-HT1A autoreceptor brake desensitises, so the same transporter block now produces a much larger sustained rise than on day one - the usual account of the delayed antidepressant effect.",
+  "source": "Blier & de Montigny, Trends Pharmacol Sci 1994; Bel & Artigas, Synapse 1993; Rutter et al., J Neurochem 1994"
+ },
+ {
+  "kind": "level",
+  "what": "sertraline",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "noradrenaline",
+  "fold": [
+   0.85,
+   1.15
+  ],
+  "confidence": "medium",
+  "why": "Sertraline is selective for the serotonin transporter; chronic treatment does not meaningfully raise cortical noradrenaline.",
+  "source": "Owens et al., J Pharmacol Exp Ther 1997; Beique et al., Br J Pharmacol 1998"
+ },
+ {
+  "kind": "level",
+  "what": "bupropion",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.05,
+   1.6
+  ],
+  "confidence": "medium",
+  "why": "Despite its reputation, bupropion occupies only about 20-30% of striatal dopamine transporters at clinical doses, so the dopamine rise is small.",
+  "source": "Learned-Coughlin et al., Biol Psychiatry 2003 (human DAT occupancy ~26%); Meyer et al., Am J Psychiatry 2002"
+ },
+ {
+  "kind": "level",
+  "what": "bupropion",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "measure": "noradrenaline",
+  "fold": [
+   1.2,
+   2.5
+  ],
+  "confidence": "medium",
+  "why": "Bupropion and its hydroxy metabolite act mainly as noradrenaline reuptake inhibitors and releasers, the larger of its two monoamine actions.",
+  "source": "Dong & Blier, Psychopharmacology 2001; Stahl et al., Prim Care Companion J Clin Psychiatry 2004"
+ },
+ {
+  "kind": "level",
+  "what": "bupropion",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "measure": "serotonin",
+  "fold": [
+   0.9,
+   1.1
+  ],
+  "confidence": "high",
+  "why": "Bupropion has essentially no affinity for the serotonin transporter, which is why it lacks SSRI-type sexual and gastrointestinal side effects.",
+  "source": "Dong & Blier, Psychopharmacology 2001; Stahl et al., Prim Care Companion J Clin Psychiatry 2004"
+ },
+ {
+  "kind": "level",
+  "what": "phenelzine",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "serotonin",
+  "fold": [
+   2,
+   8
+  ],
+  "confidence": "medium",
+  "why": "Irreversible non-selective MAO inhibition stops the main breakdown route for serotonin, so extracellular levels rise several-fold once the enzyme pool is inhibited.",
+  "source": "Finberg, Pharmacol Ther 2014; Celada & Artigas, Naunyn-Schmiedeberg's Arch Pharmacol 1993"
+ },
+ {
+  "kind": "level",
+  "what": "phenelzine",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "noradrenaline",
+  "fold": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "MAO-A inhibition raises noradrenaline as well as serotonin; the resulting tyramine sensitivity is the basis of the cheese reaction.",
+  "source": "Finberg, Pharmacol Ther 2014; Blier & de Montigny, Trends Pharmacol Sci 1994"
+ },
+ {
+  "kind": "level",
+  "what": "phenelzine",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Phenelzine inhibits MAO-B as well as MAO-A, so striatal dopamine, whose main degrading enzyme is MAO-B, also rises.",
+  "source": "Finberg, Pharmacol Ther 2014; Youdim et al., Nat Rev Neurosci 2006"
+ },
+ {
+  "kind": "level",
+  "what": "nicotine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.25,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.05,
+   1.7
+  ],
+  "confidence": "medium",
+  "why": "One cigarette produces only a small striatal dopamine release in human PET studies - smaller than most people expect, and several studies find no significant effect in non-deprived smokers.",
+  "source": "Brody et al., Arch Gen Psychiatry 2004; Barrett et al., Synapse 2004; Montgomery et al., Neuroimage 2007"
+ },
+ {
+  "kind": "level",
+  "what": "nicotine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.25,
+  "measure": "acetylcholine",
+  "fold": [
+   1.1,
+   2
+  ],
+  "confidence": "medium",
+  "why": "Nicotine acts on presynaptic nicotinic receptors that facilitate cortical acetylcholine release (it does not simply add acetylcholine itself).",
+  "source": "Wonnacott, Trends Neurosci 1997; Rowell & Winkler, J Neurochem 1984"
+ },
+ {
+  "kind": "level",
+  "what": "nicotine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.25,
+  "measure": "noradrenaline",
+  "fold": [
+   1.1,
+   2
+  ],
+  "confidence": "medium",
+  "why": "Nicotine stimulates noradrenaline release centrally and peripherally, contributing to its alerting effect.",
+  "source": "Fu et al., J Pharmacol Exp Ther 1998; Benowitz, NEJM 2010"
+ },
+ {
+  "kind": "level",
+  "what": "alcohol",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1,
+   1.6
+  ],
+  "confidence": "low",
+  "why": "Two drinks produce only a small and variable striatal dopamine signal in human PET; the rise is much smaller than for stimulants and is larger in family-history-positive drinkers.",
+  "source": "Boileau et al., Synapse 2003; Urban et al., Biol Psychiatry 2010; Yoder et al., Alcohol Clin Exp Res 2007"
+ },
+ {
+  "kind": "level",
+  "what": "alcohol",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "cortisol",
+  "fold": [
+   0.9,
+   1.6
+  ],
+  "confidence": "low",
+  "why": "At two drinks the HPA response is small and inconsistent; a clear cortisol rise needs intoxicating doses, so this is a case where a plausible effect is largely absent.",
+  "source": "Thayer et al., Alcohol Clin Exp Res 2006; Richardson et al., Psychopharmacology 2008 (dose-dependent HPA activation)"
+ },
+ {
+  "kind": "level",
+  "what": "morphine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1,
+   1.6
+  ],
+  "confidence": "low",
+  "why": "Oral morphine at an analgesic dose produces only a small striatal dopamine signal in humans; much of opioid euphoria is mu-receptor mediated rather than a large dopamine surge.",
+  "source": "Hagelberg et al., Pain 2002; Spagnolo et al., Neuropsychopharmacology 2019; Johnson & North, J Neurosci 1992 (disinhibition mechanism)"
+ },
+ {
+  "kind": "level",
+  "what": "heroin",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.25,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.3,
+   3
+  ],
+  "confidence": "low",
+  "why": "Rapidly delivered heroin disinhibits VTA dopamine neurons and raises accumbens dopamine clearly, though still less than a comparable stimulant dose.",
+  "source": "Pontieri et al., PNAS 1995; Johnson & North, J Neurosci 1992"
+ },
+ {
+  "kind": "level",
+  "what": "thc",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1,
+   1.4
+  ],
+  "confidence": "low",
+  "why": "Human PET studies of smoked or oral THC find only a small dopamine release, and several are null - notably smaller than for stimulants or even alcohol-plus-expectation.",
+  "source": "Bossong et al., Neuropsychopharmacology 2009; Stokes et al., Neuroimage 2009; Bloomfield et al., Nature 2016 (review)"
+ },
+ {
+  "kind": "level",
+  "what": "ketamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.7,
+  "measure": "glutamate",
+  "fold": [
+   1.2,
+   2.5
+  ],
+  "confidence": "medium",
+  "why": "Sub-anaesthetic ketamine blocks NMDA receptors on inhibitory interneurons, disinhibiting cortical pyramidal cells and producing a glutamate surge - the key step in its rapid antidepressant action.",
+  "source": "Moghaddam et al., J Neurosci 1997; Stone et al., Mol Psychiatry 2012 (human MRS); Abdallah et al., Neuropsychopharmacology 2018"
+ },
+ {
+  "kind": "level",
+  "what": "diazepam",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "gaba",
+  "fold": [
+   0.85,
+   1.1
+  ],
+  "confidence": "medium",
+  "why": "Benzodiazepines are positive allosteric modulators: they make each GABA molecule work better at the receptor, they do not increase how much GABA is released.",
+  "source": "Sigel & Steinmann, J Biol Chem 2012; Rudolph & Knoflach, Nat Rev Drug Discov 2011"
+ },
+ {
+  "kind": "level",
+  "what": "diazepam",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   0.85,
+   1.1
+  ],
+  "confidence": "medium",
+  "why": "At an anxiolytic 5 mg dose diazepam does not produce a measurable striatal dopamine release in humans, unlike classic drugs of abuse.",
+  "source": "Rademacher et al., Psychopharmacology 2016 (no significant [11C]raclopride displacement); Tan et al., Nature 2010 (mechanism is indirect disinhibition)"
+ },
+ {
+  "kind": "level",
+  "what": "stress",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "cortisol",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "high",
+  "why": "A standard acute psychosocial stressor roughly doubles to quadruples salivary and plasma cortisol, peaking around 20-30 min after the stressor ends.",
+  "source": "Kirschbaum et al., Neuropsychobiology 1993 (Trier Social Stress Test); Dickerson & Kemeny, Psychol Bull 2004 (meta-analysis)"
+ },
+ {
+  "kind": "level",
+  "what": "stress",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.3,
+  "measure": "acth",
+  "fold": [
+   2,
+   6
+  ],
+  "confidence": "high",
+  "why": "ACTH rises before and proportionally more than cortisol, since it is the pituitary signal that drives the adrenal response.",
+  "source": "Kirschbaum et al., Neuropsychobiology 1993; Dickerson & Kemeny, Psychol Bull 2004"
+ },
+ {
+  "kind": "level",
+  "what": "exercise",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "cortisol",
+  "fold": [
+   1.2,
+   3
+  ],
+  "confidence": "high",
+  "why": "Cortisol rises with exercise above roughly 60% VO2max; an hour of moderate-vigorous exercise gives a clear rise, while light exercise can leave it unchanged.",
+  "source": "Hill et al., J Endocrinol Invest 2008 (intensity threshold); Luger et al., NEJM 1987"
+ },
+ {
+  "kind": "level",
+  "what": "exercise",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "acth",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Exercise drives the HPA axis from the top, raising ACTH ahead of cortisol.",
+  "source": "Luger et al., NEJM 1987; Hill et al., J Endocrinol Invest 2008"
+ },
+ {
+  "kind": "level",
+  "what": "exercise",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "endorphin",
+  "fold": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "Plasma beta-endorphin rises several-fold after sustained vigorous exercise, and PET shows central opioid release after running.",
+  "source": "Goldfarb & Jamurtas, Sports Med 1997; Boecker et al., Cereb Cortex 2008 ([11C]diprenorphine after running)"
+ },
+ {
+  "kind": "level",
+  "what": "exercise",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "anandamide",
+  "fold": [
+   1.5,
+   3
+  ],
+  "confidence": "medium",
+  "why": "Circulating anandamide rises reliably with moderate-intensity exercise and is a better-supported mediator of 'runner's high' than endorphins, which cross the blood-brain barrier poorly.",
+  "source": "Sparling et al., Neuroreport 2003; Raichlen et al., J Exp Biol 2012; Siebers et al., Psychoneuroendocrinology 2021"
+ },
+ {
+  "kind": "level",
+  "what": "pain",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "endorphin",
+  "fold": [
+   1.2,
+   3
+  ],
+  "confidence": "medium",
+  "why": "Sustained noxious stimulation triggers endogenous opioid release, measurable as mu-receptor occupancy changes during experimental pain.",
+  "source": "Zubieta et al., Science 2001; Bandura-Morgan & Roszkowski, Pain 1986"
+ },
+ {
+  "kind": "level",
+  "what": "social",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "oxytocin",
+  "fold": [
+   1.1,
+   2
+  ],
+  "confidence": "low",
+  "why": "Warm social contact and touch raise plasma oxytocin modestly; effect sizes are small and plasma is an imperfect proxy for central release.",
+  "source": "Grewen et al., Psychosom Med 2005; Uvnas-Moberg et al., Front Psychol 2014; Leng & Ludwig, Biol Psychiatry 2016 (caveats)"
+ },
+ {
+  "kind": "level",
+  "what": "cbd",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "measure": "anandamide",
+  "fold": [
+   1.1,
+   2.5
+  ],
+  "confidence": "low",
+  "why": "CBD inhibits FAAH and anandamide transport, and serum anandamide rose roughly two-fold in a clinical trial - though that trial used far higher doses than 25 mg.",
+  "source": "Leweke et al., Transl Psychiatry 2012; Bisogno et al., Br J Pharmacol 2001"
+ },
+ {
+  "kind": "level",
+  "what": "melatonin",
+  "amount": 1,
+  "context": "evening",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "melatonin",
+  "fold": [
+   10,
+   100
+  ],
+  "confidence": "high",
+  "why": "A 0.5-1 mg oral dose pushes blood melatonin far above the natural nocturnal peak, because physiological levels are only tens of picograms per millilitre.",
+  "source": "Dollins et al., PNAS 1994; Zhdanova et al., J Clin Endocrinol Metab 2001; Vural et al., Drugs Aging 2014"
+ },
+ {
+  "kind": "level",
+  "what": "melatonin",
+  "amount": 1,
+  "context": "evening",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "cortisol",
+  "fold": [
+   0.9,
+   1.1
+  ],
+  "confidence": "medium",
+  "why": "Melatonin at sleep-promoting doses is a timing signal, not a stress hormone, and does not meaningfully change evening cortisol.",
+  "source": "Cagnacci et al., J Clin Endocrinol Metab 1995; Arendt & Skene, Sleep Med Rev 2005"
+ },
+ {
+  "kind": "level",
+  "what": "short_sleep",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "measure": "adenosine",
+  "fold": [
+   1.1,
+   2
+  ],
+  "confidence": "medium",
+  "why": "Extended wakefulness accumulates basal-forebrain adenosine, the main biochemical marker of sleep pressure; human A1-receptor PET supports an increase after one night of restriction.",
+  "source": "Porkka-Heiskanen et al., Science 1997; Elmenhorst et al., J Neurosci 2007 (human A1 receptor upregulation after sleep deprivation)"
+ },
+ {
+  "kind": "level",
+  "what": "short_sleep",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 12,
+  "measure": "cortisol",
+  "fold": [
+   1.1,
+   2.5
+  ],
+  "confidence": "medium",
+  "why": "Sleep restriction raises cortisol in the evening, when it should be at its lowest, more than it raises the morning peak - the direction a simulation can easily get wrong.",
+  "source": "Leproult et al., Sleep 1997; Spiegel et al., Lancet 1999"
+ },
+ {
+  "kind": "level",
+  "what": "food",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "ghrelin",
+  "fold": [
+   0.4,
+   0.8
+  ],
+  "confidence": "high",
+  "why": "Ghrelin is the pre-meal hunger hormone: it peaks just before eating and is suppressed by about half within an hour of a meal, in proportion to calories.",
+  "source": "Cummings et al., Diabetes 2001; Callahan et al., J Clin Endocrinol Metab 2004"
+ },
+ {
+  "kind": "level",
+  "what": "food",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 4,
+  "measure": "ghrelin",
+  "fold": [
+   0.9,
+   1.4
+  ],
+  "confidence": "medium",
+  "why": "By several hours after a meal ghrelin has climbed back to, and begun to exceed, its pre-meal level as the next hunger episode builds.",
+  "source": "Cummings et al., Diabetes 2001; Cummings et al., J Clin Invest 2001"
+ },
+ {
+  "kind": "level",
+  "what": "food",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.75,
+  "measure": "glp1",
+  "fold": [
+   1.5,
+   5
+  ],
+  "confidence": "high",
+  "why": "GLP-1 is secreted by intestinal L-cells in response to nutrients, rising severalfold within 30-60 min of eating.",
+  "source": "Holst, Physiol Rev 2007; Vilsboll et al., J Clin Endocrinol Metab 2003"
+ }
+]

@@ -1,0 +1,50 @@
+{
+ "activities.json": {
+  "pass": 31,
+  "of": 40
+ },
+ "depressants.json": {
+  "pass": 31,
+  "of": 40
+ },
+ "effects_contexts.json": {
+  "pass": 45,
+  "of": 60
+ },
+ "effects_coverage.json": {
+  "pass": 58,
+  "of": 61
+ },
+ "holdout_a.json": {
+  "pass": 50,
+  "of": 60
+ },
+ "holdout_b.json": {
+  "pass": 55,
+  "of": 60
+ },
+ "levels.json": {
+  "pass": 46,
+  "of": 60
+ },
+ "mood_psychedelics.json": {
+  "pass": 31,
+  "of": 40
+ },
+ "ranks.json": {
+  "pass": 55,
+  "of": 60
+ },
+ "rhythms_profiles.json": {
+  "pass": 42,
+  "of": 55
+ },
+ "stimulants.json": {
+  "pass": 30,
+  "of": 40
+ },
+ "timecourse.json": {
+  "pass": 24,
+  "of": 54
+ }
+}

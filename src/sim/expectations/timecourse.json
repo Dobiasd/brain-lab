@@ -1,0 +1,1244 @@
+[
+ {
+  "kind": "timecourse",
+  "what": "caffeine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.1,
+   0.75
+  ],
+  "peak_h": [
+   0.5,
+   2
+  ],
+  "offset_h": [
+   2.5,
+   9
+  ],
+  "confidence": "high",
+  "why": "Coffee alertness starts within ~15-30 min, peaks around 1 h and fades over several hours (half-life ~5 h).",
+  "source": "Smith 2002 Food Chem Toxicol; Nehlig 2010 J Alzheimers Dis; Fredholm 1999 Pharmacol Rev"
+ },
+ {
+  "kind": "timecourse",
+  "what": "caffeine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "down",
+  "onset_h": [
+   0.15,
+   0.75
+  ],
+  "peak_h": [
+   0.5,
+   2
+  ],
+  "offset_h": [
+   3,
+   10
+  ],
+  "confidence": "medium",
+  "why": "Caffeine blocks adenosine receptors and lowers felt sleepiness for several hours after one coffee.",
+  "source": "Drake 2013 J Clin Sleep Med; Landolt 2004; Fredholm 1999 Pharmacol Rev"
+ },
+ {
+  "kind": "timecourse",
+  "what": "methylphenidate",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.25,
+   1
+  ],
+  "peak_h": [
+   0.75,
+   2.5
+  ],
+  "offset_h": [
+   3,
+   7
+  ],
+  "confidence": "high",
+  "why": "Oral IR methylphenidate feels stimulating from ~30 min, peaks at 1-2 h and wears off in about 4 h.",
+  "source": "Volkow 1998/2001 Am J Psychiatry (PET + VAS time course); Kollins 1998 Exp Clin Psychopharmacol; Swanson & Volkow 2003"
+ },
+ {
+  "kind": "timecourse",
+  "what": "methylphenidate",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "focus",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.2
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   3.5,
+   7
+  ],
+  "confidence": "high",
+  "why": "Classroom and lab attention gains with IR methylphenidate last about 3-5 h, peaking 1-3 h after the dose.",
+  "source": "Swanson 1998/2003 (laboratory classroom studies); Greenhill 2002 J Am Acad Child Adolesc Psychiatry"
+ },
+ {
+  "kind": "timecourse",
+  "what": "amphetamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.5
+  ],
+  "peak_h": [
+   1,
+   3.5
+  ],
+  "offset_h": [
+   4,
+   10
+  ],
+  "confidence": "high",
+  "why": "10 mg oral dexamphetamine raises 'stimulated/vigor' ratings from ~30-60 min, peaking at 1.5-3 h and lasting 4-8 h.",
+  "source": "de Wit 2002 Neuropsychopharmacology; Kirkpatrick 2012 Psychopharmacology; Asghar 2003 J Clin Psychopharmacol"
+ },
+ {
+  "kind": "timecourse",
+  "what": "amphetamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.5
+  ],
+  "peak_h": [
+   0.75,
+   3
+  ],
+  "offset_h": [
+   3,
+   8
+  ],
+  "confidence": "medium",
+  "why": "Euphoria/'feel high' ratings after oral dexamphetamine peak around 1-3 h and decline before plasma levels do.",
+  "source": "de Wit 2002; Angrist 1987; Kirkpatrick 2012 Psychopharmacology"
+ },
+ {
+  "kind": "timecourse",
+  "what": "amphetamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "hunger",
+  "direction": "down",
+  "onset_h": [
+   0.5,
+   2
+  ],
+  "peak_h": [
+   1,
+   4
+  ],
+  "offset_h": [
+   4,
+   12
+  ],
+  "confidence": "medium",
+  "why": "Amphetamine suppresses appetite with a time course that follows its 1-3 h peak and lasts much of the day.",
+  "source": "Silverstone 1983; Foltin 1990 Pharmacol Biochem Behav; Heal 2013 J Psychopharmacol"
+ },
+ {
+  "kind": "timecourse",
+  "what": "methamphetamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.02,
+   1.5
+  ],
+  "peak_h": [
+   0.1,
+   3
+  ],
+  "offset_h": [
+   2,
+   12
+  ],
+  "confidence": "medium",
+  "why": "The meth 'high' comes within minutes when smoked (hours when oral), and fades faster than its long-lasting blood levels but still lasts hours.",
+  "source": "Harris 2003 Drug Alcohol Depend; Mendelson 2006 Clin Pharmacol Ther; Kirkpatrick 2012 Psychopharmacology"
+ },
+ {
+  "kind": "timecourse",
+  "what": "methamphetamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.02,
+   1.5
+  ],
+  "peak_h": [
+   0.1,
+   3.5
+  ],
+  "offset_h": [
+   4,
+   16
+  ],
+  "confidence": "medium",
+  "why": "Methamphetamine's half-life is ~10 h, so wakefulness and stimulation persist far longer than cocaine's.",
+  "source": "Cook 1993 Drug Metab Dispos; Harris 2003; Cruickshank & Dyer 2009 Addiction"
+ },
+ {
+  "kind": "timecourse",
+  "what": "cocaine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.03,
+   0.4
+  ],
+  "peak_h": [
+   0.15,
+   1
+  ],
+  "offset_h": [
+   0.75,
+   2.5
+  ],
+  "confidence": "high",
+  "why": "Intranasal cocaine euphoria starts within minutes, peaks at ~15-45 min and is largely gone in 1-2 h.",
+  "source": "Javaid 1978 Science; Van Dyke 1978; Resnick 1977; Volkow 1997 Nature"
+ },
+ {
+  "kind": "timecourse",
+  "what": "cocaine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.03,
+   0.4
+  ],
+  "peak_h": [
+   0.15,
+   1
+  ],
+  "offset_h": [
+   0.75,
+   3
+  ],
+  "confidence": "high",
+  "why": "Intranasal cocaine stimulation follows its short ~1 h half-life and fades within 1-2 h.",
+  "source": "Javaid 1978 Science; Fischman 1983; Jeffcoat 1989 Drug Metab Dispos"
+ },
+ {
+  "kind": "timecourse",
+  "what": "nicotine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0,
+   0.1
+  ],
+  "peak_h": [
+   0.02,
+   0.25
+  ],
+  "offset_h": [
+   0.2,
+   1.5
+  ],
+  "confidence": "medium",
+  "why": "Nicotine from a cigarette hits the brain in seconds; the 'head rush' and arousal peak within minutes and fade within about half an hour.",
+  "source": "Benowitz 2009 Annu Rev Pharmacol Toxicol; Henningfield 1985; Perkins 1994 Psychopharmacology"
+ },
+ {
+  "kind": "timecourse",
+  "what": "nicotine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0,
+   0.1
+  ],
+  "peak_h": [
+   0.02,
+   0.3
+  ],
+  "offset_h": [
+   0.15,
+   1
+  ],
+  "confidence": "medium",
+  "why": "Pleasant/'liking' ratings after a cigarette peak within minutes and drop off quickly as brain nicotine redistributes.",
+  "source": "Henningfield 1985 J Pharmacol Exp Ther; Perkins 1994; Benowitz 2009"
+ },
+ {
+  "kind": "timecourse",
+  "what": "alcohol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.1,
+   0.75
+  ],
+  "peak_h": [
+   0.3,
+   1.5
+  ],
+  "offset_h": [
+   1.5,
+   4.5
+  ],
+  "confidence": "high",
+  "why": "Alcohol's pleasant stimulation is strongest on the rising blood-alcohol limb (~30-60 min) and fades as levels fall.",
+  "source": "Martin 1993 Alcohol Clin Exp Res (BAES); King 2002/2011 Arch Gen Psychiatry; Holdstock & de Wit 1998"
+ },
+ {
+  "kind": "timecourse",
+  "what": "alcohol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.5
+  ],
+  "peak_h": [
+   0.75,
+   3
+  ],
+  "offset_h": [
+   2.5,
+   6
+  ],
+  "confidence": "medium",
+  "why": "Sedation from alcohol peaks later than stimulation, on the falling blood-alcohol limb 1-3 h after drinking.",
+  "source": "Martin 1993 (BAES sedation subscale); King 2011 Arch Gen Psychiatry; Roehrs & Roth 2001"
+ },
+ {
+  "kind": "timecourse",
+  "what": "alcohol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "anxiety",
+  "direction": "down",
+  "onset_h": [
+   0.1,
+   0.75
+  ],
+  "peak_h": [
+   0.3,
+   1.5
+  ],
+  "offset_h": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "Two drinks reduce tension/anxiety for a couple of hours, tracking blood alcohol.",
+  "source": "Sayette 1993 Psychol Bull; Donohue 2007; Curtin 2001 Psychol Sci"
+ },
+ {
+  "kind": "timecourse",
+  "what": "diazepam",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "up",
+  "onset_h": [
+   0.2,
+   1.25
+  ],
+  "peak_h": [
+   0.5,
+   2.5
+  ],
+  "offset_h": [
+   3,
+   10
+  ],
+  "confidence": "high",
+  "why": "Oral diazepam is absorbed fast (Tmax ~1 h); sedation peaks at 1-2 h and fades over several hours as it redistributes, despite its long half-life.",
+  "source": "Greenblatt 1980; Mattila 1988; Ellinwood 1985 Psychopharmacology"
+ },
+ {
+  "kind": "timecourse",
+  "what": "diazepam",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "anxiety",
+  "direction": "down",
+  "onset_h": [
+   0.25,
+   1.5
+  ],
+  "peak_h": [
+   0.5,
+   3
+  ],
+  "offset_h": [
+   3,
+   12
+  ],
+  "confidence": "medium",
+  "why": "Anxiety relief from 5 mg diazepam begins within the first hour and lasts several hours.",
+  "source": "Greenblatt & Shader 1974; Ashton 1994 Drugs; de Wit 1984"
+ },
+ {
+  "kind": "timecourse",
+  "what": "mdma",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.25
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   3,
+   6.5
+  ],
+  "confidence": "high",
+  "why": "100 mg MDMA effects begin at 30-60 min, peak at 1.5-2.5 h and end by 4-6 h.",
+  "source": "Liechti 2001; Hysek 2014; Vizeli & Liechti 2017 J Psychopharmacol; Holze 2020 Neuropsychopharmacology"
+ },
+ {
+  "kind": "timecourse",
+  "what": "mdma",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "bonding",
+  "direction": "up",
+  "onset_h": [
+   0.4,
+   1.5
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   3,
+   7
+  ],
+  "confidence": "high",
+  "why": "Feelings of closeness and trust ('empathogenic') follow the same 1.5-3 h peak and fade by about 5-6 h.",
+  "source": "Hysek 2014 Soc Cogn Affect Neurosci; Kirkpatrick 2014; Holze 2020"
+ },
+ {
+  "kind": "timecourse",
+  "what": "mdma",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.25
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   3,
+   7
+  ],
+  "confidence": "medium",
+  "why": "MDMA stimulates (heart rate, energy) with a peak around 2 h, in step with its other acute effects.",
+  "source": "Liechti 2001; Hysek 2011; Vizeli & Liechti 2017"
+ },
+ {
+  "kind": "timecourse",
+  "what": "thc",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.02,
+   0.3
+  ],
+  "peak_h": [
+   0.1,
+   0.75
+  ],
+  "offset_h": [
+   1,
+   4
+  ],
+  "confidence": "high",
+  "why": "After smoking, the cannabis 'high' starts within minutes, peaks at 15-45 min and is mostly gone after 2-3 h.",
+  "source": "Huestis 1992 Pharmacol Biochem Behav; Hart 2001; Grotenhermen 2003 Clin Pharmacokinet; Hindocha 2015"
+ },
+ {
+  "kind": "timecourse",
+  "what": "thc",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.03,
+   0.35
+  ],
+  "peak_h": [
+   0.1,
+   0.75
+  ],
+  "offset_h": [
+   1,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Altered time and sensory perception after smoking follows the same fast rise and 2-3 h decline.",
+  "source": "Huestis 1992; D'Souza 2004 Neuropsychopharmacology; Zuurman 2009 Br J Clin Pharmacol"
+ },
+ {
+  "kind": "timecourse",
+  "what": "thc",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "hunger",
+  "direction": "up",
+  "onset_h": [
+   0.1,
+   1
+  ],
+  "peak_h": [
+   0.3,
+   2
+  ],
+  "offset_h": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "Smoked cannabis increases appetite and food intake within the first hour or two ('munchies').",
+  "source": "Foltin 1988 Appetite; Kirkham 2005; Hart 2002"
+ },
+ {
+  "kind": "timecourse",
+  "what": "morphine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "analgesia",
+  "direction": "up",
+  "onset_h": [
+   0.2,
+   1
+  ],
+  "peak_h": [
+   0.5,
+   2
+  ],
+  "offset_h": [
+   3,
+   7
+  ],
+  "confidence": "high",
+  "why": "Oral 10 mg morphine/oxycodone gives pain relief from ~30 min, peaking at 1-2 h and lasting about 4 h.",
+  "source": "Hoskin 1989 Br J Clin Pharmacol; Lugo & Kern 2002; analgesic textbooks (Goodman & Gilman)"
+ },
+ {
+  "kind": "timecourse",
+  "what": "morphine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "breathing",
+  "direction": "down",
+  "onset_h": [
+   0.25,
+   1.25
+  ],
+  "peak_h": [
+   0.75,
+   2.5
+  ],
+  "offset_h": [
+   3,
+   8
+  ],
+  "confidence": "medium",
+  "why": "Respiratory depression from an oral opioid follows plasma levels with a slight delay, peaking 1-2 h after dosing.",
+  "source": "Dahan 2010 Anesthesiology; Pattinson 2008 Br J Anaesth"
+ },
+ {
+  "kind": "timecourse",
+  "what": "heroin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0,
+   0.15
+  ],
+  "peak_h": [
+   0.02,
+   0.5
+  ],
+  "offset_h": [
+   1,
+   4
+  ],
+  "confidence": "high",
+  "why": "Injected or smoked heroin gives a 'rush' within seconds to minutes; the high then settles and fades over a few hours.",
+  "source": "Comer 1999 Psychopharmacology; Rook 2006 Clin Pharmacokinet; Mello 1980"
+ },
+ {
+  "kind": "timecourse",
+  "what": "heroin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "breathing",
+  "direction": "down",
+  "onset_h": [
+   0,
+   0.25
+  ],
+  "peak_h": [
+   0.05,
+   0.75
+  ],
+  "offset_h": [
+   2,
+   6
+  ],
+  "confidence": "high",
+  "why": "Breathing suppression from heroin is fastest and deepest in the first 30 min, which is why overdoses happen soon after use.",
+  "source": "Darke 2003 Addiction; Dahan 2010 Anesthesiology; White & Irvine 1999 Addiction"
+ },
+ {
+  "kind": "timecourse",
+  "what": "heroin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "up",
+  "onset_h": [
+   0.03,
+   0.5
+  ],
+  "peak_h": [
+   0.1,
+   1
+  ],
+  "offset_h": [
+   2,
+   6
+  ],
+  "confidence": "medium",
+  "why": "After the rush, users 'nod' (drowsy) for a few hours as heroin's morphine metabolite acts.",
+  "source": "Comer 1999; Rook 2006; Jenkins 1994 J Anal Toxicol"
+ },
+ {
+  "kind": "timecourse",
+  "what": "ketamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.05,
+   0.5
+  ],
+  "peak_h": [
+   0.4,
+   0.9
+  ],
+  "offset_h": [
+   0.8,
+   2
+  ],
+  "confidence": "high",
+  "why": "Dissociation during a 40-min ketamine infusion peaks near the end of the infusion and resolves within about 1-2 h of starting.",
+  "source": "Zarate 2006 Arch Gen Psychiatry; Murrough 2013 Am J Psychiatry; Luckenbaugh 2014 J Affect Disord"
+ },
+ {
+  "kind": "timecourse",
+  "what": "ketamine",
+  "amount": 1,
+  "profile": "depression",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   1,
+   24
+  ],
+  "peak_h": [
+   4,
+   72
+  ],
+  "offset_h": [
+   72,
+   336
+  ],
+  "confidence": "high",
+  "why": "In depression, ketamine's antidepressant effect appears within hours, peaks around 1 day and fades over about 3-7 days.",
+  "source": "Berman 2000 Biol Psychiatry; Zarate 2006 Arch Gen Psychiatry; Murrough 2013; Wilkinson 2018 meta-analysis"
+ },
+ {
+  "kind": "timecourse",
+  "what": "ketamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "analgesia",
+  "direction": "up",
+  "onset_h": [
+   0.05,
+   0.5
+  ],
+  "peak_h": [
+   0.3,
+   1
+  ],
+  "offset_h": [
+   0.75,
+   3
+  ],
+  "confidence": "medium",
+  "why": "Sub-anaesthetic ketamine reduces pain during and shortly after infusion, fading within 1-2 h of stopping.",
+  "source": "Olofsen 2012 Anesthesiology; Sigtermans 2009; Niesters 2014 Br J Clin Pharmacol"
+ },
+ {
+  "kind": "timecourse",
+  "what": "psilocybin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.25
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   3.5,
+   7
+  ],
+  "confidence": "high",
+  "why": "Psilocybin perceptual effects begin at 20-40 min, peak at 1.5-2.5 h and end by about 5-6 h.",
+  "source": "Hasler 2004 Psychopharmacology; Griffiths 2011; Holze 2022 JAMA Psychiatry; Brown 2017 Clin Pharmacokinet"
+ },
+ {
+  "kind": "timecourse",
+  "what": "psilocybin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.4,
+   1.5
+  ],
+  "peak_h": [
+   1,
+   3.5
+  ],
+  "offset_h": [
+   3.5,
+   7.5
+  ],
+  "confidence": "medium",
+  "why": "Positive mood/'good drug effect' follows the same arc as the overall psilocybin experience.",
+  "source": "Griffiths 2006/2011 Psychopharmacology; Holze 2022 JAMA Psychiatry"
+ },
+ {
+  "kind": "timecourse",
+  "what": "lsd",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.4,
+   1.75
+  ],
+  "peak_h": [
+   1.5,
+   4
+  ],
+  "offset_h": [
+   6,
+   12
+  ],
+  "confidence": "high",
+  "why": "100 ug LSD effects start at 30-60 min, peak at 2-3 h and last about 8-10 h.",
+  "source": "Dolder 2017 Clin Pharmacokinet; Holze 2019/2021 Neuropsychopharmacology; Schmid 2015 Biol Psychiatry"
+ },
+ {
+  "kind": "timecourse",
+  "what": "lsd",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.5,
+   2
+  ],
+  "peak_h": [
+   1.5,
+   4.5
+  ],
+  "offset_h": [
+   6,
+   12
+  ],
+  "confidence": "medium",
+  "why": "Positive mood and 'good drug effect' after LSD peak around 2-4 h and persist through most of the 8-10 h experience.",
+  "source": "Schmid 2015 Biol Psychiatry; Dolder 2016; Holze 2021"
+ },
+ {
+  "kind": "timecourse",
+  "what": "melatonin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "up",
+  "onset_h": [
+   0.25,
+   1.25
+  ],
+  "peak_h": [
+   0.5,
+   2.5
+  ],
+  "offset_h": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "Daytime melatonin 0.5-1 mg peaks in blood within ~1 h and causes mild drowsiness for a few hours (half-life ~45 min).",
+  "source": "Dollins 1994 PNAS; Zhdanova 1995/2001; Harpsoe 2015 Eur J Clin Pharmacol"
+ },
+ {
+  "kind": "timecourse",
+  "what": "melatonin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "down",
+  "onset_h": [
+   0.25,
+   1.25
+  ],
+  "peak_h": [
+   0.5,
+   2.5
+  ],
+  "offset_h": [
+   1.5,
+   5
+  ],
+  "confidence": "low",
+  "why": "Mild loss of alertness tracks the short-lived melatonin peak.",
+  "source": "Dollins 1994 PNAS; Lieberman 1984 Brain Res"
+ },
+ {
+  "kind": "timecourse",
+  "what": "propranolol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "anxiety",
+  "direction": "down",
+  "onset_h": [
+   0.3,
+   1.5
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   5,
+   14
+  ],
+  "confidence": "medium",
+  "why": "Propranolol peaks in blood at 1-2 h and blocks the bodily signs of anxiety for roughly 6-12 h.",
+  "source": "Shand 1975 N Engl J Med; Steenen 2016 J Psychopharmacol (meta-analysis); Brantigan 1982"
+ },
+ {
+  "kind": "timecourse",
+  "what": "propranolol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "down",
+  "onset_h": [
+   0.5,
+   2
+  ],
+  "peak_h": [
+   1,
+   3.5
+  ],
+  "offset_h": [
+   5,
+   14
+  ],
+  "confidence": "low",
+  "why": "Lower heart rate and mild calming after 40 mg follow its 1-3 h peak and several-hour duration.",
+  "source": "Shand 1975; Turner 1976; Steenen 2016"
+ },
+ {
+  "kind": "timecourse",
+  "what": "guanfacine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "up",
+  "onset_h": [
+   0.5,
+   3
+  ],
+  "peak_h": [
+   1.5,
+   5
+  ],
+  "offset_h": [
+   8,
+   24
+  ],
+  "confidence": "medium",
+  "why": "IR guanfacine peaks in blood at 1-4 h with a ~17 h half-life, so drowsiness builds over hours and lasts most of the day.",
+  "source": "Cornish 1988 Br J Clin Pharmacol; Kiechel 1986; Jerie 1980; Sorkin & Heel 1986 Drugs"
+ },
+ {
+  "kind": "timecourse",
+  "what": "guanfacine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "down",
+  "onset_h": [
+   0.5,
+   3
+  ],
+  "peak_h": [
+   1.5,
+   5
+  ],
+  "offset_h": [
+   8,
+   24
+  ],
+  "confidence": "low",
+  "why": "Alpha-2A agonism lowers noradrenergic tone and alertness with the same slow, long time course.",
+  "source": "Cornish 1988; Sorkin & Heel 1986 Drugs; Arnsten 2007"
+ },
+ {
+  "kind": "timecourse",
+  "what": "haloperidol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "sleepiness",
+  "direction": "up",
+  "onset_h": [
+   1,
+   4
+  ],
+  "peak_h": [
+   2,
+   8
+  ],
+  "offset_h": [
+   10,
+   36
+  ],
+  "confidence": "medium",
+  "why": "Oral haloperidol peaks at 2-6 h with a ~20 h half-life; sedation in healthy volunteers is delayed and long.",
+  "source": "Froemming 1989 Clin Pharmacokinet; King 1995; Barbanoj 2001"
+ },
+ {
+  "kind": "timecourse",
+  "what": "haloperidol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "motivation",
+  "direction": "down",
+  "onset_h": [
+   1,
+   5
+  ],
+  "peak_h": [
+   2,
+   10
+  ],
+  "offset_h": [
+   12,
+   48
+  ],
+  "confidence": "low",
+  "why": "Dopamine D2 blockade lowers drive and reward-seeking (dysphoria) with a slow onset and day-long duration.",
+  "source": "Pessiglione 2006 Nature; Lane 1999; Kapur 2000 Am J Psychiatry"
+ },
+ {
+  "kind": "timecourse",
+  "what": "sertraline",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "hunger",
+  "direction": "down",
+  "onset_h": [
+   1,
+   6
+  ],
+  "peak_h": [
+   3,
+   10
+  ],
+  "offset_h": [
+   10,
+   48
+  ],
+  "confidence": "low",
+  "why": "A single 50 mg dose can cause mild nausea/appetite loss that follows its slow peak (Tmax 4-8 h) and long half-life (~26 h).",
+  "source": "DeVane 2002 Clin Pharmacokinet; Ronfeld 1997; product label"
+ },
+ {
+  "kind": "timecourse",
+  "what": "bupropion",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.5,
+   4
+  ],
+  "peak_h": [
+   1.5,
+   6
+  ],
+  "offset_h": [
+   5,
+   16
+  ],
+  "confidence": "low",
+  "why": "Bupropion mildly increases alertness after its plasma peak (2-3 h, SR formulation later), lasting much of the day.",
+  "source": "Jefferson 2005 Prim Care Companion; Hamilton 1995; Rush 1998 Psychopharmacology"
+ },
+ {
+  "kind": "timecourse",
+  "what": "phenelzine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   1,
+   6
+  ],
+  "peak_h": [
+   1.5,
+   8
+  ],
+  "offset_h": [
+   6,
+   72
+  ],
+  "confidence": "low",
+  "why": "Phenelzine irreversibly blocks MAO, so a single 15 mg dose has small, slow and long-lasting activating effects; acute subjective data are sparse.",
+  "source": "Robinson 1985; Kennedy 2000 J Clin Psychiatry; product label"
+ },
+ {
+  "kind": "timecourse",
+  "what": "cbd",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "anxiety",
+  "direction": "down",
+  "onset_h": [
+   0.5,
+   2
+  ],
+  "peak_h": [
+   1,
+   4
+  ],
+  "offset_h": [
+   3,
+   10
+  ],
+  "confidence": "low",
+  "why": "At 25 mg CBD has at most small calming effects, peaking a few hours after oral oil (Tmax 1-4 h).",
+  "source": "Millar 2018 Front Pharmacol; Zuardi 2017; Arndt & de Wit 2017 Cannabis Cannabinoid Res"
+ },
+ {
+  "kind": "timecourse",
+  "what": "theanine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "anxiety",
+  "direction": "down",
+  "onset_h": [
+   0.25,
+   1
+  ],
+  "peak_h": [
+   0.5,
+   2
+  ],
+  "offset_h": [
+   2,
+   6
+  ],
+  "confidence": "low",
+  "why": "200 mg L-theanine peaks in blood at ~1 h and gives mild relaxation for a few hours.",
+  "source": "Kimura 2007 Biol Psychol; Scheid 2012 Amino Acids; Hidese 2019 Nutrients"
+ },
+ {
+  "kind": "timecourse",
+  "what": "semaglutide",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "hunger",
+  "direction": "down",
+  "onset_h": [
+   4,
+   48
+  ],
+  "peak_h": [
+   24,
+   96
+  ],
+  "offset_h": [
+   168,
+   720
+  ],
+  "confidence": "medium",
+  "why": "Semaglutide peaks 1-3 days after injection and has a ~1-week half-life, so appetite suppression from one dose lasts weeks.",
+  "source": "Hall 2018 Clin Pharmacol Ther (pharmacokinetics); Blundell 2017 Diabetes Obes Metab; Friedrichsen 2021"
+ },
+ {
+  "kind": "timecourse",
+  "what": "exercise",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.15,
+   1
+  ],
+  "peak_h": [
+   0.5,
+   1.75
+  ],
+  "offset_h": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "Moderate-vigorous exercise improves mood during and for an hour or two after the session ('afterglow').",
+  "source": "Reed & Ones 2006 Psychol Sport Exerc (meta-analysis); Ekkekakis 2011 Sports Med"
+ },
+ {
+  "kind": "timecourse",
+  "what": "stress",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "anxiety",
+  "direction": "up",
+  "onset_h": [
+   0,
+   0.25
+  ],
+  "peak_h": [
+   0.1,
+   1
+  ],
+  "offset_h": [
+   1,
+   2.5
+  ],
+  "confidence": "high",
+  "why": "Anxiety rises within minutes of an acute stressor and falls back soon after it ends.",
+  "source": "Kirschbaum 1993 TSST; Dickerson & Kemeny 2004 Psychol Bull; Allen 2017 Neurosci Biobehav Rev"
+ },
+ {
+  "kind": "timecourse",
+  "what": "social",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "bonding",
+  "direction": "up",
+  "onset_h": [
+   0,
+   0.5
+  ],
+  "peak_h": [
+   0.5,
+   2
+  ],
+  "offset_h": [
+   2,
+   4
+  ],
+  "confidence": "low",
+  "why": "Feeling connected rises during warm time with friends and fades within an hour or two after parting.",
+  "source": "Dunbar 2012 Proc R Soc B; Heinrichs 2003 Biol Psychiatry; Kok & Fredrickson 2010"
+ },
+ {
+  "kind": "timecourse",
+  "what": "food",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "hunger",
+  "direction": "down",
+  "onset_h": [
+   0,
+   0.5
+  ],
+  "peak_h": [
+   0.3,
+   1.5
+  ],
+  "offset_h": [
+   2.5,
+   6
+  ],
+  "confidence": "high",
+  "why": "Hunger falls during a meal, is lowest shortly after, and returns over the next 3-5 h.",
+  "source": "Blundell 2010 Obes Rev (satiety methods); Cummings 2001 Diabetes (ghrelin); Flint 2000 Int J Obes"
+ }
+]

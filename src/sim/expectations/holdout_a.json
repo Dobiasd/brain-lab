@@ -1,0 +1,1017 @@
+[
+ {
+  "kind": "effect",
+  "what": "caffeine",
+  "amount": 1,
+  "context": "withdrawal",
+  "profile": "typical",
+  "when_h": 0,
+  "feeling": "sleepiness",
+  "direction": "up",
+  "size": "small",
+  "confidence": "high",
+  "why": "Stopping regular coffee causes tiredness and drowsiness within 1-2 days; this is the most reliable caffeine-withdrawal symptom.",
+  "source": "Juliano & Griffiths 2004, Psychopharmacology 176:1-29 (review of caffeine withdrawal)"
+ },
+ {
+  "kind": "effect",
+  "what": "thc",
+  "amount": 1,
+  "context": "busy",
+  "profile": "typical",
+  "when_h": 1,
+  "feeling": "anxiety",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "THC raises anxiety and paranoid thinking on average, and a crowded unfamiliar setting makes this more likely rather than relaxing.",
+  "source": "D'Souza et al. 2004 Neuropsychopharmacology 29:1558; Freeman et al. 2015 Schizophr Bull 41:391"
+ },
+ {
+  "kind": "effect",
+  "what": "alcohol",
+  "amount": 1,
+  "context": "next_morning",
+  "profile": "typical",
+  "when_h": 13,
+  "feeling": "sleepiness",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "Evening alcohol fragments the second half of sleep and suppresses REM, so people feel less rested the next morning even after moderate drinking.",
+  "source": "Ebrahim et al. 2013 Alcohol Clin Exp Res 37:539 (review of alcohol and sleep)"
+ },
+ {
+  "kind": "effect",
+  "what": "methylphenidate",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "focus",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "In healthy people without ADHD, methylphenidate gives only small gains in attention and working memory, smaller than people expect.",
+  "source": "Ilieva, Hook & Farah 2015 J Cogn Neurosci 27:1069 (meta-analysis)"
+ },
+ {
+  "kind": "effect",
+  "what": "methylphenidate",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "adhd",
+  "when_h": 1.5,
+  "feeling": "focus",
+  "direction": "up",
+  "size": "medium",
+  "confidence": "high",
+  "why": "In ADHD, methylphenidate reliably improves sustained attention, with moderate to large effect sizes in trials.",
+  "source": "Cortese et al. 2018 Lancet Psychiatry 5:727 (network meta-analysis)"
+ },
+ {
+  "kind": "effect",
+  "what": "exercise",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "anxiety",
+  "when_h": 1.5,
+  "feeling": "anxiety",
+  "direction": "down",
+  "size": "small",
+  "confidence": "medium",
+  "why": "A single session of moderate-vigorous exercise lowers state anxiety for a few hours afterwards.",
+  "source": "Petruzzello et al. 1991 Sports Med 11:143; Ensari et al. 2015 Depress Anxiety 32:624 (meta-analyses)"
+ },
+ {
+  "kind": "effect",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "bonding",
+  "direction": "up",
+  "size": "large",
+  "confidence": "high",
+  "why": "MDMA's signature effect is strong feelings of closeness, trust and openness to others.",
+  "source": "Kirkpatrick et al. 2014 Neuropsychopharmacology 39:1654; Hysek et al. 2014 Soc Cogn Affect Neurosci 9:1645"
+ },
+ {
+  "kind": "effect",
+  "what": "diazepam",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "anxiety",
+  "when_h": 1.5,
+  "feeling": "anxiety",
+  "direction": "down",
+  "size": "medium",
+  "confidence": "high",
+  "why": "Benzodiazepines such as diazepam reduce anxiety quickly and clearly in generalised anxiety disorder.",
+  "source": "Baldwin et al. 2014 J Psychopharmacol 28:403 (BAP guidelines); Gomez et al. 2018 Expert Opin Pharmacother 19:883"
+ },
+ {
+  "kind": "effect",
+  "what": "diazepam",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "feeling": "breathing",
+  "direction": "none",
+  "confidence": "high",
+  "why": "A 5 mg oral dose of diazepam alone has negligible effect on breathing in a healthy adult; the danger comes from combining it with opioids or alcohol.",
+  "source": "Dahan et al. 2010 Anesthesiology 112:226 context; FDA 2016 boxed warning on benzodiazepine-opioid combination"
+ },
+ {
+  "kind": "effect",
+  "what": "sertraline",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "depression",
+  "when_h": 4,
+  "feeling": "mood",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "After several weeks, SSRIs lift mood in major depression, though the average advantage is modest.",
+  "source": "Cipriani et al. 2018 Lancet 391:1357 (network meta-analysis of 21 antidepressants)"
+ },
+ {
+  "kind": "effect",
+  "what": "sertraline",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 4,
+  "feeling": "mood",
+  "direction": "none",
+  "confidence": "medium",
+  "why": "A single SSRI dose does not make a healthy person feel happier; antidepressant effects take weeks.",
+  "source": "Harmer et al. 2009 Br J Psychiatry 195:102; Harmer, Duman & Cowen 2017 Lancet Psychiatry 4:409"
+ },
+ {
+  "kind": "effect",
+  "what": "cbd",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "feeling": "anxiety",
+  "direction": "none",
+  "confidence": "medium",
+  "why": "25 mg CBD is well below the 300-600 mg oral doses that reduced anxiety in lab studies, and low doses performed like placebo.",
+  "source": "Zuardi et al. 2017 Front Pharmacol 8:259 (inverted-U dose curve); Linares et al. 2019 Braz J Psychiatry 41:9"
+ },
+ {
+  "kind": "effect",
+  "what": "cbd",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "feeling": "perception",
+  "direction": "none",
+  "confidence": "high",
+  "why": "CBD is not intoxicating and does not alter perception.",
+  "source": "WHO Expert Committee on Drug Dependence 2018, Cannabidiol critical review"
+ },
+ {
+  "kind": "effect",
+  "what": "nicotine",
+  "amount": 1,
+  "context": "withdrawal",
+  "profile": "typical",
+  "when_h": 0,
+  "feeling": "anxiety",
+  "direction": "up",
+  "size": "small",
+  "confidence": "high",
+  "why": "Quitting smoking brings irritability, restlessness and anxiety within the first days.",
+  "source": "Hughes 2007 Nicotine Tob Res 9:315 (review of tobacco withdrawal); DSM-5 tobacco withdrawal criteria"
+ },
+ {
+  "kind": "effect",
+  "what": "nicotine",
+  "amount": 1,
+  "context": "withdrawal",
+  "profile": "typical",
+  "when_h": 0,
+  "feeling": "hunger",
+  "direction": "up",
+  "size": "small",
+  "confidence": "high",
+  "why": "Increased appetite is a standard nicotine-withdrawal symptom and drives post-quitting weight gain.",
+  "source": "Hughes 2007 Nicotine Tob Res 9:315; DSM-5 tobacco withdrawal criteria"
+ },
+ {
+  "kind": "effect",
+  "what": "alcohol",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "feeling": "anxiety",
+  "direction": "down",
+  "size": "small",
+  "confidence": "medium",
+  "why": "Two drinks reduce tension and anxiety modestly while blood alcohol is rising.",
+  "source": "Sher & Levenson 1982 J Abnorm Psychol 91:350; Bresin et al. 2018 Psychol Bull 144:1036 (meta-analysis)"
+ },
+ {
+  "kind": "effect",
+  "what": "morphine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "analgesia",
+  "direction": "up",
+  "size": "medium",
+  "confidence": "high",
+  "why": "10 mg oral morphine gives clear pain relief in experimental and clinical pain.",
+  "source": "Moore & McQuay 1997 Pain (Oxford league table of analgesics); Staahl et al. 2009 Pain 146:116"
+ },
+ {
+  "kind": "effect",
+  "what": "morphine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "breathing",
+  "direction": "down",
+  "size": "small",
+  "confidence": "medium",
+  "why": "A normal oral morphine dose measurably lowers breathing drive in a non-tolerant person, but not dangerously when taken alone.",
+  "source": "Dahan, Aarts & Smith 2010 Anesthesiology 112:226 (opioid-induced respiratory depression review)"
+ },
+ {
+  "kind": "effect",
+  "what": "heroin",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.25,
+  "feeling": "breathing",
+  "direction": "down",
+  "size": "medium",
+  "confidence": "medium",
+  "why": "Injected or smoked heroin reaches the brain fast and clearly suppresses breathing, which is how overdose kills.",
+  "source": "Pattinson 2008 Br J Anaesth 100:747; White & Irvine 1999 Addiction 94:961"
+ },
+ {
+  "kind": "effect",
+  "what": "ketamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "feeling": "perception",
+  "direction": "up",
+  "size": "large",
+  "confidence": "high",
+  "why": "During a sub-anaesthetic infusion ketamine causes strong dissociation and changed perception.",
+  "source": "Krystal et al. 1994 Arch Gen Psychiatry 51:199; Murrough et al. 2013 Am J Psychiatry 170:1134"
+ },
+ {
+  "kind": "effect",
+  "what": "ketamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "depression",
+  "when_h": 24,
+  "feeling": "mood",
+  "direction": "up",
+  "size": "medium",
+  "confidence": "medium",
+  "why": "In major depression, one ketamine infusion lifts mood within a day, after the dissociation has worn off.",
+  "source": "Zarate et al. 2006 Arch Gen Psychiatry 63:856; Newport et al. 2015 Am J Psychiatry 172:950 (meta-analysis)"
+ },
+ {
+  "kind": "effect",
+  "what": "psilocybin",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "feeling": "perception",
+  "direction": "up",
+  "size": "large",
+  "confidence": "high",
+  "why": "A 15-25 mg psilocybin dose produces strong visual and perceptual changes at peak.",
+  "source": "Griffiths et al. 2006 Psychopharmacology 187:268; Hirschfeld & Schmidt 2021 J Psychopharmacol 35:384 (dose-response meta-analysis)"
+ },
+ {
+  "kind": "effect",
+  "what": "haloperidol",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 4,
+  "feeling": "arousal",
+  "direction": "down",
+  "size": "small",
+  "confidence": "medium",
+  "why": "A small haloperidol dose in healthy people causes sedation and lower alertness rather than anything pleasant.",
+  "source": "King 1997 J Psychopharmacol 11:99 (review of neuroleptics in healthy volunteers); Ramaekers et al. 1999 Neuropsychopharmacology 21:775"
+ },
+ {
+  "kind": "effect",
+  "what": "propranolol",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "mood",
+  "direction": "none",
+  "confidence": "medium",
+  "why": "A single 40 mg propranolol dose leaves mood essentially unchanged in healthy people.",
+  "source": "Steenen et al. 2016 J Psychopharmacol 30:128 (systematic review of propranolol for anxiety)"
+ },
+ {
+  "kind": "effect",
+  "what": "melatonin",
+  "amount": 1,
+  "context": "evening",
+  "profile": "typical",
+  "when_h": 1,
+  "feeling": "sleepiness",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "Low-dose melatonin taken in the evening modestly increases sleepiness and shortens time to fall asleep by several minutes.",
+  "source": "Ferracioli-Oda et al. 2013 PLoS One 8:e63773 (meta-analysis); Zhdanova et al. 1995 Clin Pharmacol Ther 57:552"
+ },
+ {
+  "kind": "effect",
+  "what": "semaglutide",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "when_h": 4,
+  "feeling": "hunger",
+  "direction": "down",
+  "size": "medium",
+  "confidence": "high",
+  "why": "Weekly semaglutide clearly lowers hunger and food cravings, cutting energy intake by about a quarter.",
+  "source": "Blundell et al. 2017 Diabetes Obes Metab 19:1242; Friedrichsen et al. 2021 Diabetes Obes Metab 23:754"
+ },
+ {
+  "kind": "effect",
+  "what": "methamphetamine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "feeling": "hunger",
+  "direction": "down",
+  "size": "medium",
+  "confidence": "high",
+  "why": "Methamphetamine strongly suppresses appetite.",
+  "source": "Hart et al. 2001 Psychopharmacology 159:397; Cruickshank & Dyer 2009 Addiction 104:1085"
+ },
+ {
+  "kind": "effect",
+  "what": "thc",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "hunger",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "Smoked THC increases appetite and food intake (the 'munchies').",
+  "source": "Foltin et al. 1988 Appetite 11:1; Kirkham 2009 Int Rev Psychiatry 21:163"
+ },
+ {
+  "kind": "effect",
+  "what": "social",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "feeling": "bonding",
+  "direction": "up",
+  "size": "medium",
+  "confidence": "medium",
+  "why": "Warm time with friends and touch increases felt connection and trust.",
+  "source": "Holt-Lunstad et al. 2008 Psychosom Med 70:976; Dunbar 2010 Neurosci Biobehav Rev 34:260"
+ },
+ {
+  "kind": "effect",
+  "what": "short_sleep",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 2,
+  "feeling": "sleepiness",
+  "direction": "up",
+  "size": "medium",
+  "confidence": "high",
+  "why": "After only 4 hours of sleep people feel clearly sleepier the next day.",
+  "source": "Van Dongen et al. 2003 Sleep 26:117; Lim & Dinges 2010 Psychol Bull 136:375"
+ },
+ {
+  "kind": "rank",
+  "feeling": "focus",
+  "bigger": {
+   "what": "amphetamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "adhd",
+   "when_h": 2
+  },
+  "smaller": {
+   "what": "amphetamine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 2
+  },
+  "confidence": "high",
+  "why": "Stimulants improve attention much more in people with ADHD than in healthy people, who start near their ceiling.",
+  "source": "Cortese et al. 2018 Lancet Psychiatry 5:727; Ilieva et al. 2015 J Cogn Neurosci 27:1069"
+ },
+ {
+  "kind": "rank",
+  "feeling": "arousal",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "medium",
+  "why": "Daily coffee drinkers build tolerance, so a cup mostly brings them back to normal rather than above a non-user.",
+  "source": "James & Rogers 2005 Psychopharmacology 182:1; Rogers et al. 2010 Neuropsychopharmacology 35:1973"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "heroin+alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "confidence": "high",
+  "why": "Alcohol adds to the breathing suppression from opioids, and the combination is present in many overdose deaths.",
+  "source": "van der Schrier et al. 2017 Anesthesiology 126:534; Darke & Zador 1996 Addiction 91:405"
+ },
+ {
+  "kind": "rank",
+  "feeling": "breathing",
+  "bigger": {
+   "what": "heroin",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "smaller": {
+   "what": "heroin+naloxone",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 0.5
+  },
+  "confidence": "high",
+  "why": "Naloxone pushes heroin off opioid receptors and quickly restores breathing.",
+  "source": "Boyer 2012 N Engl J Med 367:146 (management of opioid analgesic overdose); WHO 2014 community management of opioid overdose"
+ },
+ {
+  "kind": "rank",
+  "feeling": "perception",
+  "bigger": {
+   "what": "thc",
+   "amount": 3,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "thc",
+   "amount": 0.5,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "THC intoxication and perceptual change increase with dose.",
+  "source": "Hollister 1986 Pharmacol Rev 38:1; Curran et al. 2002 Psychopharmacology 164:61"
+ },
+ {
+  "kind": "rank",
+  "feeling": "focus",
+  "bigger": {
+   "what": "alcohol",
+   "amount": 3,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "alcohol",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "Attention and reaction time get worse as blood alcohol rises.",
+  "source": "Zoethout et al. 2011 J Psychopharmacol 25:1563 (review of alcohol dose and CNS performance)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "analgesia",
+  "bigger": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "morphine",
+   "amount": 1,
+   "context": "chronic",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Tolerance to the pain-relieving effect of opioids builds with daily use, so the same dose works less well.",
+  "source": "Chu et al. 2006 J Pain 7:43; Morgan & Christie 2011 Br J Pharmacol 164:1322"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "caffeine",
+   "amount": 4,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "smaller": {
+   "what": "caffeine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1
+  },
+  "confidence": "high",
+  "why": "One coffee barely changes anxiety, but around 400 mg at once reliably causes jitteriness and nervousness.",
+  "source": "Smith 2002 Food Chem Toxicol 40:1243; Childs et al. 2008 Neuropsychopharmacology 33:2791"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "diazepam",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "anxiety",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "theanine",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "anxiety",
+   "when_h": 1.5
+  },
+  "confidence": "high",
+  "why": "Diazepam is a proven anti-anxiety drug; theanine's calming effect is small and inconsistent at best.",
+  "source": "Baldwin et al. 2014 J Psychopharmacol 28:403; Williams et al. 2020 Plant Foods Hum Nutr 75:12 (theanine systematic review)"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": {
+   "what": "sensory",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "autism",
+   "when_h": 1.5
+  },
+  "smaller": {
+   "what": "sensory",
+   "amount": 1,
+   "context": "quiet",
+   "profile": "typical",
+   "when_h": 1.5
+  },
+  "confidence": "medium",
+  "why": "Many autistic people have higher sensory sensitivity, so loud, bright, crowded places are more distressing for them.",
+  "source": "Green & Ben-Sasson 2010 J Autism Dev Disord 40:1495; Robertson & Baron-Cohen 2017 Nat Rev Neurosci 18:671"
+ },
+ {
+  "kind": "timecourse",
+  "what": "psilocybin",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.25
+  ],
+  "peak_h": [
+   1,
+   3
+  ],
+  "offset_h": [
+   4,
+   7.5
+  ],
+  "confidence": "high",
+  "why": "A psilocybin trip starts within about an hour, peaks at 1.5-2.5 hours and is mostly over by about 6 hours.",
+  "source": "Hasler et al. 2004 Psychopharmacology 172:145; Brown et al. 2017 Clin Pharmacokinet 56:1543; Holze et al. 2023 Clin Pharmacol Ther 113:822"
+ },
+ {
+  "kind": "timecourse",
+  "what": "lsd",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.4,
+   1.5
+  ],
+  "peak_h": [
+   1.5,
+   4
+  ],
+  "offset_h": [
+   7,
+   13
+  ],
+  "confidence": "high",
+  "why": "An LSD trip lasts much longer than psilocybin: peak after a few hours and effects for about 8-12 hours.",
+  "source": "Dolder et al. 2017 Clin Pharmacokinet 56:1219; Holze et al. 2021 Neuropsychopharmacology 46:537"
+ },
+ {
+  "kind": "timecourse",
+  "what": "cocaine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.03,
+   0.3
+  ],
+  "peak_h": [
+   0.15,
+   0.75
+  ],
+  "offset_h": [
+   0.75,
+   2.5
+  ],
+  "confidence": "high",
+  "why": "Snorted cocaine works within minutes, peaks around 20-40 minutes and fades within about an hour or two.",
+  "source": "Javaid et al. 1978 Science 202:227; Van Dyke et al. 1978 Science 200:211"
+ },
+ {
+  "kind": "timecourse",
+  "what": "caffeine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "arousal",
+  "direction": "up",
+  "onset_h": [
+   0.1,
+   0.75
+  ],
+  "peak_h": [
+   0.5,
+   2
+  ],
+  "offset_h": [
+   3,
+   12
+  ],
+  "confidence": "medium",
+  "why": "Caffeine peaks in the blood 30-60 minutes after a coffee and has a half-life of about 5 hours, so the lift fades over the afternoon.",
+  "source": "Fredholm et al. 1999 Pharmacol Rev 51:83; Institute of Medicine 2001 Caffeine for the Sustainment of Mental Task Performance"
+ },
+ {
+  "kind": "timecourse",
+  "what": "mdma",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "bonding",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1.25
+  ],
+  "peak_h": [
+   1,
+   2.5
+  ],
+  "offset_h": [
+   3.5,
+   7
+  ],
+  "confidence": "high",
+  "why": "MDMA effects begin within about 45 minutes, peak at around 1.5-2 hours and last about 4-6 hours.",
+  "source": "Hysek et al. 2012 J Pharmacol Exp Ther 340:286; Vizeli & Liechti 2017 J Psychopharmacol 31:576"
+ },
+ {
+  "kind": "timecourse",
+  "what": "methylphenidate",
+  "amount": 1,
+  "profile": "adhd",
+  "feeling": "focus",
+  "direction": "up",
+  "onset_h": [
+   0.3,
+   1
+  ],
+  "peak_h": [
+   1,
+   2.5
+  ],
+  "offset_h": [
+   3,
+   6
+  ],
+  "confidence": "high",
+  "why": "Immediate-release Ritalin works within about 30-60 minutes and lasts about 3-4 hours.",
+  "source": "Swanson et al. 1999 Clin Pharmacol Ther 66:295; Kimko et al. 1999 Clin Pharmacokinet 37:457"
+ },
+ {
+  "kind": "timecourse",
+  "what": "ketamine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.05,
+   0.4
+  ],
+  "peak_h": [
+   0.25,
+   0.75
+  ],
+  "offset_h": [
+   0.75,
+   2
+  ],
+  "confidence": "high",
+  "why": "Dissociation from a 40-minute ketamine infusion builds during the infusion and is largely gone within an hour of its end.",
+  "source": "Murrough et al. 2013 Am J Psychiatry 170:1134; Luckenbaugh et al. 2014 J Affect Disord 159:56"
+ },
+ {
+  "kind": "timecourse",
+  "what": "thc",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "perception",
+  "direction": "up",
+  "onset_h": [
+   0.02,
+   0.3
+  ],
+  "peak_h": [
+   0.1,
+   1
+  ],
+  "offset_h": [
+   1.5,
+   4.5
+  ],
+  "confidence": "medium",
+  "why": "Smoked cannabis acts within minutes, peaks within the first half hour to an hour and wears off over 2-4 hours.",
+  "source": "Grotenhermen 2003 Clin Pharmacokinet 42:327; Huestis 2007 Chem Biodivers 4:1770"
+ },
+ {
+  "kind": "timecourse",
+  "what": "morphine",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "analgesia",
+  "direction": "up",
+  "onset_h": [
+   0.25,
+   1
+  ],
+  "peak_h": [
+   0.75,
+   2
+  ],
+  "offset_h": [
+   3.5,
+   7
+  ],
+  "confidence": "medium",
+  "why": "Oral immediate-release morphine starts working within about 30 minutes, peaks at about 1 hour and lasts about 4 hours.",
+  "source": "Lugo & Kern 2002 J Pain Palliat Care Pharmacother 16:5; BNF morphine monograph"
+ },
+ {
+  "kind": "timecourse",
+  "what": "alcohol",
+  "amount": 1,
+  "profile": "typical",
+  "feeling": "mood",
+  "direction": "up",
+  "onset_h": [
+   0.1,
+   0.5
+  ],
+  "peak_h": [
+   0.3,
+   1.5
+  ],
+  "offset_h": [
+   1.5,
+   5
+  ],
+  "confidence": "medium",
+  "why": "The pleasant lift from two drinks follows rising blood alcohol, peaking within the first hour and fading as levels fall.",
+  "source": "King et al. 2011 Arch Gen Psychiatry 68:389; Martin et al. 1993 Alcohol Clin Exp Res 17:140 (biphasic alcohol effects)"
+ },
+ {
+  "kind": "level",
+  "what": "cocaine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.3,
+   4
+  ],
+  "confidence": "medium",
+  "why": "Cocaine blocks the dopamine transporter, raising striatal dopamine several-fold in microdialysis and clearly in human PET.",
+  "source": "Volkow et al. 1997 Nature 386:827; Di Chiara & Imperato 1988 PNAS 85:5274; Cox et al. 2009 J Neurosci 29:12957"
+ },
+ {
+  "kind": "level",
+  "what": "caffeine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "adenosine",
+  "fold": [
+   0.8,
+   1.25
+  ],
+  "confidence": "medium",
+  "why": "Caffeine blocks adenosine receptors rather than lowering adenosine itself, so adenosine levels stay about the same.",
+  "source": "Fredholm et al. 1999 Pharmacol Rev 51:83; Porkka-Heiskanen et al. 1997 Science 276:1265"
+ },
+ {
+  "kind": "level",
+  "what": "stress",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.75,
+  "measure": "cortisol",
+  "fold": [
+   1.3,
+   3.5
+  ],
+  "confidence": "high",
+  "why": "A social-evaluative stressor raises blood cortisol, peaking about 20-40 minutes after it starts.",
+  "source": "Dickerson & Kemeny 2004 Psychol Bull 130:355 (meta-analysis); Kirschbaum et al. 1993 Neuropsychobiology 28:76"
+ },
+ {
+  "kind": "level",
+  "what": "stress",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "acth",
+  "fold": [
+   1.5,
+   4
+  ],
+  "confidence": "high",
+  "why": "ACTH rises faster and more steeply than cortisol during an acute psychological stressor.",
+  "source": "Kirschbaum et al. 1993 Neuropsychobiology 28:76; Foley & Kirschbaum 2010 Neurosci Biobehav Rev 35:91"
+ },
+ {
+  "kind": "level",
+  "what": "food",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "ghrelin",
+  "fold": [
+   0.4,
+   0.85
+  ],
+  "confidence": "high",
+  "why": "Ghrelin, the hunger hormone, drops after a meal and rises again before the next one.",
+  "source": "Cummings et al. 2001 Diabetes 50:1714; Callahan et al. 2004 J Clin Endocrinol Metab 89:1319"
+ },
+ {
+  "kind": "level",
+  "what": "food",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.5,
+  "measure": "glp1",
+  "fold": [
+   1.3,
+   3.5
+  ],
+  "confidence": "high",
+  "why": "GLP-1 is released from the gut within minutes of eating.",
+  "source": "Holst 2007 Physiol Rev 87:1409; Orskov et al. 1996 Scand J Gastroenterol 31:665"
+ },
+ {
+  "kind": "level",
+  "what": "mdma",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "measure": "oxytocin",
+  "fold": [
+   1.5,
+   6
+  ],
+  "confidence": "high",
+  "why": "MDMA clearly raises blood oxytocin in humans, which is thought to contribute to its social effects.",
+  "source": "Dumont et al. 2009 J Psychopharmacol 23:681; Hysek et al. 2014 Soc Cogn Affect Neurosci 9:1645"
+ },
+ {
+  "kind": "level",
+  "what": "melatonin",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "melatonin",
+  "fold": [
+   10,
+   300
+  ],
+  "confidence": "medium",
+  "why": "Even 0.5-1 mg of oral melatonin taken in the daytime raises blood melatonin far above its very low daytime level.",
+  "source": "Dollins et al. 1994 PNAS 91:1824; Zhdanova et al. 1995 Clin Pharmacol Ther 57:552"
+ },
+ {
+  "kind": "level",
+  "what": "nicotine",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 0.25,
+  "measure": "dopamine_striatum",
+  "fold": [
+   1.05,
+   1.8
+  ],
+  "confidence": "medium",
+  "why": "One cigarette raises striatal dopamine only modestly, much less than cocaine or amphetamine.",
+  "source": "Brody et al. 2004 Am J Psychiatry 161:1211; Di Chiara & Imperato 1988 PNAS 85:5274"
+ },
+ {
+  "kind": "level",
+  "what": "exercise",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1,
+  "measure": "anandamide",
+  "fold": [
+   1.2,
+   3
+  ],
+  "confidence": "medium",
+  "why": "Moderate aerobic exercise raises blood anandamide, a possible contributor to the 'runner's high'.",
+  "source": "Raichlen et al. 2012 J Exp Biol 215:1331; Sparling et al. 2003 Neuroreport 14:2209; Dietrich & McDaniel 2004 Br J Sports Med 38:536"
+ }
+]

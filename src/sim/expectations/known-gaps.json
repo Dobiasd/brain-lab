@@ -1,0 +1,38 @@
+[
+  {
+    "match": "diazepam×1 [withdrawal",
+    "reason": "Diazepam and its metabolite (half-life ~100 h) are still active 1–3 days after stopping, so the model still shows calm. Real long-term users already notice early rebound; the model's benzodiazepine tolerance is incomplete."
+  },
+  {
+    "match": "sertraline×1 [withdrawal",
+    "reason": "SSRI discontinuation syndrome (anxiety, dizziness, 'brain zaps') is not modelled; its mechanism is not well understood. In the model the slowly clearing drug is still calming on day 1."
+  },
+  {
+    "match": "phenelzine×3 [withdrawal",
+    "reason": "MAO-inhibitor discontinuation (agitation, sometimes delirium) is not modelled; the model's MAO recovers smoothly."
+  },
+  {
+    "match": "phenelzine×3 [chronic, anxiety] anxiety",
+    "reason": "The direction is right (less anxiety), but too weak: the long-term adaptations that make MAO inhibitors strong anti-anxiety drugs are only partly modelled."
+  },
+  {
+    "match": "cocaine×1 [quiet, typical] mood",
+    "reason": "The cocaine 'crash' (dysphoria as levels fall) is not modelled; it likely involves acute tolerance and dopamine-receptor adaptations within the hour that this model lacks."
+  },
+  {
+    "match": "heroin×1 [chronic",
+    "reason": "The chronic context judges ~4 h after the morning dose, when a short-acting heroin dose has largely worn off. Breathing suppression in tolerant users at the time of a dose is covered by the rank tables."
+  },
+  {
+    "match": "bupropion×1 [chronic",
+    "reason": "Bupropion's antidepressant effect is not reproduced: its weak dopamine/noradrenaline reuptake block (~20% DAT occupancy) barely moves the model's slow plasticity variable, which mainly responds to serotonin, glutamate and psychedelics."
+  },
+  {
+    "match": "caffeine×1 [typical] arousal timecourse",
+    "reason": "In the model caffeine's alerting effect grows as adenosine builds up during the day, so it lasts into the evening; felt alertness in studies fades after 3–6 h, although effects on sleep persist."
+  },
+  {
+    "match": "caffeine×1 [typical] sleepiness timecourse",
+    "reason": "See caffeine arousal time course: rising adenosine during the day makes the model's caffeine effect last too long."
+  }
+]
