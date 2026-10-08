@@ -450,7 +450,9 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   // --- sensory load (E/I cartoon) ---
   const glu = s.level[poolIdx['glu']] / ctx.refs.pool[poolIdx['glu']];
   const gaba = s.level[poolIdx['gaba']] / ctx.refs.pool[poolIdx['gaba']];
-  sc.sensoryLoad = Math.max(0, sc.inputs[INPUT_IDS.indexOf('sensory')] * (glu / Math.max(gaba, 0.2)) - 0.3);
+  // THC turns up sensory intensity (sounds, lights, touch feel stronger) once past a light dose
+  const thcGain = 1 + Math.min(1, Math.max(0, sc.agonCb1 - 0.22));
+  sc.sensoryLoad = Math.max(0, sc.inputs[INPUT_IDS.indexOf('sensory')] * thcGain * (glu / Math.max(gaba, 0.2)) - 0.3);
 
   // --- adaptation ---
   if (ctx.adapt) {

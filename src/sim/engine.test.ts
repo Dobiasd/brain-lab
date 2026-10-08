@@ -243,3 +243,13 @@ describe('CBD', () => {
     expect(at(both, 'read:anxiety', 0, 11.5)).toBeLessThan(at(thc, 'read:anxiety', 0, 11.5) - 3);
   });
 });
+
+describe('THC and the senses', () => {
+  const busy = [{ input: 'sensory' as const, at: 11 * 60, duration: 180, intensity: 1 }];
+  const day = (amount: number) => runSim({ profile: 'autism', days: 1, events: busy, doses: amount ? [{ drug: 'thc', at: 10.75 * 60, amount }] : [] });
+  test('a full joint turns up sensory overload in a busy place; a few puffs barely do', () => {
+    const none = at(day(0), 'state:sensory_load', 0, 11.5);
+    expect(at(day(1), 'state:sensory_load', 0, 11.5)).toBeGreaterThan(none * 1.1);
+    expect(at(day(0.5), 'state:sensory_load', 0, 11.5)).toBeLessThan(none * 1.1);
+  });
+});
