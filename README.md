@@ -1,5 +1,7 @@
 # Brain Lab
 
+[![test](https://github.com/Dobiasd/brain-lab/actions/workflows/test.yml/badge.svg)](https://github.com/Dobiasd/brain-lab/actions/workflows/test.yml)
+
 An interactive, simplified simulation of brain chemistry. It shows in plain words what coffee, stress, exercise,
 alcohol, cannabis or medication do: guided tours answer everyday questions, and a day planner lets you drop
 substances and activities onto a timeline and watch the feelings and chemicals change.
@@ -30,3 +32,5 @@ npm run dev     # local dev server
 npm test        # behaviour tests and reference tables
 npm run build   # single-file build in dist/index.html
 ```
+
+Spotted a mistake in the science? Please [open an issue](https://github.com/Dobiasd/brain-lab/issues/new), ideally with a source.

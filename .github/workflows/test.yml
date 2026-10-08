@@ -1,0 +1,20 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # type check + production build
+      - run: npm run build
+      # behaviour tests and the reference tables (ratchet against expectations/baseline.json)
+      - run: npm test

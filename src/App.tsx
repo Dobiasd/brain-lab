@@ -142,9 +142,17 @@ export default function App() {
       </main>
       <footer className="disclaimer">
         <b>Educational cartoon, not medical advice.</b> The model gets directions, shapes and time scales of well-known effects right, but its numbers are made up and real brains vary enormously. Never use it to decide on doses or medication.
+        {' '}<a href={reportUrl(view === 'tour' ? `guided tour "${tourById[tourId]?.question}"` : view)} target="_blank" rel="noopener">Spotted a mistake? Report it</a>
+        {' · '}<a href="https://github.com/Dobiasd/brain-lab" target="_blank" rel="noopener">Source code</a>
       </footer>
     </div>
   );
+}
+
+/** A pre-filled GitHub issue that records where in the app the reader was. */
+function reportUrl(page: string) {
+  const body = `**Where:** ${page}\n\n**What looks wrong:**\n\n\n**What you expected (a source helps a lot):**\n`;
+  return `https://github.com/Dobiasd/brain-lab/issues/new?title=${encodeURIComponent('Mistake: ')}&labels=mistake&body=${encodeURIComponent(body)}`;
 }
 
 function Playground({ science, cfg, setCfg, compare, setCompare, chartKeys, setChartKeys, scenarioId, onScenario }: {
