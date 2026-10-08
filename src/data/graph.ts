@@ -18,6 +18,7 @@ const actionLabel: Record<Action, string> = {
   agonist: 'activates',
   antagonist: 'blocks',
   pam: 'amplifies',
+  nam: 'dampens',
   reuptake_inhibitor: 'blocks reuptake by',
   enzyme_inhibitor: 'inhibits',
   releaser: 'forces release of',

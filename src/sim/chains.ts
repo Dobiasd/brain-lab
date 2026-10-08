@@ -228,9 +228,9 @@ export function traceFeeling(feelingId: string, a: Get, b: Get, profileA: Profil
         for (const t of dd.targets) {
           if (t.target !== id) continue;
           const o = occ(c, t.ec50);
-          const fits = up ? t.action === 'agonist' || t.action === 'pam' : t.action === 'antagonist';
+          const fits = up ? t.action === 'agonist' || t.action === 'pam' : t.action === 'antagonist' || t.action === 'nam';
           if (fits && o > 0.05 && (!best || o > best.o)) {
-            const verb = t.action === 'antagonist' ? 'blocks' : t.action === 'pam' ? 'amplifies' : 'switches on';
+            const verb = t.action === 'antagonist' ? 'blocks' : t.action === 'nam' ? 'dampens' : t.action === 'pam' ? 'amplifies' : 'switches on';
             best = { name: drugPlainName(dd.id), icon: drugIcon[dd.id] ?? '💊', note: `${verb} ${Math.round(o * 100)}% of these receptors`, o };
           }
         }

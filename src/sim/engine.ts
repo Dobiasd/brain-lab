@@ -369,12 +369,13 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   for (let r = 0; r < receptors.length; r++) {
     const endo = s.level[recPool[r]];
     // acute tolerance weakens the response, not the binding; slow adaptation sees the full drug exposure
-    let orth = 0, agon = 0, pam = 0, agonRaw = 0, pamRaw = 0;
+    let orth = 0, agon = 0, pam = 0, agonRaw = 0, pamRaw = 0, nam = 0, namRaw = 0;
     for (const e of recEffs[r]) {
       const o = occRaw(e), tf = sc.tolf[e.drug];
       if (e.action === 'agonist') { orth += o; agon += o * tf * e.eff; agonRaw += o * e.eff; }
       else if (e.action === 'antagonist') orth += o * e.endo;
       else if (e.action === 'pam') { pam += o * tf * e.eff; pamRaw += o * e.eff; }
+      else if (e.action === 'nam') { nam += o * tf * e.eff; namRaw += o * e.eff; }
     }
     orth = Math.min(orth, 0.97);
     // a competitive antagonist displaces agonist drugs as well (that is how naloxone reverses an overdose)
@@ -382,15 +383,17 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
     for (const e of recEffs[r]) if (e.action === 'antagonist') ant += occOf(e);
     agon *= 1 - Math.min(ant, 0.97);
     agonRaw *= 1 - Math.min(ant, 0.97);
-    const stim = endo * (1 - orth) * (1 + pam) + agon * EMAX;
+    // a negative allosteric modulator damps the response to both the body's own transmitter and agonist drugs
+    const damp = 1 - Math.min(nam, 0.9);
+    const stim = (endo * (1 - orth) * (1 + pam) + agon * EMAX) * damp;
     sc.stim[r] = stim;
-    sc.stimRaw[r] = endo * (1 - orth) * (1 + pamRaw) + agonRaw * EMAX;
+    sc.stimRaw[r] = (endo * (1 - orth) * (1 + pamRaw) + agonRaw * EMAX) * (1 - Math.min(namRaw, 0.9));
     sc.signal[r] = stim * s.density[r];
     const id = receptors[r].id;
     if (id === 'ht2a') sc.agonHt2a = agon;
     if (id === 'nmda') sc.blockNmda = orth;
     if (id === 'a2a') sc.blockA2a = orth;
-    if (id === 'cb1') sc.agonCb1 = agon;
+    if (id === 'cb1') sc.agonCb1 = agon * damp;
     if (id === 'mu') sc.agonMu = agon;
   }
 

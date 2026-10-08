@@ -127,10 +127,11 @@ export const drugs: Drug[] = [
   { id: 'cbd', name: 'CBD (cannabidiol)', category: 'Cannabinoid', standardDose: '25 mg oil', tmax: 2.5 * H, halfLife: 18 * H,
     targets: [
       { target: 'faah', action: 'enzyme_inhibitor', ec50: 25 },
-      { target: 'ht1a_post', action: 'agonist', ec50: 30, efficacy: 0.4 },
+      { target: 'ht1a_post', action: 'agonist', ec50: 15, efficacy: 0.6 },
+      { target: 'cb1', action: 'nam', ec50: 15, efficacy: 0.6 },
     ],
-    summary: 'The non-intoxicating part of cannabis. It does not switch on CB1 like THC; instead it mildly slows the breakdown of the body\'s own anandamide and nudges serotonin 1A receptors. Effects at typical shop doses are small. Good evidence exists only for certain epilepsies (at much higher doses).',
-    notModelled: 'Its many other weak targets, and its blunting of some THC effects.' },
+    summary: 'The non-intoxicating part of cannabis. It does not switch on CB1 like THC; instead it mildly slows the breakdown of the body\'s own anandamide, nudges serotonin 1A receptors and makes CB1 respond less (which is why it can take the edge off a THC high). Effects at typical shop doses are tiny. Calming effects in studies needed about 300–600 mg, and good evidence exists only for certain epilepsies (at even higher doses).',
+    notModelled: 'Its many other weak targets. CB1 damping is seen in cell studies; how much it matters at human doses is debated.' },
   { id: 'theanine', name: 'L-theanine', category: 'Supplement', standardDose: '200 mg (or ~5 cups of green tea)', tmax: 50, halfLife: 70,
     targets: [
       { target: 'gabaa', action: 'pam', ec50: 2.0, efficacy: 0.3 },

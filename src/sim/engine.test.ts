@@ -205,6 +205,13 @@ describe('exercise intensity', () => {
   test('a hard workout feels worse than a run at first', () => {
     expect(at(hard, 'read:mood', 0, 17.25)).toBeLessThan(at(runr, 'read:mood', 0, 17.25));
   });
+  test('the mood lift outlasts the run (afterglow) but stays modest', () => {
+    const lift = (h: number) => at(runr, 'read:mood', 0, h) - at(none, 'read:mood', 0, h);
+    expect(lift(18)).toBeLessThan(30);
+    expect(lift(18.5)).toBeGreaterThan(4);
+    expect(lift(19)).toBeGreaterThan(2);
+    expect(Math.abs(lift(23))).toBeLessThan(2);
+  });
 });
 
 describe('meals', () => {
@@ -218,5 +225,21 @@ describe('meals', () => {
     const a = runSim({ profile: 'typical', days: 1, doses: [], events: [] });
     const b = runSim({ profile: 'typical', days: 1, doses: [], events: [], meals: [7.5 * 60, 12.5 * 60, 19 * 60] });
     expect(at(b, 'read:hunger', 0, 15)).toBeCloseTo(at(a, 'read:hunger', 0, 15), 5);
+  });
+});
+
+describe('CBD', () => {
+  const day = (doses: { drug: string; at: number; amount: number }[]) => runSim({ profile: 'typical', days: 1, doses, events: [] });
+  const none = day([]);
+  test('a clinical-sized dose calms a little without a motivation or appetite boost', () => {
+    const big = day([{ drug: 'cbd', at: 10 * 60, amount: 20 }]);
+    expect(at(big, 'read:anxiety', 0, 13)).toBeLessThan(at(none, 'read:anxiety', 0, 13) - 4);
+    expect(at(big, 'read:motivation', 0, 13) - at(none, 'read:motivation', 0, 13)).toBeLessThan(8);
+    expect(at(big, 'read:hunger', 0, 13) - at(none, 'read:hunger', 0, 13)).toBeLessThan(8);
+  });
+  test('takes the edge off THC anxiety', () => {
+    const thc = day([{ drug: 'thc', at: 10.75 * 60, amount: 1 }]);
+    const both = day([{ drug: 'thc', at: 10.75 * 60, amount: 1 }, { drug: 'cbd', at: 8 * 60, amount: 4 }]);
+    expect(at(both, 'read:anxiety', 0, 11.5)).toBeLessThan(at(thc, 'read:anxiety', 0, 11.5) - 3);
   });
 });

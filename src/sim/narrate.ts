@@ -69,6 +69,7 @@ function drugCause(key: string, higher: boolean, get: Get): string | null {
     if (get(`drug:${d.id}`) < 0.05) continue;
     for (const t of d.targets) {
       if (t.target !== rec) continue;
+      if (!higher && t.action === 'nam') return `${midSentence(d.id)} is dampening ${termNoun[key].replace(/,$/, '')}`;
       if (!higher && t.action === 'antagonist') return `${midSentence(d.id)} is blocking ${termNoun[key].replace(/,$/, '')}`;
       if (higher && (t.action === 'agonist' || t.action === 'pam')) return `${midSentence(d.id)} is boosting ${termNoun[key].replace(/,$/, '')}`;
     }

@@ -90,6 +90,7 @@ export type Action =
   | 'agonist' // occupies receptor, activates it with `efficacy` (1 = full agonist)
   | 'antagonist' // occupies receptor, blocks endogenous signal
   | 'pam' // positive allosteric modulator: amplifies endogenous signal
+  | 'nam' // negative allosteric modulator: damps the receptor's response to anything that binds it (`efficacy` = fraction removed)
   | 'reuptake_inhibitor' // blocks a transporter
   | 'enzyme_inhibitor' // blocks an enzyme
   | 'releaser'; // reverses transport / dumps vesicles into a pool
