@@ -91,7 +91,9 @@ const receptorPlain: Record<string, string> = {
 };
 
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`;
-const fmtHalfLife = (min: number) => (min >= 1440 ? plural(Math.round(min / 1440), 'day') : min >= 60 ? plural(Math.round(min / 60), 'hour') : `${min} minutes`);
+const fmtHalfLife = (min: number) => (min >= 1440 ? plural(Math.round(min / 1440), 'day')
+  // short half-lives keep their half hour ("2.5 hours"), since the difference matters within a day
+  : min >= 60 ? (min < 600 && min % 60 ? `${Math.round(min / 30) / 2} hours` : plural(Math.round(min / 60), 'hour')) : `${min} minutes`);
 /** How long the effect really lasts: fast redistribution or saturable clearance can end it well before the half-life says. */
 const actingHalfLife = (d: Drug) => d.fastPhase?.halfLife ?? (d.saturable ? 90 : d.halfLife);
 function wearingOff(d: Drug, name: string) {

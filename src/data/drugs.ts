@@ -15,7 +15,7 @@ export const drugs: Drug[] = [
     ],
     summary: 'Blocks adenosine receptors, so the sleep-pressure signal is hidden, not removed. Adenosine keeps accumulating and hits once caffeine wears off. Daily use upregulates adenosine receptors (tolerance), and stopping causes withdrawal fatigue and headaches.' },
   { id: 'methylphenidate', name: 'Methylphenidate (Ritalin)', category: 'ADHD medication', standardDose: '10–20 mg IR', hill: 2,
-    doseOptions: [{ amount: 0.75, label: '10 mg' }, { amount: 1.5, label: '20 mg' }, { amount: 2.25, label: '30 mg' }], tmax: 90, halfLife: 2.5 * H, effectDelay: 20, acuteTolerance: { strength: 0.6, on: 90, off: 360 },
+    doseOptions: [{ amount: 0.75, label: '10 mg' }, { amount: 1.5, label: '20 mg' }, { amount: 2.25, label: '30 mg' }], tmax: 60, halfLife: 2.5 * H, effectDelay: 20, acuteTolerance: { strength: 0.6, on: 90, off: 360 },
     targets: [
       { target: 'dat', action: 'reuptake_inhibitor', ec50: 0.7 },
       { target: 'net', action: 'reuptake_inhibitor', ec50: 0.7 },

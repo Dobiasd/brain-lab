@@ -36,7 +36,7 @@ export interface SimResult {
 
 // ---------- constants ----------
 const EMAX = 3; // signal of a full agonist at full occupancy, relative to baseline endogenous
-const K_DRAIN = 0.0006; // store depletion per unit releaser boost per minute
+const K_DRAIN = 0.0018; // store depletion per unit releaser boost per minute
 const A_MAX = 2.4, A_MIN = 0.15, TAU_WAKE = 1100, TAU_SLEEP = 300;
 const TAU_PLAST = 14 * MIN_PER_DAY;
 /** The typical brain's average cortisol (GR) signal once receptor adaptation runs (references are measured without it). */

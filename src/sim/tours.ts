@@ -152,7 +152,7 @@ export const tours: Tour[] = [
         text: 'Ritalin blocks the pumps that clear dopamine and noradrenaline away, so more of them stay around. The planning brain moves toward its sweet spot and focus rises a lot compared to the dashed line.' },
       { day: 0, hour: 15, profile: 'adhd', title: 'Wearing off', highlight: ['pfc'],
         feelings: ['focus'], charts: ['read:focus', 'drug:methylphenidate'],
-        text: 'Half the medicine is gone every ~3 hours, so by afternoon the effect fades. That is why some people take a second dose or a long-acting version.' },
+        text: 'Half the medicine is gone every 2 to 3 hours, so by afternoon the effect fades. That is why some people take a second dose or a long-acting version.' },
       { day: 0, hour: 10, profile: 'typical', title: 'Same dose, typical brain', highlight: ['pfc'],
         feelings: ['focus', 'arousal', 'anxiety'], charts: ['read:focus', 'rec:d1_pfc'],
         text: 'Now the same dose in a typical brain, which already sits close to the sweet spot. There is much less room to improve: lab studies in healthy people find only small and inconsistent gains in focus, while people feel more wired and alert and often overestimate how well they are doing. Compare the gain here with the ADHD steps. Stimulants are not "smart pills".' },

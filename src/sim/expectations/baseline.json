@@ -8,7 +8,7 @@
   "of": 40
  },
  "effects_contexts.json": {
-  "pass": 46,
+  "pass": 47,
   "of": 60
  },
  "effects_coverage.json": {
@@ -16,7 +16,7 @@
   "of": 61
  },
  "holdout_a.json": {
-  "pass": 53,
+  "pass": 56,
   "of": 60
  },
  "holdout_b.json": {
@@ -40,11 +40,11 @@
   "of": 55
  },
  "stimulants.json": {
-  "pass": 30,
+  "pass": 32,
   "of": 40
  },
  "timecourse.json": {
-  "pass": 37,
+  "pass": 41,
   "of": 54
  }
 }

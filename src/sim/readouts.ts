@@ -140,7 +140,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'agon:cb1', w: 0.6, label: 'THC ("munchies")', mode: 'abs' },
       { key: 'rec:d1_str', w: 0.08, label: 'reward drive' },
       { key: 'pool:ne', w: -0.55, label: 'noradrenaline (stimulants suppress appetite)' },
-      { key: 'pool:da_str', w: -0.15, label: 'dopamine surge (stimulants)', mode: 'above', above: 1.3 },
+      { key: 'pool:da_str', w: -0.25, label: 'dopamine surge (stimulants)', mode: 'above', above: 1.3 },
       { key: 'pool:ht', w: -0.2, label: 'serotonin (satiety)' },
       { key: 'rec:nachr', w: -0.66, label: 'nicotine' },
       { key: 'input:exercise', w: -0.8, label: 'exercise', mode: 'abs' },
@@ -173,7 +173,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'block:nmda', w: 2.4, label: 'NMDA blockade', mode: 'above', above: 0.3 },
       { key: 'agon:cb1', w: 1.22, label: 'CB1 agonist', mode: 'above', above: 0.1 },
       { key: 'ei:inhib', w: 0.3, label: 'heavy sedation / drunkenness', mode: 'above', above: 1.5 },
-      { key: 'pool:ht', w: 0.05, label: 'serotonin flood (MDMA)', mode: 'above', above: 4 },
+      { key: 'pool:ht', w: 0.05, label: 'serotonin flood (MDMA)', mode: 'above', above: 3.5 },
       { key: 'const', w: -0.6, label: 'offset', mode: 'abs' },
     ] },
 ];
