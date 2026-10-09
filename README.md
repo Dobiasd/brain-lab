@@ -6,7 +6,7 @@ An interactive, simplified simulation of brain chemistry. It shows in plain word
 alcohol, cannabis or medication do: guided tours answer everyday questions, and a day planner lets you drop
 substances and activities onto a timeline and watch the feelings and chemicals change.
 
-**Live:** https://daiw.de/brain/
+**Live:** https://daiw.de/brain/ (every guided tour has its own link, e.g. [#coffee](https://daiw.de/brain/#coffee) or [#sleep_aid](https://daiw.de/brain/#sleep_aid), and [#day](https://daiw.de/brain/#day) opens the day planner)
 
 > This is an educational cartoon of the brain, not medical advice. It does not give doses and cannot predict
 > what a substance will do to a real person.

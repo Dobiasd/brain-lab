@@ -172,3 +172,18 @@ describe('sleep aid tour tells the model\'s story', () => {
     expect(deltaAt(3, 'sleepiness')).toBeLessThan(deltaAt(0, 'sleepiness'));
   });
 });
+
+describe('shareable links', () => {
+  test('every tour and page has its own address, and they do not clash', async () => {
+    const { hashFor, pageViews, parseHash } = await import('../ui/route');
+    for (const t of tours) {
+      expect(pageViews as string[], t.id).not.toContain(t.id);
+      expect(t.id, t.id).toMatch(/^[a-z0-9_]+$/);
+      expect(parseHash(hashFor('tour', t.id))).toEqual({ view: 'tour', tourId: t.id });
+    }
+    for (const v of pageViews) expect(parseHash(hashFor(v, 'coffee')).view).toBe(v);
+    expect(hashFor('home', 'coffee')).toBe('');
+    expect(parseHash('').view).toBe('home');
+    expect(parseHash('#no-such-thing').view).toBe('home');
+  });
+});

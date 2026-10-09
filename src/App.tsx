@@ -29,8 +29,7 @@ import { Story } from './ui/Story';
 import { useSim } from './ui/useSim';
 import { planWarnings } from './sim/safety';
 import { Warnings } from './ui/Warnings';
-
-type View = 'home' | 'tour' | 'day' | 'chemicals' | 'glossary' | 'graph';
+import { hashFor, parseHash, type View } from './ui/route';
 
 function readPref(key: string, fallback: string) {
   try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; }
@@ -55,9 +54,21 @@ const compareWords: Record<CompareMode, string> = {
 const tileBase: Record<CompareMode, string> = { nodrugs: 'no drugs', typical: 'typical brain', avgpers: 'average personality', plain: 'nothing added', off: '' };
 
 export default function App() {
-  const [view, setView] = useState<View>('home');
+  // the address says which page or tour is open, so it can be shared and the Back button works
+  const [view, setView] = useState<View>(() => parseHash(location.hash).view);
   const [science, setScience] = useState(() => readPref('brainlab.science', '0') === '1');
-  const [tourId, setTourId] = useState('coffee');
+  const [tourId, setTourId] = useState(() => parseHash(location.hash).tourId ?? 'coffee');
+  useEffect(() => {
+    const h = hashFor(view, tourId);
+    if (location.hash !== h) history.pushState(null, '', h || location.pathname + location.search);
+    document.title = view === 'tour' ? `${tourById[tourId].question} · Brain Lab` : 'Brain Lab';
+  }, [view, tourId]);
+  useEffect(() => {
+    const onNav = () => { const r = parseHash(location.hash); if (r.tourId) setTourId(r.tourId); setView(r.view); };
+    window.addEventListener('popstate', onNav);
+    window.addEventListener('hashchange', onNav);
+    return () => { window.removeEventListener('popstate', onNav); window.removeEventListener('hashchange', onNav); };
+  }, []);
   useEffect(() => writePref('brainlab.science', science ? '1' : '0'), [science]);
   useEffect(() => { if (!science && view === 'graph') setView('home'); }, [science, view]);
   // a new view: scroll to the top and move focus to it, so keyboard and screen-reader users land in the right place
