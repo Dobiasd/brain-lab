@@ -28,6 +28,7 @@ export function seriesInfo(key: string): SeriesInfo {
       if (id === 'satiety') return { label: 'Stomach fullness', unit: 'frac', group: 'Slow variables', help: 'Rises with meals, falls over ~4 hours.' };
       if (id === 'hangover') return { label: 'Hangover', unit: 'frac', group: 'Slow variables', help: 'Builds up with heavy drinking and is felt once the alcohol is gone.' };
       if (id === 'afterglow') return { label: 'Exercise afterglow', unit: 'frac', group: 'Slow variables', help: 'Builds up while you exercise and fades over the next two to three hours: the better mood and calm after a workout.' };
+      if (id === 'rem') return { label: 'Dreaming (REM) sleep', unit: 'frac', group: 'Slow variables', help: '1 during dreaming sleep, which ends each ~90-minute sleep cycle and gets longer towards morning. Acetylcholine is high in it.' };
       if (id === 'meal') return { label: 'Eating a meal', unit: 'frac', group: 'Slow variables', help: '1 while eating a meal (three a day unless you move or remove them).' };
       return { label: 'Circadian wake drive', unit: 'frac', group: 'Slow variables', help: 'The body clock\'s push to stay awake (peaks late afternoon).' };
     default: return { label: key, unit: 'rel', group: 'Other', help: '' };

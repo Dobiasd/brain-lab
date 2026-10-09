@@ -4,7 +4,7 @@
   "of": 40
  },
  "cholinergic.json": {
-  "pass": 31,
+  "pass": 35,
   "of": 40
  },
  "depressants.json": {
@@ -28,7 +28,7 @@
   "of": 60
  },
  "levels.json": {
-  "pass": 46,
+  "pass": 47,
   "of": 60
  },
  "mood_psychedelics.json": {

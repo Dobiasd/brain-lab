@@ -286,10 +286,10 @@ export const tours: Tour[] = [
         text: 'Your body removes only half of it about every 6 hours (more slowly in older people), so a good part is still there when you wake up. The wake signal is still partly blocked: you feel groggy and your attention is worse, often without noticing it, which matters for driving. The pill also blocks acetylcholine, the attention chemical, a little. In older people, regular use of such drugs is linked to a higher risk of dementia.' },
       { day: 4, hour: 8, title: 'Four nights later', highlight: ['cortex'],
         feelings: ['focus', 'sleepiness'], charts: ['dens:h1', 'drug:diphenhydramine', 'read:focus'],
-        text: 'The same pill, the same amount in your blood, but the morning fog is almost gone. While awake, the brain noticed the weaker wake signal and made more histamine receptors to catch it.' },
+        text: 'The same pill, the same amount in your blood, but the morning fog is gone. While awake, the brain noticed the weaker wake signal and made more histamine receptors to catch it.' },
       { day: 4, hour: 22.75, title: 'The fifth night', highlight: ['hypothalamus', 'cortex'],
         feelings: ['sleepiness'], charts: ['read:sleepiness', 'dens:h1', 'rec:h1'],
-        text: 'The extra receptors also blunt the pill at bedtime: it makes you less drowsy than on the first night. Studies find that after about four days of regular use these pills barely work any more. Taking more does not fix that, and it raises the side effects.' },
+        text: 'The extra receptors also blunt the pill at bedtime: it adds less than half the drowsiness of the first night. Studies find that after about four days of regular use these pills barely work any more. Taking more does not fix that, and it raises the side effects.' },
     ],
     takeaway: 'Antihistamine sleep aids block the brain\'s histamine wake signal. You wake up groggy, and after a few nights they hardly work.' },
 

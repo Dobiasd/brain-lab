@@ -125,7 +125,7 @@ export const receptors: Receptor[] = [
     summary: 'Ion channel opened by acetylcholine and nicotine. On VTA neurons it boosts dopamine. Desensitises fast.' },
   { id: 'm1', name: 'Muscarinic ACh receptors (M1)', pool: 'ach', region: 'cortex', role: 'post', adaptTau: 5 * D, adaptStrength: 0.3,
     summary: 'The main acetylcholine receptors in the cortex and hippocampus. They sharpen attention and help store new memories. Blocked by scopolamine and, as a side effect, by antihistamine sleep aids and many other drugs.' },
-  { id: 'h1', name: 'Histamine H1', pool: 'hist', region: 'cortex', role: 'post', adaptTau: 1.5 * D, adaptStrength: 3, adaptAwake: true,
+  { id: 'h1', name: 'Histamine H1', pool: 'hist', region: 'cortex', role: 'post', adaptTau: 1.5 * D, adaptStrength: 4, adaptAwake: true,
     summary: 'Keeps the cortex awake. Old antihistamines block it, which makes you drowsy, but the drowsiness fades within a few nights of regular use.' },
   { id: 'gabaa', name: 'GABA-A (synaptic)', pool: 'gaba', region: 'cortex', role: 'post', adaptTau: 4 * D, adaptStrength: 0.85,
     summary: 'The main "brake" receptor at synapses. Benzodiazepines (Valium) and sleeping pills amplify it. It adapts over days to weeks of daily use: that is benzo tolerance, and why stopping after regular use must be done slowly with a doctor.' },
@@ -213,7 +213,8 @@ export const nuclei: (Nucleus & { base?: number })[] = [
     { ref: 'receptor:gabaa', w: -0.21, note: 'GABA brake' },
     { ref: 'receptor:gabaa_ex', w: -0.09, note: 'tonic (extrasynaptic) GABA brake' },
     { ref: 'input:sensory', w: 0.2, note: 'novelty / stimulation' },
-    { ref: 'state:asleep', w: -0.5, note: 'lower in deep sleep (high again in dreaming sleep, which is not modelled)' },
+    { ref: 'state:asleep', w: -1.0, note: 'low in deep sleep' },
+    { ref: 'state:rem', w: 1.0, note: 'high again in dreaming (REM) sleep' },
   ] },
   { id: 'tmn', region: 'hypothalamus', name: 'Histamine neurons (tuberomammillary)', modulators: [
     { ref: 'state:asleep', w: -2.0, note: 'fire only while awake, silent in sleep' },

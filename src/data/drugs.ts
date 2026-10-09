@@ -51,7 +51,10 @@ export const drugs: Drug[] = [
     summary: 'Blocks all three monoamine transporters. Fast on, fast off: the short half-life makes the high brief and the urge to redose strong. It also raises heart rate and blood pressure sharply; heart attacks and strokes can happen even in young people.',
     notModelled: 'Heart and blood-vessel effects, and cocaethylene (formed with alcohol, harder on the heart than either alone).' },
   { id: 'nicotine', hill: 2, name: 'Nicotine', category: 'Stimulant', standardDose: '1 cigarette / vape session', tmax: 5, halfLife: 2 * H, effectDelay: 2, acuteTolerance: { strength: 0.85, on: 15, off: 120 },
-    targets: [{ target: 'nachr', action: 'agonist', ec50: 0.14, efficacy: 1 }],
+    targets: [
+      { target: 'nachr', action: 'agonist', ec50: 0.14, efficacy: 1 },
+      { target: 'ach', action: 'releaser', ec50: 0.3, efficacy: 0.5, note: 'nicotinic receptors on acetylcholine terminals boost its release in the cortex' },
+    ],
     summary: 'Activates nicotinic receptors on VTA dopamine neurons, which gives a quick dopamine and alertness hit. The receptors desensitise within minutes, so the hit fades fast even though nicotine stays bound. Over weeks the brain adapts, and between cigarettes smokers feel flat, edgy and hungry, which is why they redose.' },
   { id: 'alcohol', name: 'Alcohol', category: 'Depressant', standardDose: '2 drinks',
     doseOptions: [{ amount: 0.5, label: '1 drink' }, { amount: 1, label: '2 drinks' }, { amount: 3, label: '6 drinks' }], tmax: 20, halfLife: 2 * H, saturable: { vmax: 0.0055, km: 0.2 }, effectDelay: 15, acuteTolerance: { strength: 0.25, on: 60, off: 240 },
@@ -158,7 +161,7 @@ export const drugs: Drug[] = [
       { target: 'm1', action: 'antagonist', ec50: 3.5, note: 'about ten times weaker at muscarinic receptors; matters at high doses' },
     ],
     summary: 'An old antihistamine (in Benadryl, ZzzQuil, Vivinox) that enters the brain. It blocks the histamine wake signal, so you get drowsy, and also blocks acetylcholine, which adds fogginess and, at high doses, confusion and hallucinations. Its half-life is 6–9 hours, so after a bedtime dose some of it is still there the next morning. After a few nights of regular use it hardly makes you drowsy any more. Regular use in older people is linked to a higher dementia risk.',
-    notModelled: 'Its effects on sleep stages, dry mouth, constipation and urinary retention, and heart-rhythm effects in overdose. Older people clear it more slowly.' },
+    notModelled: 'Its effects on sleep stages, a possible rebound of poor sleep after stopping (weak evidence), dry mouth, constipation and urinary retention, and heart-rhythm effects in overdose. Older people clear it more slowly.' },
   { id: 'donepezil', name: 'Donepezil (Aricept)', category: 'Dementia medication', standardDose: '5–10 mg daily', tmax: 3.5 * H, halfLife: 70 * H,
     targets: [
       { target: 'ache', action: 'enzyme_inhibitor', ec50: 8, note: 'about a third of brain AChE blocked at steady state (PET)' },

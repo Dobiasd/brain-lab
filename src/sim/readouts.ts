@@ -146,6 +146,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'pool:ht', w: -0.2, label: 'serotonin (satiety)' },
       { key: 'rec:nachr', w: -0.66, label: 'nicotine' },
       { key: 'block:h1', w: 0.2, label: 'histamine blocked (raises appetite)', mode: 'abs' },
+      { key: 'block:ache', w: -0.6, label: 'nausea (more acetylcholine in the gut)', mode: 'abs' },
       { key: 'input:exercise', w: -0.8, label: 'exercise', mode: 'abs' },
       { key: 'rec:a1', w: 0.22, label: 'sleep loss' },
       { key: 'state:circadian', w: 0.73, label: 'body clock (appetite peaks in the evening)', mode: 'abs' },

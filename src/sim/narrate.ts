@@ -45,6 +45,7 @@ const fullPhrase: Record<string, string> = {
   'block:nmda': 'NMDA (learning) receptors are blocked',
   'block:h1': 'an antihistamine is blocking histamine, the brain\'s wake signal',
   'block:m1': 'acetylcholine, the attention signal, is blocked',
+  'block:ache': 'extra acetylcholine in the gut makes you queasy',
   'agon:cb1': 'THC is acting on cannabinoid receptors',
   'state:sensory_load': 'the surroundings are overloading your senses',
   'state:hangover': 'you have a hangover',

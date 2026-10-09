@@ -141,7 +141,7 @@ const MAO_STORE = 2;
 const poolHasMao = pools.map((p) => p.clearance.some((c) => c.by === 'mao'));
 
 type ModRef = { kind: 'rec' | 'pool' | 'input' | 'state'; idx: number; key: string; w: number; log?: boolean; above?: number };
-const STATE_KEYS = ['asleep', 'circadian', 'hpa_rhythm', 'car', 'dark', 'satiety', 'meal', 'hangover', 'inertia', 'afterglow'] as const;
+const STATE_KEYS = ['asleep', 'circadian', 'hpa_rhythm', 'car', 'dark', 'satiety', 'meal', 'hangover', 'inertia', 'afterglow', 'rem'] as const;
 const ALCOHOL = drugs.findIndex((d) => d.id === 'alcohol');
 /** Automatic meals (clock hours, 30 min each), eaten only while awake. */
 export const MEALS = [7.5, 12.5, 19];
@@ -199,6 +199,7 @@ export interface State {
   hangover: number;
   afterglow: number; // post-exercise lift, builds while exercising and fades over a couple of hours
   lastWake: number;
+  lastSleep: number;
   wasAsleep: boolean;
 }
 
@@ -223,6 +224,7 @@ function freshState(): State {
     hangover: 0,
     afterglow: 0,
     lastWake: -10000,
+    lastSleep: -10000,
     wasAsleep: false,
   };
 }
@@ -230,7 +232,7 @@ function freshState(): State {
 function cloneState(s: State): State {
   return {
     level: s.level.slice(), store: s.store.slice(), density: s.density.slice(), stimSlow: s.stimSlow.slice(),
-    plasticity: s.plasticity, gut: s.gut.slice(), c1: s.c1.slice(), c2: s.c2.slice(), ce: s.ce.slice(), tol: s.tol.slice(), conc: s.conc.slice(), enzyme: s.enzyme.slice(), gluSlow: s.gluSlow, grSlow: s.grSlow, htSlow: s.htSlow, satiety: s.satiety, hangover: s.hangover, afterglow: s.afterglow, lastWake: s.lastWake, wasAsleep: s.wasAsleep,
+    plasticity: s.plasticity, gut: s.gut.slice(), c1: s.c1.slice(), c2: s.c2.slice(), ce: s.ce.slice(), tol: s.tol.slice(), conc: s.conc.slice(), enzyme: s.enzyme.slice(), gluSlow: s.gluSlow, grSlow: s.grSlow, htSlow: s.htSlow, satiety: s.satiety, hangover: s.hangover, afterglow: s.afterglow, lastWake: s.lastWake, lastSleep: s.lastSleep, wasAsleep: s.wasAsleep,
   };
 }
 
@@ -280,6 +282,7 @@ interface Scratch {
   blockA2a: number;
   blockM1: number;
   blockH1: number;
+  blockAche: number;
   sensoryLoad: number;
 }
 
@@ -293,7 +296,7 @@ function newScratch(): Scratch {
     tolf: new Float64Array(drugs.length).fill(1),
     inputs: new Float64Array(INPUT_IDS.length),
     states: new Float64Array(STATE_KEYS.length),
-    agonHt2a: 0, blockNmda: 0, agonCb1: 0, agonMu: 0, blockA2a: 0, blockM1: 0, blockH1: 0, sensoryLoad: 0,
+    agonHt2a: 0, blockNmda: 0, agonCb1: 0, agonMu: 0, blockA2a: 0, blockM1: 0, blockH1: 0, blockAche: 0, sensoryLoad: 0,
   };
 }
 
@@ -335,6 +338,7 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   const h = ((t % MIN_PER_DAY) + MIN_PER_DAY) % MIN_PER_DAY / 60;
   const asleep = isAsleep(t, p, ctx.sleepOverrides);
   if (s.wasAsleep && !asleep) s.lastWake = t;
+  if (!s.wasAsleep && asleep) s.lastSleep = t;
   s.wasAsleep = asleep;
   const sinceWake = t - s.lastWake;
   sc.states[0] = asleep ? 1 : 0;
@@ -347,6 +351,11 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   sc.states[4] = Math.max(0, Math.cos((2 * Math.PI * (h - 3)) / 24)) ** 1.5;
   // sleep inertia: grogginess for the first hour after waking
   sc.states[8] = asleep ? 0 : Math.exp(-sinceWake / 40);
+  // dreaming (REM) sleep: ends each ~90-minute sleep cycle, short early in the night and longer towards morning
+  if (asleep) {
+    const since = t - s.lastSleep, k = Math.floor(since / 90), len = Math.min(40, 8 + 8 * k);
+    sc.states[10] = since % 90 >= 90 - len ? 1 : 0;
+  } else sc.states[10] = 0;
 
   // --- inputs ---
   sc.inputs.fill(0);
@@ -405,6 +414,11 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
     if (id === 'cb1') sc.agonCb1 = agon * damp;
     if (id === 'mu') sc.agonMu = agon;
   }
+
+  // acetylcholine breakdown blocked (Alzheimer drugs): in the gut this causes nausea
+  sc.blockAche = 0;
+  for (const e of clrEffs[clrIdx['ache']]) sc.blockAche += occOf(e);
+  sc.blockAche = Math.min(sc.blockAche, 0.97);
 
   // --- nucleus firing ---
   for (let n = 0; n < nuclei.length; n++) {
@@ -560,6 +574,7 @@ function warmState(profile: Profile, cacheKey: string): State {
   ctx.adaptAccel = 1;
   for (; t < 24 * MIN_PER_DAY; t++) step(s, t, ctx, sc);
   s.lastWake -= t; // re-base to t = 0
+  s.lastSleep -= t;
   warmCache[cacheKey] = cloneState(s);
   return s;
 }
@@ -576,8 +591,8 @@ export function seriesKeys(): string[] {
     ...readoutDefs.map((r) => `read:${r.id}`),
     ...INPUT_IDS.map((i) => `input:${i}`),
     'state:asleep', 'state:circadian', 'state:sensory_load',
-    'state:hpa_rhythm', 'state:car', 'state:dark', 'state:satiety', 'state:meal', 'state:hangover', 'state:inertia', 'state:afterglow',
-    'agon:ht2a', 'block:nmda', 'agon:cb1', 'agon:mu', 'block:a2a', 'block:m1', 'block:h1', 'plasticity', 'ei:inhib',
+    'state:hpa_rhythm', 'state:car', 'state:dark', 'state:satiety', 'state:meal', 'state:hangover', 'state:inertia', 'state:afterglow', 'state:rem',
+    'agon:ht2a', 'block:nmda', 'agon:cb1', 'agon:mu', 'block:a2a', 'block:m1', 'block:h1', 'block:ache', 'plasticity', 'ei:inhib',
   ];
 }
 
@@ -624,6 +639,7 @@ export function runSim(cfg: SimConfig): SimResult {
     vals['state:meal'] = sc.states[6];
     vals['state:hangover'] = sc.states[7];
     vals['state:afterglow'] = sc.states[9];
+    vals['state:rem'] = sc.states[10];
     vals['agon:ht2a'] = sc.agonHt2a;
     vals['block:nmda'] = sc.blockNmda;
     vals['agon:cb1'] = sc.agonCb1;
@@ -631,6 +647,7 @@ export function runSim(cfg: SimConfig): SimResult {
     vals['block:a2a'] = sc.blockA2a;
     vals['block:m1'] = sc.blockM1;
     vals['block:h1'] = sc.blockH1;
+    vals['block:ache'] = sc.blockAche;
     // brakes relative to excitement: GABA that merely follows excitation (feedback inhibition) cancels out,
     // extra braking (alcohol, Valium) or missing braking (ketamine) does not
     vals['ei:inhib'] = (0.7 * vals['rec:gabaa'] + 0.3 * vals['rec:gabaa_ex']) / Math.pow(Math.max(0.2, vals['pool:glu']), 1.5);
