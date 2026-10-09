@@ -37,6 +37,12 @@ const plainNames: Record<string, string> = {
   'state:afterglow': 'Exercise afterglow',
   'ei:inhib': 'Brain brakes vs excitement',
   'pool:ach': 'Attention chemical (acetylcholine)',
+  'pool:hist': 'Wake signal (histamine)',
+  'rec:m1': 'Attention receptors (acetylcholine M1)',
+  'rec:h1': 'Wake receptors (histamine H1)',
+  'dens:h1': 'Number of wake receptors (H1)',
+  'block:h1': 'Wake signal blocked (antihistamine)',
+  'block:m1': 'Attention signal blocked (anticholinergic)',
   'pool:glu': 'Brain excitement (glutamate)',
   'pool:gaba': 'Brain brakes (GABA)',
   'store:ht': 'Serotonin reserves',
@@ -83,6 +89,7 @@ const drugPlain: Record<string, string> = {
   mdma: 'MDMA', thc: 'Cannabis (THC)', morphine: 'Opioid painkiller', naloxone: 'Naloxone', ketamine: 'Ketamine',
   psilocybin: 'Psilocybin', melatonin_supp: 'Melatonin pill', propranolol: 'Beta-blocker', guanfacine: 'Guanfacine', haloperidol: 'Antipsychotic',
   heroin: 'Heroin', methamphetamine: 'Meth', lsd: 'LSD', cbd: 'CBD', theanine: 'L-theanine', semaglutide: 'Ozempic',
+  diphenhydramine: 'Sleep aid (antihistamine)', donepezil: 'Donepezil',
 };
 export const drugPlainName = (id: string) => drugPlain[id] ?? id;
 
@@ -102,6 +109,7 @@ export const drugIcon: Record<string, string> = {
   phenelzine: '💊', diazepam: '💊', guanfacine: '💊', haloperidol: '💊', propranolol: '💊', melatonin_supp: '🌙',
   thc: '🌿', mdma: '💜', cocaine: '❄️', morphine: '💉', naloxone: '🚑', ketamine: '⚡', psilocybin: '🍄',
   heroin: '💉', methamphetamine: '🧊', lsd: '🌈', cbd: '🧴', theanine: '🍵', semaglutide: '💉',
+  diphenhydramine: '💤', donepezil: '💊',
 };
 export const inputIcon: Record<string, string> = {
   stress: '😰', exercise: '🏃', sunlight: '☀️', social: '🫂', food: '🍰', sensory: '🔊', pain: '🤕',

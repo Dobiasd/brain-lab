@@ -278,6 +278,8 @@ interface Scratch {
   agonCb1: number;
   agonMu: number;
   blockA2a: number;
+  blockM1: number;
+  blockH1: number;
   sensoryLoad: number;
 }
 
@@ -291,7 +293,7 @@ function newScratch(): Scratch {
     tolf: new Float64Array(drugs.length).fill(1),
     inputs: new Float64Array(INPUT_IDS.length),
     states: new Float64Array(STATE_KEYS.length),
-    agonHt2a: 0, blockNmda: 0, agonCb1: 0, agonMu: 0, blockA2a: 0, sensoryLoad: 0,
+    agonHt2a: 0, blockNmda: 0, agonCb1: 0, agonMu: 0, blockA2a: 0, blockM1: 0, blockH1: 0, sensoryLoad: 0,
   };
 }
 
@@ -369,7 +371,7 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   sc.states[9] = s.afterglow;
 
   // --- receptor signals ---
-  sc.agonHt2a = 0; sc.blockNmda = 0; sc.agonCb1 = 0; sc.agonMu = 0; sc.blockA2a = 0;
+  sc.agonHt2a = 0; sc.blockNmda = 0; sc.agonCb1 = 0; sc.agonMu = 0; sc.blockA2a = 0; sc.blockM1 = 0; sc.blockH1 = 0;
   for (let r = 0; r < receptors.length; r++) {
     const endo = s.level[recPool[r]];
     // acute tolerance weakens the response, not the binding; slow adaptation sees the full drug exposure
@@ -397,6 +399,9 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
     if (id === 'ht2a') sc.agonHt2a = agon;
     if (id === 'nmda') sc.blockNmda = orth;
     if (id === 'a2a') sc.blockA2a = orth;
+    if (id === 'm1') sc.blockM1 = orth;
+    // histamine signal lost to a blocking drug, after the receptor adapted (regular users get more receptors)
+    if (id === 'h1') sc.blockH1 = Math.max(0, 1 - (1 - orth) * Math.max(1, s.density[r]));
     if (id === 'cb1') sc.agonCb1 = agon * damp;
     if (id === 'mu') sc.agonMu = agon;
   }
@@ -462,10 +467,12 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
   if (ctx.adapt) {
     for (let r = 0; r < receptors.length; r++) {
       const rc = receptors[r];
+      // some receptors only adapt to what they get while awake (their transmitter is silent in every sleep)
+      if (rc.adaptAwake && asleep) continue;
       const avgTau = Math.min(rc.adaptTau / 3, 8 * 60);
       s.stimSlow[r] += ((sc.stimRaw[r] - s.stimSlow[r]) / avgTau) * dt;
       if (rc.adaptStrength <= 0) continue;
-      const rel = Math.max(0.05, s.stimSlow[r] / ctx.refs.rec24[r]);
+      const rel = Math.max(0.05, s.stimSlow[r] / (rc.adaptAwake ? ctx.refs.rec[r] : ctx.refs.rec24[r]));
       // some receptors only upregulate (e.g. adenosine receptors under caffeine; chronic sleep loss is not compensated)
       const target = (p.receptors?.[rc.id] ?? 1) * Math.pow(rc.adaptUpOnly ? Math.min(1, rel) : rel, -rc.adaptStrength);
       s.density[r] += ((target - s.density[r]) / rc.adaptTau) * ctx.adaptAccel * dt;
@@ -570,7 +577,7 @@ export function seriesKeys(): string[] {
     ...INPUT_IDS.map((i) => `input:${i}`),
     'state:asleep', 'state:circadian', 'state:sensory_load',
     'state:hpa_rhythm', 'state:car', 'state:dark', 'state:satiety', 'state:meal', 'state:hangover', 'state:inertia', 'state:afterglow',
-    'agon:ht2a', 'block:nmda', 'agon:cb1', 'agon:mu', 'block:a2a', 'plasticity', 'ei:inhib',
+    'agon:ht2a', 'block:nmda', 'agon:cb1', 'agon:mu', 'block:a2a', 'block:m1', 'block:h1', 'plasticity', 'ei:inhib',
   ];
 }
 
@@ -622,6 +629,8 @@ export function runSim(cfg: SimConfig): SimResult {
     vals['agon:cb1'] = sc.agonCb1;
     vals['agon:mu'] = sc.agonMu;
     vals['block:a2a'] = sc.blockA2a;
+    vals['block:m1'] = sc.blockM1;
+    vals['block:h1'] = sc.blockH1;
     // brakes relative to excitement: GABA that merely follows excitation (feedback inhibition) cancels out,
     // extra braking (alcohol, Valium) or missing braking (ketamine) does not
     vals['ei:inhib'] = (0.7 * vals['rec:gabaa'] + 0.3 * vals['rec:gabaa_ex']) / Math.pow(Math.max(0.2, vals['pool:glu']), 1.5);

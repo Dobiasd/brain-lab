@@ -29,6 +29,8 @@ export const palette: PaletteItem[] = [
   { group: 'Medication', key: 'ssri', icon: '💊', label: 'Antidepressant', drug: 'sertraline', amount: 1, hint: 'An SSRI. Takes weeks, so tick "every day".' },
   { group: 'Medication', key: 'valium', icon: '💊', label: 'Valium', drug: 'diazepam', amount: 1, hint: 'Calming medication; lasts days. Never combine with opioids or alcohol.' },
   { group: 'Medication', key: 'melatonin', icon: '🌙', label: 'Melatonin pill', drug: 'melatonin_supp', amount: 1, hint: 'A "night time" signal.' },
+  { group: 'Medication', key: 'sleepaid', icon: '💤', label: 'Sleep aid (antihistamine)', drug: 'diphenhydramine', amount: 1, hint: 'Diphenhydramine, as in ZzzQuil or Vivinox (50 mg). Drowsy, foggy next morning, stops working after a few nights.' },
+  { group: 'Medication', key: 'donepezil', icon: '💊', label: 'Donepezil', drug: 'donepezil', amount: 1, hint: 'Alzheimer medication: more acetylcholine. Builds up over two weeks; does little in a healthy brain.' },
   { group: 'Medication', key: 'ozempic', icon: '💉', label: 'Ozempic', drug: 'semaglutide', amount: 1, hint: 'Weekly injection; reduces appetite. Use 7+ days.' },
   { group: 'Medication', key: 'painkiller', icon: '💉', label: 'Opioid painkiller', drug: 'morphine', amount: 1, hint: 'Morphine / oxycodone. Never combine with alcohol or sedatives.' },
   { group: 'Illegal drugs', key: 'cocaine', icon: '❄️', label: 'Cocaine', drug: 'cocaine', amount: 1, hint: 'Short, intense; blocks dopamine pumps.' },

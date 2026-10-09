@@ -151,6 +151,15 @@ export const scenarios: Scenario[] = [
       doses: [dose('cbd', 0, 9), dose('cbd', 1, 9, 16)] },
     focus: ['read:anxiety', 'read:perception', 'pool:anandamide', 'drug:cbd'] },
 
+  { id: 'sleep_aid', name: 'An antihistamine sleep aid for five nights',
+    story: [
+      'A 50 mg diphenhydramine sleep aid (as in ZzzQuil or Vivinox) at 21:30 for five nights, then none.',
+      'It blocks histamine, the brain\'s wake signal, so you get drowsy, and some is still there the next morning.',
+      'Over a few days the brain makes more histamine receptors, so the pill does less each night.',
+    ],
+    config: { profile: 'typical', days: 7, events: [], doses: daily('diphenhydramine', 0, 5, 21.5) },
+    focus: ['read:sleepiness', 'read:focus', 'drug:diphenhydramine', 'rec:h1', 'dens:h1'] },
+
   { id: 'ozempic', name: 'Ozempic over 6 weeks',
     story: [
       'A weekly semaglutide injection, every Monday morning.',

@@ -156,3 +156,19 @@ describe('cannabis tours tell the model\'s story', () => {
     expect(Math.abs(deltaAt('cbd', 1, 'perception'))).toBeLessThan(1);
   });
 });
+
+describe('sleep aid tour tells the model\'s story', () => {
+  const deltaAt = (stepIdx: number, feeling: string) => {
+    const t = tourById.sleep_aid, s = t.steps[stepIdx];
+    const cfg = scenarioById[t.scenario].config;
+    const main = runSim(cfg), base = runSim(compareConfig(cfg, t.compare)!);
+    const i = indexAt(main.t, (s.day * 24 + s.hour) * 60);
+    return main.series[`read:${feeling}`][i] - base.series[`read:${feeling}`][i];
+  };
+  test('drowsy on the first night, foggy next morning, much less after a few nights', () => {
+    expect(deltaAt(0, 'sleepiness')).toBeGreaterThan(5);
+    expect(deltaAt(1, 'focus')).toBeLessThan(-10);
+    expect(deltaAt(2, 'focus')).toBeGreaterThan(deltaAt(1, 'focus') / 3);
+    expect(deltaAt(3, 'sleepiness')).toBeLessThan(deltaAt(0, 'sleepiness'));
+  });
+});

@@ -3,7 +3,7 @@ import { tourById, tours } from '../sim/tours';
 
 /** Questions grouped by theme, so the home page reads as a few short shelves instead of one wall of cards. */
 const shelves: { id: string; title: string; blurb: string; tours: string[] }[] = [
-  { id: 'everyday', title: 'Everyday life', blurb: 'Coffee, drinks, sleep and a good day.', tours: ['coffee', 'tolerance', 'hangxiety', 'healthy'] },
+  { id: 'everyday', title: 'Everyday life', blurb: 'Coffee, drinks, sleep and a good day.', tours: ['coffee', 'tolerance', 'hangxiety', 'sleep_aid', 'healthy'] },
   { id: 'stress', title: 'Stress and different brains', blurb: 'Why the same day feels different to different people.', tours: ['stress', 'chronic', 'sensory'] },
   { id: 'meds', title: 'Medication', blurb: 'What it changes, and why some take weeks.', tours: ['adhd', 'ssri', 'ketamine', 'ozempic'] },
   { id: 'drugs', title: 'Drugs and cannabis', blurb: 'Highs, dips, tolerance, withdrawal, and what cannabis and CBD do.', tours: ['opioids', 'mdma', 'thc_busy', 'cbd'] },

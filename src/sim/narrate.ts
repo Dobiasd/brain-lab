@@ -43,6 +43,8 @@ const termNoun: Record<string, string> = {
 const fullPhrase: Record<string, string> = {
   'agon:ht2a': 'a psychedelic is acting on serotonin 2A receptors',
   'block:nmda': 'NMDA (learning) receptors are blocked',
+  'block:h1': 'an antihistamine is blocking histamine, the brain\'s wake signal',
+  'block:m1': 'acetylcholine, the attention signal, is blocked',
   'agon:cb1': 'THC is acting on cannabinoid receptors',
   'state:sensory_load': 'the surroundings are overloading your senses',
   'state:hangover': 'you have a hangover',
@@ -88,6 +90,7 @@ const receptorPlain: Record<string, string> = {
   mu: 'opioid receptors', ht1a_auto: 'serotonin "thermostat" receptors', gr: 'cortisol sensors (the stress brake)',
   ht2a: 'serotonin 2A receptors', nachr: 'nicotine receptors', cb1: 'cannabinoid receptors', d2_str: 'dopamine D2 receptors',
   d1_str: 'dopamine D1 receptors', nmda: 'NMDA (glutamate) receptors', nmda_int: 'NMDA receptors on brake neurons',
+  h1: 'histamine (wake) receptors', m1: 'acetylcholine (attention) receptors',
 };
 
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`;

@@ -29,6 +29,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'rec:beta', w: 0.27, label: 'noradrenaline (β)' },
       { key: 'rec:d1_str', w: 0.2, label: 'dopamine (D1)' },
       { key: 'rec:nachr', w: 0.2, label: 'nicotinic ACh' },
+      { key: 'block:h1', w: -1.0, label: 'histamine blocked (antihistamine)', mode: 'abs' },
       { key: 'rec:a1', w: -0.34, label: 'adenosine (A1)' },
       { key: 'rec:a2a', w: -0.3, label: 'adenosine (A2A)' },
       { key: 'ei:inhib', w: -0.47, label: 'brain brakes vs excitement (GABA)' },
@@ -115,6 +116,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'ei:inhib', w: 0.23, label: 'brain brakes vs excitement (GABA)' },
       { key: 'rec:alpha1', w: -0.35, label: 'noradrenaline (α1)' },
       { key: 'rec:nachr', w: -0.11, label: 'nicotinic ACh' },
+      { key: 'block:h1', w: 1.4, label: 'histamine blocked (antihistamine)', mode: 'abs' },
       { key: 'rec:d2_str', w: -0.25, label: 'dopamine (wake-promoting)' },
       { key: 'rec:d2_str', w: -1.2, label: 'dopamine shortfall (exhaustion)', mode: 'neg' },
       { key: 'state:circadian', w: -0.7, label: 'circadian wake drive', mode: 'abs' },
@@ -143,6 +145,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'pool:da_str', w: -0.25, label: 'dopamine surge (stimulants)', mode: 'above', above: 1.3 },
       { key: 'pool:ht', w: -0.2, label: 'serotonin (satiety)' },
       { key: 'rec:nachr', w: -0.66, label: 'nicotine' },
+      { key: 'block:h1', w: 0.2, label: 'histamine blocked (raises appetite)', mode: 'abs' },
       { key: 'input:exercise', w: -0.8, label: 'exercise', mode: 'abs' },
       { key: 'rec:a1', w: 0.22, label: 'sleep loss' },
       { key: 'state:circadian', w: 0.73, label: 'body clock (appetite peaks in the evening)', mode: 'abs' },
@@ -174,6 +177,7 @@ export const readoutDefs: ReadoutDef[] = [
       { key: 'agon:cb1', w: 1.22, label: 'CB1 agonist', mode: 'above', above: 0.1 },
       { key: 'ei:inhib', w: 0.3, label: 'heavy sedation / drunkenness', mode: 'above', above: 1.5 },
       { key: 'pool:ht', w: 0.05, label: 'serotonin flood (MDMA)', mode: 'above', above: 3.5 },
+      { key: 'block:m1', w: 2, label: 'acetylcholine blocked (confusion, hallucinations)', mode: 'above', above: 0.4 },
       { key: 'const', w: -0.6, label: 'offset', mode: 'abs' },
     ] },
 ];
@@ -187,7 +191,7 @@ export type Getter = (key: string) => number;
 export const focusParams = {
   peak: 1.15, width: 0.5, widthHigh: 1.22,
   nicotine: 0.12, sleepy: 1.64, sleepyFrom: 0.2, anxiety: 0.5, anxietyFrom: 55,
-  sensory: 0.25, thc: 0.8, nmda: 0.8, plasticity: 0.4,
+  sensory: 0.25, thc: 0.8, nmda: 0.8, plasticity: 0.4, ach: 0.5,
 };
 export const focusCurve = (c: number) => {
   const f = focusParams;
@@ -221,6 +225,7 @@ export function contributions(id: string, get: Getter): Contribution[] {
       { label: 'THC (impairs working memory)', value: -f.thc * Math.min(1, get('agon:cb1')), key: 'agon:cb1' },
       { label: 'dissociation (NMDA blockade)', value: -f.nmda * Math.min(1, 1.5 * get('block:nmda')), key: 'block:nmda' },
       { label: 'low resilience (chronic stress, depression)', value: -f.plasticity * Math.max(0, 1 - get('plasticity')), key: 'plasticity' },
+      { label: 'acetylcholine blocked (muscarinic)', value: -f.ach * Math.min(1, get('block:m1')), key: 'block:m1' },
       { label: 'asleep', value: -get('state:asleep'), key: 'state:asleep' },
     ];
   }
@@ -250,7 +255,8 @@ export function readout(id: string, get: Getter): number {
       * (1 - f.sensory * Math.min(1, get('state:sensory_load')))
       * (1 - f.thc * Math.min(1, get('agon:cb1')))
       * (1 - f.nmda * Math.min(1, 1.5 * get('block:nmda')))
-      * (1 - f.plasticity * Math.max(0, 1 - get('plasticity')));
+      * (1 - f.plasticity * Math.max(0, 1 - get('plasticity')))
+      * (1 - f.ach * Math.min(1, get('block:m1')));
     return 100 * Math.max(0, Math.min(1, v));
   }
   const def = readoutById[id];

@@ -34,14 +34,14 @@ const ACTIVITIES: Record<string, { input?: InputId; hours: number }> = {
 /** Daily use pattern of regular users (clock hours), for the chronic and withdrawal contexts. */
 const HABITS: Record<string, number[]> = {
   caffeine: [8, 13], nicotine: [8, 9.5, 11, 12.5, 14, 15.5, 17, 18.5, 20, 21.5], alcohol: [19], heroin: [9, 15, 21],
-  morphine: [9, 15, 21], methylphenidate: [8, 12], thc: [17, 21], cocaine: [21], methamphetamine: [9], amphetamine: [9],
+  morphine: [9, 15, 21], methylphenidate: [8, 12], thc: [17, 21], cocaine: [21], methamphetamine: [9], amphetamine: [9], diphenhydramine: [22.5], donepezil: [21],
 };
 const ALIASES: Record<string, string> = { melatonin: 'melatonin_supp', oxycodone: 'morphine', ozempic: 'semaglutide', dexamphetamine: 'amphetamine' };
 export const MEASURES: Record<string, string> = {
   dopamine_striatum: 'pool:da_str', dopamine_pfc: 'pool:da_pfc', noradrenaline: 'pool:ne', serotonin: 'pool:ht',
   acetylcholine: 'pool:ach', glutamate: 'pool:glu', gaba: 'pool:gaba', adenosine: 'pool:adenosine', cortisol: 'pool:cortisol',
   acth: 'pool:acth', melatonin: 'pool:melatonin', oxytocin: 'pool:oxytocin', endorphin: 'pool:endorphin',
-  anandamide: 'pool:anandamide', ghrelin: 'pool:ghrelin', glp1: 'pool:glp1',
+  anandamide: 'pool:anandamide', ghrelin: 'pool:ghrelin', glp1: 'pool:glp1', histamine: 'pool:hist',
 };
 
 /** Effect sizes on the 0–100 scale (the reference tables think of them like VAS points), with some slack. */

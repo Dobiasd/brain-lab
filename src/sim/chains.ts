@@ -36,7 +36,7 @@ const nucleusPlain: Record<string, string> = {
   raphe: 'Serotonin neurons', basal_forebrain: 'Wake-centre neurons', interneurons: 'Brake neurons (GABA)',
   pyramidal: 'Excitatory neurons (glutamate)', pvn: 'Stress neurons (hypothalamus)', pituitary: 'Pituitary gland',
   adrenal: 'Adrenal glands', pineal: 'Night clock (pineal gland)', pomc: 'Endorphin neurons', pvn_oxt: 'Oxytocin neurons',
-  ecb: 'Anandamide production', stomach: 'Stomach', gut_l: 'Gut (GLP-1 cells)',
+  ecb: 'Anandamide production', stomach: 'Stomach', gut_l: 'Gut (GLP-1 cells)', tmn: 'Histamine neurons (wake centre)',
 };
 
 const statePlain: Record<string, { icon: string; up: string; down: string }> = {
@@ -52,7 +52,7 @@ const statePlain: Record<string, { icon: string; up: string; down: string }> = {
 
 const pumpPlain: Record<string, string> = {
   dat: 'dopamine pumps', net: 'noradrenaline pumps', sert: 'serotonin pumps', mao: 'breakdown enzyme (MAO)',
-  comt: 'breakdown enzyme (COMT)', faah: 'breakdown enzyme (FAAH)', gat: 'GABA pumps', eaat: 'glutamate pumps',
+  comt: 'breakdown enzyme (COMT)', faah: 'breakdown enzyme (FAAH)', ache: 'breakdown enzyme (AChE)', hnmt: 'breakdown enzyme (HNMT)', gat: 'GABA pumps', eaat: 'glutamate pumps',
 };
 
 function receptorLabel(key: string) {

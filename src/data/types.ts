@@ -64,6 +64,8 @@ export interface Receptor {
   adaptStrength: number;
   /** only upregulates when under-stimulated, never downregulates */
   adaptUpOnly?: boolean;
+  /** adapts only to the signal while awake (for transmitters that fall silent in every sleep) */
+  adaptAwake?: boolean;
   summary: string;
 }
 
