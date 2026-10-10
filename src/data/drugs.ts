@@ -139,7 +139,7 @@ export const drugs: Drug[] = [
       { target: 'cb1', action: 'nam', ec50: 15, efficacy: 0.6 },
     ],
     summary: 'The non-intoxicating part of cannabis. It does not switch on CB1 like THC; instead it mildly slows the breakdown of the body\'s own anandamide, nudges serotonin 1A receptors and makes CB1 respond less (which is why it can take the edge off a THC high). Effects at typical shop doses are tiny. Calming effects in studies needed about 300–600 mg, and good evidence exists only for certain epilepsies (at even higher doses).',
-    notModelled: 'Its many other weak targets. CB1 damping is seen in cell studies; how much it matters at human doses is debated.' },
+    notModelled: 'Its many other weak targets. CB1 damping is seen in cell studies; how much it matters at human doses is debated. A brain-scan study (one 600 mg dose, 34 men) found CBD raised GABA in non-autistic men but lowered it in autistic men, and lowered glutamate in the prefrontal cortex. Here CBD barely moves GABA or glutamate and does so the same way in every profile.' },
   { id: 'theanine', name: 'L-theanine', category: 'Supplement', standardDose: '200 mg (or ~5 cups of green tea)', tmax: 50, halfLife: 70,
     targets: [
       { target: 'gabaa', action: 'pam', ec50: 2.0, efficacy: 0.3 },
