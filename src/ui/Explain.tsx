@@ -53,6 +53,7 @@ export function Explain({ readoutId, get, getBase, profileId }: { readoutId: str
       <div className="col" style={{ gap: 6 }}>
         <h2>Why is “{def.name}” at {get(`read:${readoutId}`).toFixed(0)}?</h2>
         <p className="small" style={{ color: 'var(--text-secondary)' }}>{def.summary}</p>
+        <p className="muted">Click a feeling under “How it feels right now” to explain a different one.</p>
       </div>
       <div className="contrib" role="table" aria-label="What is pushing this up or down">
         {contrib.map((c) => {
