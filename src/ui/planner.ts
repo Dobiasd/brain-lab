@@ -20,7 +20,6 @@ export interface PaletteItem {
 
 export const palette: PaletteItem[] = [
   { group: 'Everyday', key: 'coffee', icon: '☕', label: 'Coffee', drug: 'caffeine', amount: 1, hint: 'Hides tiredness for a few hours.' },
-  { group: 'Everyday', key: 'tea', icon: '🍵', label: 'L-theanine', drug: 'theanine', amount: 1, hint: 'From tea: maybe slightly calming.' },
   { group: 'Everyday', key: 'wine', icon: '🍷', label: '2 drinks', drug: 'alcohol', amount: 1, hint: 'Relaxes, then rebounds; lighter sleep.' },
   { group: 'Everyday', key: 'cig', icon: '🚬', label: 'Cigarette', drug: 'nicotine', amount: 1, hint: 'A quick dopamine and alertness hit.' },
   { group: 'Everyday', key: 'joint', icon: '🌿', label: 'Joint (THC)', drug: 'thc', amount: 1, hint: 'Cannabis: relaxed, hungry, altered perception.' },
@@ -33,6 +32,9 @@ export const palette: PaletteItem[] = [
   { group: 'Medication', key: 'donepezil', icon: '💊', label: 'Donepezil', drug: 'donepezil', amount: 1, hint: 'Alzheimer medication: more acetylcholine. Builds up over two weeks; does little in a healthy brain.' },
   { group: 'Medication', key: 'ozempic', icon: '💉', label: 'Ozempic', drug: 'semaglutide', amount: 1, hint: 'Weekly injection; reduces appetite. Use 7+ days.' },
   { group: 'Medication', key: 'painkiller', icon: '💉', label: 'Opioid painkiller', drug: 'morphine', amount: 1, hint: 'Morphine / oxycodone. Never combine with alcohol or sedatives.' },
+  { group: 'Supplements', key: 'tea', icon: '🍵', label: 'L-theanine', drug: 'theanine', amount: 1, hint: 'From tea: maybe slightly calming.' },
+  { group: 'Supplements', key: 'sjw', icon: '🌼', label: "St John's wort", drug: 'st_johns_wort', amount: 1, hint: 'Herbal mild antidepressant: one tablet, usually 3 a day. Takes weeks, so tick "every day". Never with antidepressants or MDMA; makes the pill and many medicines weaker.' },
+  { group: 'Supplements', key: 'kava', icon: '🥥', label: 'Kava', drug: 'kava', amount: 1, hint: 'Pacific root drink: mildly calming. Not with alcohol; rare liver damage.' },
   { group: 'Illegal drugs', key: 'cocaine', icon: '❄️', label: 'Cocaine', drug: 'cocaine', amount: 1, hint: 'Short, intense; blocks dopamine pumps.' },
   { group: 'Illegal drugs', key: 'meth', icon: '🧊', label: 'Meth', drug: 'methamphetamine', amount: 1, hint: 'Long, strong dopamine release; drains reserves; strains the heart.' },
   { group: 'Illegal drugs', key: 'mdma', icon: '💜', label: 'MDMA', drug: 'mdma', amount: 1, hint: 'Serotonin and oxytocin flood; mid-week dip.' },

@@ -98,7 +98,7 @@ const drugPlain: Record<string, string> = {
   alcohol: 'Alcohol', diazepam: 'Valium', sertraline: 'Antidepressant (SSRI)', bupropion: 'Bupropion', phenelzine: 'MAO inhibitor',
   mdma: 'MDMA', thc: 'Cannabis (THC)', morphine: 'Opioid painkiller', naloxone: 'Naloxone', ketamine: 'Ketamine',
   psilocybin: 'Psilocybin', melatonin_supp: 'Melatonin pill', propranolol: 'Beta-blocker', guanfacine: 'Guanfacine', haloperidol: 'Antipsychotic',
-  heroin: 'Heroin', methamphetamine: 'Meth', lsd: 'LSD', cbd: 'CBD', theanine: 'L-theanine', semaglutide: 'Ozempic',
+  heroin: 'Heroin', methamphetamine: 'Meth', lsd: 'LSD', cbd: 'CBD', theanine: 'L-theanine', st_johns_wort: "St John's wort", kava: 'Kava', semaglutide: 'Ozempic',
   diphenhydramine: 'Sleep aid (antihistamine)', donepezil: 'Donepezil',
 };
 export const drugPlainName = (id: string) => drugPlain[id] ?? id;
@@ -118,7 +118,7 @@ export const drugIcon: Record<string, string> = {
   caffeine: '☕', alcohol: '🍷', nicotine: '🚬', methylphenidate: '💊', amphetamine: '💊', sertraline: '💊', bupropion: '💊',
   phenelzine: '💊', diazepam: '💊', guanfacine: '💊', haloperidol: '💊', propranolol: '💊', melatonin_supp: '🌙',
   thc: '🌿', mdma: '💜', cocaine: '❄️', morphine: '💉', naloxone: '🚑', ketamine: '⚡', psilocybin: '🍄',
-  heroin: '💉', methamphetamine: '🧊', lsd: '🌈', cbd: '🧴', theanine: '🍵', semaglutide: '💉',
+  heroin: '💉', methamphetamine: '🧊', lsd: '🌈', cbd: '🧴', theanine: '🍵', st_johns_wort: '🌼', kava: '🥥', semaglutide: '💉',
   diphenhydramine: '💤', donepezil: '💊',
 };
 export const inputIcon: Record<string, string> = {

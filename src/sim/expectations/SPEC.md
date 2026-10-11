@@ -77,6 +77,8 @@ Use these with `level` and `daily`. Each is an extracellular or blood level.
 | `psilocybin` | 15–25 mg |
 | `lsd` | 100 µg |
 | `theanine` | 200 mg |
+| `st_johns_wort` | 300 mg extract (one tablet; regular users take 3 a day) |
+| `kava` | a typical dose (about 120–250 mg kavalactones) |
 | `melatonin` | 0.5–1 mg |
 | `propranolol` | 40 mg |
 | `guanfacine` | 1 mg immediate release |

@@ -1,0 +1,95 @@
+[
+ {
+  "kind": "effect",
+  "what": "st_johns_wort",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "depression",
+  "when_h": 4,
+  "feeling": "mood",
+  "direction": "up",
+  "size": "small",
+  "confidence": "medium",
+  "why": "Standardised St John's wort extracts beat placebo in mild to moderate depression after several weeks, about as much as standard antidepressants.",
+  "source": "Linde et al. 2008 Cochrane Database Syst Rev CD000448; Ng et al. 2017 J Affect Disord 210:211"
+ },
+ {
+  "kind": "rank",
+  "feeling": "mood",
+  "bigger": { "what": "st_johns_wort", "amount": 1, "context": "chronic", "profile": "depression" },
+  "smaller": { "what": "st_johns_wort", "amount": 1, "context": "quiet", "profile": "depression", "when_h": 4 },
+  "confidence": "medium",
+  "why": "As with other antidepressants, the mood benefit builds over weeks; a single dose does little.",
+  "source": "Linde et al. 2008 Cochrane Database Syst Rev CD000448"
+ },
+ {
+  "kind": "effect",
+  "what": "st_johns_wort",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 4,
+  "feeling": "mood",
+  "direction": "none",
+  "confidence": "low",
+  "why": "One dose of St John's wort has no noticeable mood effect in healthy people.",
+  "source": "Schmidt et al. 2000 Pharmacopsychiatry 33:47 (single-dose EEG/psychometric study)"
+ },
+ {
+  "kind": "level",
+  "what": "st_johns_wort",
+  "amount": 1,
+  "context": "chronic",
+  "profile": "typical",
+  "measure": "serotonin",
+  "fold": [1.1, 3],
+  "confidence": "low",
+  "why": "Hyperforin raises extracellular serotonin in animal microdialysis; human brain data are lacking.",
+  "source": "Kaehler et al. 1999 Neurosci Lett 262:199; Müller 2003 Pharmacol Res 47:101"
+ },
+ {
+  "kind": "effect",
+  "what": "kava",
+  "amount": 1,
+  "context": "stress",
+  "profile": "typical",
+  "when_h": 1,
+  "feeling": "anxiety",
+  "direction": "down",
+  "size": "small",
+  "confidence": "low",
+  "why": "Older trials found kava extract eased anxiety, but a large 2020 trial in generalised anxiety found no benefit over placebo.",
+  "source": "Pittler & Ernst 2003 Cochrane Database Syst Rev CD003383; Sarris et al. 2020 J Clin Psychopharmacol 40:13"
+ },
+ {
+  "kind": "rank",
+  "feeling": "anxiety",
+  "bigger": { "what": "diazepam", "amount": 1, "context": "stress", "profile": "typical", "when_h": 1 },
+  "smaller": { "what": "kava", "amount": 1, "context": "stress", "profile": "typical", "when_h": 1 },
+  "confidence": "medium",
+  "why": "Benzodiazepines reliably dampen acute anxiety; kava's effect is small and inconsistent.",
+  "source": "Baldwin et al. 2014 J Psychopharmacol 28:403; Sarris et al. 2020 J Clin Psychopharmacol 40:13"
+ },
+ {
+  "kind": "rank",
+  "feeling": "sleepiness",
+  "bigger": { "what": "diazepam", "amount": 1, "context": "quiet", "profile": "typical", "when_h": 1.5 },
+  "smaller": { "what": "kava", "amount": 1, "context": "quiet", "profile": "typical", "when_h": 1.5 },
+  "confidence": "medium",
+  "why": "At usual doses kava causes little drowsiness compared with a benzodiazepine.",
+  "source": "Sarris et al. 2012 Hum Psychopharmacol 27:262; Saletu et al. 1989 Hum Psychopharmacol 4:169"
+ },
+ {
+  "kind": "effect",
+  "what": "kava",
+  "amount": 1,
+  "context": "quiet",
+  "profile": "typical",
+  "when_h": 1.5,
+  "feeling": "focus",
+  "direction": "none",
+  "confidence": "low",
+  "why": "In controlled studies, usual doses of kava did not noticeably impair attention or memory.",
+  "source": "Sarris et al. 2012 Hum Psychopharmacol 27:262; LaPorte et al. 2011 Phytomedicine 18:1080"
+ }
+]

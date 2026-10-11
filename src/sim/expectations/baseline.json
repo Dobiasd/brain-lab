@@ -47,6 +47,10 @@
   "pass": 32,
   "of": 40
  },
+ "supplements.json": {
+  "pass": 7,
+  "of": 8
+ },
  "timecourse.json": {
   "pass": 42,
   "of": 54

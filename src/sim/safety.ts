@@ -6,7 +6,7 @@ export interface Warning { level: 'danger' | 'caution'; title: string; text: str
 
 const OPIOIDS = ['morphine', 'heroin'];
 const SEDATIVES = ['alcohol', 'diazepam'];
-const SEROTONERGIC = ['sertraline', 'phenelzine'];
+const SEROTONERGIC = ['sertraline', 'phenelzine', 'st_johns_wort'];
 const STIMULANTS = ['cocaine', 'methamphetamine', 'amphetamine', 'mdma', 'methylphenidate'];
 
 /** Is drug b in the body while drug a is (doses within `window` minutes of each other)? */
@@ -35,6 +35,12 @@ export function planWarnings(cfg: SimConfig): Warning[] {
   }
   if (overlap(cfg, ['mdma'], SEROTONERGIC, 3 * 1440) || overlap(cfg, ['phenelzine'], STIMULANTS, 14 * 1440)) w.push({ level: 'danger', title: 'Dangerous interaction',
     text: 'MDMA with antidepressants, and any stimulant with an MAO inhibitor, can cause serotonin syndrome or a hypertensive crisis: fever, agitation, seizures. This is a medical emergency.' });
+  if (overlap(cfg, ['st_johns_wort'], ['sertraline', 'phenelzine'], 3 * 1440)) w.push({ level: 'danger', title: "St John's wort + antidepressant",
+    text: 'Both raise serotonin, and together they can cause serotonin syndrome: agitation, sweating, fever, muscle twitching. Never combine them, and ask a doctor before switching from one to the other.' });
+  if (cfg.doses.some((d) => d.drug === 'st_johns_wort')) w.push({ level: 'caution', title: "St John's wort and other medicines",
+    text: 'It makes the liver break down many medicines faster, so the contraceptive pill, blood thinners, HIV and transplant drugs can stop working. Tell your doctor and pharmacist you take it.' });
+  if (overlap(cfg, ['kava'], SEDATIVES, 12 * 60)) w.push({ level: 'caution', title: 'Kava + alcohol or sedatives',
+    text: 'The calming effects add up, and alcohol may add to kava\'s strain on the liver. Do not drive.' });
   if (overlap(cfg, ['cocaine'], ['alcohol'], 6 * 60)) w.push({ level: 'caution', title: 'Cocaine + alcohol',
     text: 'Together they form cocaethylene, which strains the heart more than either drug alone.' });
   const daily = (drug: string) => cfg.doses.filter((d) => d.drug === drug).length >= 7;

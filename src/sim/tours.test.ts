@@ -11,6 +11,7 @@ import { narrate } from './narrate';
 import { profilesFor, traceFeeling } from './chains';
 import { scenarioById } from './scenarios';
 import { tourById, tours } from './tours';
+import { planWarnings } from './safety';
 
 const keys = new Set(seriesKeys());
 
@@ -196,5 +197,16 @@ describe('shareable links', () => {
     expect(hashFor('home', 'coffee')).toBe('');
     expect(parseHash('').view).toBe('home');
     expect(parseHash('#no-such-thing').view).toBe('home');
+  });
+});
+
+describe('supplement warnings', () => {
+  const plan = (drugs: string[]) => ({ ...scenarioById[tours[0].scenario].config, doses: drugs.map((drug, i) => ({ drug, at: 600 + i * 60, amount: 1 })) });
+  test("St John's wort with an antidepressant or MDMA is flagged as dangerous", () => {
+    for (const other of ['sertraline', 'mdma']) expect(planWarnings(plan(['st_johns_wort', other])).some((w) => w.level === 'danger'), other).toBe(true);
+    expect(planWarnings(plan(['st_johns_wort'])).some((w) => w.level === 'danger')).toBe(false);
+  });
+  test('kava with alcohol gets a caution', () => {
+    expect(planWarnings(plan(['kava', 'alcohol'])).some((w) => w.title.startsWith('Kava'))).toBe(true);
   });
 });
