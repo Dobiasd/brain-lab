@@ -39,8 +39,8 @@ function HeroArt() {
   );
 }
 
-export function Home({ onTour, onPlayground, onChemicals }: {
-  onTour: (id: string) => void; onPlayground: () => void; onChemicals: () => void;
+export function Home({ onTour, onPlayground, onChemicals, onAreas }: {
+  onTour: (id: string) => void; onPlayground: () => void; onChemicals: () => void; onAreas: () => void;
 }) {
   return (
     <div className="col home" style={{ gap: 28 }}>
@@ -94,6 +94,13 @@ export function Home({ onTour, onPlayground, onChemicals }: {
             <span className="muted">Dopamine, serotonin, cortisol and friends: who they are and common myths.</span>
           </span>
         </button>
+        <button className="card action" onClick={onAreas}>
+          <span className="qicon" aria-hidden>🧭🔥📚</span>
+          <span className="col" style={{ gap: 4, textAlign: 'left' }}>
+            <b>Meet the brain areas</b>
+            <span className="muted">The planner, the smoke detector, the memory maker: what each part does.</span>
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -110,7 +117,7 @@ export function Chemicals({ onTour }: { onTour: (id: string) => void }) {
       </section>
       <div className="chargrid">
         {characters.map((c) => (
-          <article key={c.id} className="card charcard">
+          <article key={c.id} id={`chem-${c.id}`} tabIndex={-1} className="card charcard">
             <div className="row" style={{ alignItems: 'center', flexWrap: 'nowrap' }}>
               <span className="qicon" aria-hidden style={{ flex: '0 0 auto' }}>{c.icon}</span>
               <div className="col" style={{ gap: 0, flex: '1 1 auto' }}>
@@ -124,6 +131,12 @@ export function Chemicals({ onTour }: { onTour: (id: string) => void }) {
               <div><b>▲ More with</b><ul>{c.boostedBy.map((x) => <li key={x}>{x}</li>)}</ul></div>
               <div><b>▼ Less with</b><ul>{c.loweredBy.map((x) => <li key={x}>{x}</li>)}</ul></div>
             </div>
+            {c.locks && (
+              <div className="small">
+                <b>Its locks (receptors):</b>
+                <ul className="locks">{c.locks.map((l) => <li key={l.name}><b>{l.name}</b>: {l.text}</li>)}</ul>
+              </div>
+            )}
             {c.myth && (
               <div className="myth small">
                 <span><b>Myth:</b> {c.myth.myth}</span>

@@ -84,20 +84,22 @@ const labelOffset: Record<string, [number, number, 'start' | 'middle' | 'end']> 
   cerebellum: [0, 4, 'middle'], adrenal: [28, 5, 'start'], gut: [26, 5, 'start'],
 };
 
-export function BrainMap({ get, selected = null, onSelect, asleep, highlight, plainLabels }: {
+export function BrainMap({ get, selected = null, onSelect, asleep, highlight, plainLabels, caption }: {
   get: Get; selected?: string | null; onSelect?: (regionId: string) => void; asleep: boolean;
   /** Regions to point at; others are dimmed. */
   highlight?: string[];
   plainLabels?: boolean;
+  /** fixed description instead of the live "most changed" summary */
+  caption?: string;
 }) {
   const hasHi = !!highlight && highlight.length > 0;
   // a text summary for screen readers (and anyone who can't tell red from blue)
   const changed = regions.filter((r) => regionKeys(r.id).length)
     .map((r) => ({ r, a: regionActivity(r.id, get) })).filter((x) => Math.abs(x.a) > 0.15)
     .sort((x, y) => Math.abs(y.a) - Math.abs(x.a)).slice(0, 5);
-  const summary = changed.length
+  const summary = caption ?? (changed.length
     ? `Most changed: ${changed.map((x) => `${(plainLabels && plainShort[x.r.id]) || x.r.name} ${x.a > 0 ? 'more active' : 'less active'}`).join(', ')}.`
-    : 'No brain area is much more or less active than usual.';
+    : 'No brain area is much more or less active than usual.');
   // on narrow screens only these keep their label
   const important = new Set([...(highlight ?? []), ...changed.slice(0, 4).map((x) => x.r.id), 'pfc', 'cortex', 'striatum']);
   return (

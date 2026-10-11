@@ -2,10 +2,10 @@
 // e.g. daiw.de/brain/#coffee opens the coffee tour and #day opens "Your day".
 import { tourById } from '../sim/tours';
 
-export type View = 'home' | 'tour' | 'day' | 'chemicals' | 'glossary' | 'graph';
+export type View = 'home' | 'tour' | 'day' | 'chemicals' | 'areas' | 'glossary' | 'graph';
 
 /** Pages with their own address (the question list is the bare address). */
-export const pageViews: View[] = ['day', 'chemicals', 'glossary', 'graph'];
+export const pageViews: View[] = ['day', 'chemicals', 'areas', 'glossary', 'graph'];
 
 export function parseHash(hash: string): { view: View; tourId?: string } {
   const id = decodeURIComponent(hash.replace(/^#\/?/, '')).trim();

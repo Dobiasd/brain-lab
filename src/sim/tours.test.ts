@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest';
-import { regionById } from '../data/anatomy';
+import { regionById, regions } from '../data/anatomy';
+import { areaById, areas } from '../data/areas';
 import { characters } from '../data/characters';
 import { profileById } from '../data/profiles';
 import { compareConfig, indexAt } from '../ui/compare';
@@ -27,6 +28,16 @@ describe('tours', () => {
       }
     }
     for (const c of characters) if (c.tour) expect(tourById[c.tour], c.id).toBeDefined();
+  });
+
+  test('every brain area on the map has a card, with real chemicals and tours', () => {
+    for (const r of regions) expect(areaById[r.id], r.id).toBeDefined();
+    const chars = new Set(characters.map((c) => c.id));
+    for (const a of areas) {
+      expect(regionById[a.id], a.id).toBeDefined();
+      for (const c of a.chemicals) expect(chars.has(c), `${a.id}: ${c}`).toBe(true);
+      if (a.tour) expect(tourById[a.tour], a.id).toBeDefined();
+    }
   });
 });
 

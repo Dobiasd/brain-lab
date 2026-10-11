@@ -8,6 +8,7 @@ import { getterAt } from './sim/engine';
 import { scenarioById } from './sim/scenarios';
 import { tourById } from './sim/tours';
 import { BrainMap, chemLegend } from './ui/BrainMap';
+import { Areas, jumpTo } from './ui/Areas';
 import { Charts } from './ui/Charts';
 import { compareConfig, type CompareMode } from './ui/compare';
 import { compareLabels, ScenarioPanel, SetupPanel } from './ui/Controls';
@@ -99,10 +100,11 @@ export default function App() {
     setView('day');
   };
 
-  const nav: { v: View; label: string }[] = [
+  const nav: { v: View; label: string; short?: string }[] = [
     { v: 'home', label: 'Questions' },
     { v: 'day', label: 'Your day' },
-    { v: 'chemicals', label: 'Meet the chemicals' },
+    { v: 'chemicals', label: 'Meet the chemicals', short: 'Chemicals' },
+    { v: 'areas', label: 'Brain areas' },
     { v: 'glossary', label: 'Glossary' },
     ...(science ? [{ v: 'graph' as View, label: 'Connections map' }] : []),
   ];
@@ -114,7 +116,9 @@ export default function App() {
         <nav className="tabs" aria-label="Sections">
           {nav.map((n) => (
             <button key={n.v} className={view === n.v || (view === 'tour' && n.v === 'home') ? 'on' : ''} onClick={() => setView(n.v)}
-              aria-current={view === n.v || (view === 'tour' && n.v === 'home') ? 'page' : undefined}>{n.label}</button>
+              aria-current={view === n.v || (view === 'tour' && n.v === 'home') ? 'page' : undefined}>
+              {n.short ? <><span className="tab-long">{n.label}</span><span className="tab-short">{n.short}</span></> : n.label}
+            </button>
           ))}
         </nav>
         <label className="toggle" title="Show receptors, densities, the full controls and the connections map">
@@ -123,7 +127,7 @@ export default function App() {
       </header>
 
       <main ref={mainRef} tabIndex={-1} className="col" style={{ gap: 16, outline: 'none' }}>
-      {view === 'home' && <Home onTour={openTour} onPlayground={() => setView('day')} onChemicals={() => setView('chemicals')} />}
+      {view === 'home' && <Home onTour={openTour} onPlayground={() => setView('day')} onChemicals={() => setView('chemicals')} onAreas={() => setView('areas')} />}
       {view === 'tour' && <Story key={tourId} tour={tourById[tourId]} onExit={() => setView('home')} onTryIt={tryTour} onTour={openTour} />}
       {view === 'day' && (
         <Playground science={science} cfg={cfg} setCfg={(c) => { setCfg(c); setScenarioId('custom'); }}
@@ -135,6 +139,7 @@ export default function App() {
           }} />
       )}
       {view === 'chemicals' && <Chemicals onTour={openTour} />}
+      {view === 'areas' && <Areas onTour={openTour} onChemical={(id) => { setView('chemicals'); setTimeout(() => jumpTo(`chem-${id}`), 0); }} />}
       {view === 'graph' && <GraphView />}
       {view === 'glossary' && (
         <div className="card">
