@@ -152,7 +152,9 @@ export const receptors: Receptor[] = [
   { id: 'glp1r', name: 'GLP-1 receptor', pool: 'glp1', region: 'hypothalamus', role: 'post', adaptTau: 14 * D, adaptStrength: 0.1,
     summary: 'Fullness receptor in the hypothalamus and brainstem, also on reward neurons. Semaglutide (Ozempic) activates it for days, so appetite and food "wanting" drop. The nausea fades with time; the appetite effect mostly stays.' },
   { id: 'cb1', name: 'CB1 cannabinoid receptor', pool: 'anandamide', region: 'hippocampus', role: 'post', adaptTau: 3 * D, adaptStrength: 0.6,
-    summary: 'The most abundant G-protein receptor in the brain. Turns down transmitter release on GABA and glutamate terminals. THC is a partial agonist.' },
+    summary: 'The most abundant G-protein receptor in the brain. Turns down transmitter release on GABA and glutamate terminals. THC is a partial agonist. This entry stands for the many CB1 receptors on GABA terminals: higher doses lift the GABA brake.' },
+  { id: 'cb1_glu', name: 'CB1 on glutamate terminals', pool: 'anandamide', region: 'amygdala', role: 'post', adaptTau: 3 * D, adaptStrength: 0.6,
+    summary: 'The smaller share of CB1 receptors, on glutamate terminals. They respond to lower cannabinoid levels and turn down excitation. In mice, the calming effect of low cannabinoid doses runs through these, while the anxiety at high doses needs CB1 on GABA terminals.' },
 ];
 
 // Firing rules: firing = base * exp(Σ w·(x − 1)) for receptor/pool refs, and
@@ -233,6 +235,7 @@ export const nuclei: (Nucleus & { base?: number })[] = [
     { ref: 'receptor:alpha1', w: 0.2, note: 'noradrenergic arousal' },
     { ref: 'receptor:a1', w: -0.3, note: 'adenosine inhibition' },
     { ref: 'receptor:nachr', w: 0.15, note: 'cholinergic excitation' },
+    { ref: 'receptor:cb1_glu', w: -0.07, note: 'cannabinoids reduce glutamate release' },
     { ref: 'input:sensory', w: 0.3, note: 'sensory input (scaled by sensory gain)' },
     { ref: 'state:asleep', w: -0.3, note: 'lower in sleep' },
   ] },

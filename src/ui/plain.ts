@@ -72,6 +72,7 @@ const plainNames: Record<string, string> = {
   'rec:mu': 'Opioid receptors',
   'rec:oxtr': 'Oxytocin receptors',
   'rec:cb1': 'Cannabinoid receptors (CB1)',
+  'rec:cb1_glu': 'Cannabinoid receptors on glutamate inputs',
   'rec:nmda': 'Learning receptors (NMDA)',
   'rec:nmda_int': 'Brake-neuron NMDA receptors',
   'rec:d1_str': 'Reward receptors (dopamine D1)',

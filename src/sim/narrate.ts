@@ -23,6 +23,7 @@ const termNoun: Record<string, string> = {
   'state:asleep': 'sleep',
   'rec:mu': 'opioid signalling (endorphins)',
   'rec:cb1': 'cannabinoid signalling',
+  'rec:cb1_glu': 'cannabinoid calming of excitation',
   'pool:crh': 'the stress alarm (CRH)',
   'rec:nmda': 'brain excitement (glutamate)',
   'rec:ht2a': 'serotonin 2A signalling',
@@ -89,7 +90,7 @@ function describe(key: string, higher: boolean, get: Get): string {
 const receptorPlain: Record<string, string> = {
   a2a: 'caffeine-target (A2A) receptors', a1: 'tiredness (A1) receptors', gabaa: 'calming GABA-A receptors',
   mu: 'opioid receptors', ht1a_auto: 'serotonin "thermostat" receptors', gr: 'cortisol sensors (the stress brake)',
-  ht2a: 'serotonin 2A receptors', nachr: 'nicotine receptors', cb1: 'cannabinoid receptors', d2_str: 'dopamine D2 receptors',
+  ht2a: 'serotonin 2A receptors', nachr: 'nicotine receptors', cb1: 'cannabinoid receptors', cb1_glu: 'cannabinoid receptors on glutamate inputs', d2_str: 'dopamine D2 receptors',
   d1_str: 'dopamine D1 receptors', nmda: 'NMDA (glutamate) receptors', nmda_int: 'NMDA receptors on brake neurons',
   h1: 'histamine (wake) receptors', m1: 'acetylcholine (attention) receptors',
 };
