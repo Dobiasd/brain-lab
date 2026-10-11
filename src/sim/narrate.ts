@@ -1,5 +1,5 @@
 // Turns the model state at one moment into a few plain-language sentences.
-import { pools, receptors } from '../data/chemistry';
+import { nuclei, pools, receptors } from '../data/chemistry';
 import { drugs } from '../data/drugs';
 import type { Drug } from '../data/types';
 import { feelingById, drugPlainName } from '../ui/plain';
@@ -25,6 +25,9 @@ const termNoun: Record<string, string> = {
   'rec:cb1': 'cannabinoid signalling',
   'rec:cb1_glu': 'cannabinoid calming of excitation',
   'pool:crh': 'the stress alarm (CRH)',
+  'fire:bla': 'activity in the fear centre (amygdala)',
+  'rec:gabaa_amy': 'the GABA brake on the fear centre (amygdala)',
+  'rec:gabaa_ex_amy': 'the background GABA brake on the fear centre (amygdala)',
   'rec:nmda': 'brain excitement (glutamate)',
   'rec:ht2a': 'serotonin 2A signalling',
   'rec:ht1a_post': 'calming serotonin signalling',
@@ -70,10 +73,11 @@ const midSentence = (id: string) => {
 function drugCause(key: string, higher: boolean, get: Get): string | null {
   if (!key.startsWith('rec:')) return null;
   const rec = key.slice(4);
+  const same = receptors.find((r) => r.id === rec)?.drugsFrom;
   for (const d of drugs) {
     if (get(`drug:${d.id}`) < 0.05) continue;
     for (const t of d.targets) {
-      if (t.target !== rec) continue;
+      if (t.target !== rec && t.target !== same) continue;
       if (!higher && t.action === 'nam') return `${midSentence(d.id)} is dampening ${termNoun[key].replace(/,$/, '')}`;
       if (!higher && t.action === 'antagonist') return `${midSentence(d.id)} is blocking ${termNoun[key].replace(/,$/, '')}`;
       if (higher && (t.action === 'agonist' || t.action === 'pam')) return `${midSentence(d.id)} is boosting ${termNoun[key].replace(/,$/, '')}`;
@@ -92,6 +96,7 @@ const receptorPlain: Record<string, string> = {
   mu: 'opioid receptors', ht1a_auto: 'serotonin "thermostat" receptors', gr: 'cortisol sensors (the stress brake)',
   ht2a: 'serotonin 2A receptors', nachr: 'nicotine receptors', cb1: 'cannabinoid receptors', cb1_glu: 'cannabinoid receptors on glutamate inputs', d2_str: 'dopamine D2 receptors',
   d1_str: 'dopamine D1 receptors', nmda: 'NMDA (glutamate) receptors', nmda_int: 'NMDA receptors on brake neurons',
+  gabaa_amy: 'calming GABA-A receptors in the fear centre', gabaa_ex_amy: 'background GABA-A receptors in the fear centre',
   h1: 'histamine (wake) receptors', m1: 'acetylcholine (attention) receptors',
 };
 
@@ -201,6 +206,34 @@ function isHigher(key: string, get: Get, getBase: Get | null) {
 }
 
 /** The term whose change (vs the comparison) pushed this readout the most in the observed direction. */
+/** Why the amygdala's alarm cells are more (or less) active: its strongest input, in words. */
+function fearCentreCause(get: Get, getBase: Get, sign: number): string | null {
+  const n = nuclei.find((x) => x.id === 'bla')!;
+  const terms = n.modulators.filter((m) => !m.ref.startsWith('state:')).map((m) => {
+    const [mk, mid] = m.ref.split(':');
+    const k = mk === 'receptor' ? `rec:${mid}` : `${mk}:${mid}`;
+    const xa = Math.max(0.05, get(k)), xb = Math.max(0.05, getBase(k));
+    return { k, v: m.form === 'log' ? m.w * Math.log(xa / xb) : m.w * (xa - xb) };
+  });
+  const best = terms.filter((t) => t.v * sign > 0.01).sort((x, y) => y.v * sign - x.v * sign)[0];
+  if (!best) return null;
+  const up = get(best.k) > getBase(best.k);
+  const where = 'the fear centre (amygdala)';
+  if (best.k.startsWith('rec:gabaa')) {
+    const drug = drugCause(best.k, up, get);
+    if (drug && up) return `${drug.split(' is ')[0]} is strengthening the GABA brake on ${where}`;
+    if (!up && get('agon:cb1') > 0.3) return `THC is weakening the GABA brake on ${where}`;
+    return `the GABA brake on ${where} is ${up ? 'stronger' : 'weaker'}`;
+  }
+  if (best.k === 'rec:cb1_glu') {
+    const drug = drugCause(best.k, up, get);
+    if (drug) return `${drug.split(' is ')[0]} is turning ${up ? 'down' : 'up'} the input to ${where}`;
+    return up ? `the body's own cannabinoids are turning down the input to ${where}` : `less cannabinoid calming of the input to ${where}`;
+  }
+  if (best.k === 'pool:glu') return `${up ? 'more' : 'less'} excitement from the senses and cortex reaches ${where}`;
+  return null;
+}
+
 function mainDriver(id: string, get: Get, getBase: Get, sign: number): string | null {
   const a = contributions(id, (k) => (k === 'const' ? 1 : get(k)));
   const b = contributions(id, (k) => (k === 'const' ? 1 : getBase(k)));
@@ -226,5 +259,6 @@ function mainDriver(id: string, get: Get, getBase: Get, sign: number): string | 
     if (id === 'focus' && now > then && now > 1.7) return 'dopamine and noradrenaline in the planning brain went past their sweet spot';
     return `${termNoun[key]} ${now > then ? 'moved toward' : 'moved away from'} their sweet spot`;
   }
+  if (key === 'fire:bla') return fearCentreCause(get, getBase, sign) ?? describe(key, isHigher(key, get, getBase), get);
   return describe(key, isHigher(key, get, getBase), get);
 }

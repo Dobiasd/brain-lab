@@ -140,7 +140,7 @@ const MAO = clrIdx['mao'];
 const MAO_STORE = 2;
 const poolHasMao = pools.map((p) => p.clearance.some((c) => c.by === 'mao'));
 
-type ModRef = { kind: 'rec' | 'pool' | 'input' | 'state'; idx: number; key: string; w: number; log?: boolean; above?: number };
+type ModRef = { kind: 'rec' | 'pool' | 'input' | 'state' | 'agon'; idx: number; key: string; w: number; log?: boolean; above?: number };
 const STATE_KEYS = ['asleep', 'circadian', 'hpa_rhythm', 'car', 'dark', 'satiety', 'meal', 'hangover', 'inertia', 'afterglow', 'rem'] as const;
 const ALCOHOL = drugs.findIndex((d) => d.id === 'alcohol');
 /** Automatic meals (clock hours, 30 min each), eaten only while awake. */
@@ -154,6 +154,7 @@ const nucMods: ModRef[][] = nuclei.map((n) =>
     if (kind === 'receptor') return { kind: 'rec', idx: recIdx[id], key: id, w: m.w, log: m.form === 'log' };
     if (kind === 'pool') return { kind: 'pool', idx: poolIdx[id], key: id, w: m.w, log: m.form === 'log' };
     if (kind === 'input') return { kind: 'input', idx: INPUT_IDS.indexOf(id as InputId), key: id, w: m.w, above: m.above };
+    if (kind === 'agon') { if (id !== 'cb1') throw new Error(`agon:${id} not available to firing rules`); return { kind: 'agon', idx: 0, key: id, w: m.w, above: m.above }; }
     return { kind: 'state', idx: STATE_KEYS.indexOf(id as (typeof STATE_KEYS)[number]), key: id, w: m.w };
   }),
 );
@@ -171,7 +172,10 @@ drugs.forEach((d, di) => {
     const e: Eff = { id: allEffs.length, drug: di, action: t.action, ec50: t.ec50, hill: d.hill ?? 1, eff: t.efficacy ?? (t.action === 'releaser' ? 4 : 1), endo: t.endogenous ?? 1,
       irr: t.irreversible ? { kinact: t.irreversible.inactivation, ksyn: Math.LN2 / t.irreversible.recovery } : undefined };
     allEffs.push(e);
-    if (t.target in recIdx) recEffs[recIdx[t.target]].push(e);
+    if (t.target in recIdx) {
+      recEffs[recIdx[t.target]].push(e);
+      receptors.forEach((r, ri) => { if (r.drugsFrom === t.target) recEffs[ri].push(e); });
+    }
     else if (t.target in clrIdx) clrEffs[clrIdx[t.target]].push(e);
     else if (t.target in poolIdx) poolEffs[poolIdx[t.target]].push(e);
     else throw new Error(`Unknown target ${t.target} for drug ${d.id}`);
@@ -427,7 +431,8 @@ function step(s: State, t: number, ctx: Ctx, sc: Scratch) {
       if (m.kind === 'rec' || m.kind === 'pool') {
         const x = m.kind === 'rec' ? sc.signal[m.idx] / ctx.refs.rec[m.idx] : s.level[m.idx] / ctx.refs.pool[m.idx];
         z += m.w * (m.log ? Math.log(Math.max(0.05, x)) : Math.min(x, 6) - 1);
-      } else if (m.kind === 'input') z += m.w * (m.above != null ? Math.max(0, sc.inputs[m.idx] - m.above) : sc.inputs[m.idx]);
+      } else if (m.kind === 'agon') z += m.w * Math.max(0, sc.agonCb1 - (m.above ?? 0));
+      else if (m.kind === 'input') z += m.w * (m.above != null ? Math.max(0, sc.inputs[m.idx] - m.above) : sc.inputs[m.idx]);
       else z += m.w * sc.states[m.idx];
     }
     const base = (nuclei[n].base ?? 1) * (p.firing?.[nuclei[n].id] ?? 1);

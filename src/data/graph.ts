@@ -56,7 +56,7 @@ export function buildGraph() {
     for (const m of n.modulators) {
       const [kind, id] = m.ref.split(':');
       const sign = m.w > 0 ? 1 : -1;
-      if (kind === 'receptor') add({ source: `receptor:${id}`, target: `region:${n.region}`, label: sign > 0 ? 'excites' : 'inhibits', sign });
+      if (kind === 'receptor' || kind === 'agon') add({ source: `receptor:${id}`, target: `region:${n.region}`, label: sign > 0 ? 'excites' : 'inhibits', sign });
       if (kind === 'pool') add({ source: `chemical:${poolChem[id]}`, target: `region:${n.region}`, label: sign > 0 ? 'excites' : 'inhibits', sign });
     }
   }
@@ -64,6 +64,7 @@ export function buildGraph() {
     for (const t of d.targets) {
       const target = recIds.has(t.target) ? `receptor:${t.target}` : clrIds.has(t.target) ? `clearer:${t.target}` : `chemical:${poolChem[t.target]}`;
       add({ source: `drug:${d.id}`, target, label: actionLabel[t.action] });
+      for (const r of receptors) if (r.drugsFrom === t.target) add({ source: `drug:${d.id}`, target: `receptor:${r.id}`, label: actionLabel[t.action] });
     }
   }
   return { nodes, edges };

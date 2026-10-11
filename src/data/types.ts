@@ -66,17 +66,19 @@ export interface Receptor {
   adaptUpOnly?: boolean;
   /** adapts only to the signal while awake (for transmitters that fall silent in every sleep) */
   adaptAwake?: boolean;
+  /** the same receptor type in another region: drugs that act on that receptor act on this one too */
+  drugsFrom?: string;
   summary: string;
 }
 
 /** A term in a log-linear firing rule: firing = base * exp(sum w * (x - 1)). */
 export interface Modulator {
-  /** 'receptor:<id>' | 'input:<id>' | 'pool:<id>' | 'state:<id>' */
+  /** 'receptor:<id>' | 'input:<id>' | 'pool:<id>' | 'state:<id>' | 'agon:cb1' (drug-driven CB1 activation, 0..1) */
   ref: string;
   w: number;
   /** 'log': firing scales as x^w (a power law, used for hormone cascades); default: exp(w·(x−1)). Receptor/pool refs only. */
   form?: 'log';
-  /** input refs only: count only the part of the input above this level (an effort threshold) */
+  /** input and agon refs only: count only the part above this level (a threshold) */
   above?: number;
   note: string;
 }

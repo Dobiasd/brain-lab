@@ -36,7 +36,7 @@ const nucleusPlain: Record<string, string> = {
   raphe: 'Serotonin neurons', basal_forebrain: 'Wake-centre neurons', interneurons: 'Brake neurons (GABA)',
   pyramidal: 'Excitatory neurons (glutamate)', pvn: 'Stress neurons (hypothalamus)', pituitary: 'Pituitary gland',
   adrenal: 'Adrenal glands', pineal: 'Night clock (pineal gland)', pomc: 'Endorphin neurons', pvn_oxt: 'Oxytocin neurons',
-  ecb: 'Anandamide production', stomach: 'Stomach', gut_l: 'Gut (GLP-1 cells)', tmn: 'Histamine neurons (wake centre)',
+  bla: 'Fear centre neurons (amygdala)', bla_int: 'Fear centre brake neurons (GABA)', ecb: 'Anandamide production', stomach: 'Stomach', gut_l: 'Gut (GLP-1 cells)', tmn: 'Histamine neurons (wake centre)',
 };
 
 const statePlain: Record<string, { icon: string; up: string; down: string }> = {
@@ -226,7 +226,7 @@ export function traceFeeling(feelingId: string, a: Get, b: Get, profileA: Profil
         const c = a(`drug:${dd.id}`);
         if (c < 0.03) continue;
         for (const t of dd.targets) {
-          if (t.target !== id) continue;
+          if (t.target !== id && t.target !== rc.drugsFrom) continue;
           const o = occ(c, t.ec50, dd.hill);
           const fits = up ? t.action === 'agonist' || t.action === 'pam' : t.action === 'antagonist' || t.action === 'nam';
           if (fits && o > 0.05 && (!best || o > best.o)) {
