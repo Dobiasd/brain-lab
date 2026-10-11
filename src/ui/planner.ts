@@ -52,6 +52,9 @@ export const palette: PaletteItem[] = [
   { group: 'Activities', key: 'busy', icon: '🔊', label: 'Busy place (2 h)', input: 'sensory', hours: 2, intensity: 1, hint: 'Noise, light, crowds.' },
   { group: 'Activities', key: 'pain', icon: '🤕', label: 'Pain (2 h)', input: 'pain', hours: 2, intensity: 1, hint: 'An injury or headache.' },
 ];
+/** The lengths offered for a placed activity (minutes), including its current one. */
+export const durationOptions = (current: number) => Array.from(new Set([15, 30, 60, 120, 180, current])).sort((a, b) => a - b);
+export const durationLabel = (m: number) => (m < 60 ? `${m} min` : `${+(m / 60).toFixed(2)} h`);
 /** The dose sizes the planner offers for a drug. */
 export const doseOptions = (d: Drug) => d.doseOptions ?? [
   { amount: 0.5, label: 'half dose' }, { amount: 1, label: `usual (${d.standardDose})` }, { amount: 2, label: 'double dose' },
@@ -128,9 +131,13 @@ export function usePlanner(cfg: SimConfig, setCfg: (c: SimConfig) => void) {
   const setAmount = (index: number, amount: number) =>
     setCfg({ ...cfg, doses: cfg.doses.map((x, i) => (i === index ? { ...x, amount } : x)) });
 
+  /** change how long a placed activity lasts (minutes) */
+  const setDuration = (index: number, duration: number) =>
+    setCfg({ ...cfg, events: cfg.events.map((x, i) => (i === index ? { ...x, duration } : x)) });
+
   const meals = cfg.meals ?? defaultMeals(cfg.days);
 
-  return { cfg, meals, armed, setArmed, everyDay, setEveryDay, sel, setSel, place, remove, shift, setAmount };
+  return { cfg, meals, armed, setArmed, everyDay, setEveryDay, sel, setSel, place, remove, shift, setAmount, setDuration };
 }
 
 export type Planner = ReturnType<typeof usePlanner>;

@@ -4,7 +4,7 @@ import { inputById } from '../data/profiles';
 import { doseLevel, type SimConfig, type SimResult } from '../sim/engine';
 import { fmtTime } from './labels';
 import { drugIcon, drugPlainName, inputIcon } from './plain';
-import { doseLabel, doseOptions, palette, paletteByKey, snap, type Planner } from './planner';
+import { doseLabel, doseOptions, durationLabel, durationOptions, palette, paletteByKey, snap, type Planner } from './planner';
 
 type Kind = 'dose' | 'event' | 'meal';
 type Drag = { kind: Kind; index: number; startX: number; dx: number; width: number };
@@ -169,7 +169,19 @@ export function Timeline({ main, cursor, onCursor, planner }: {
             ? <span>🍲 <b>Meal</b> · {fmtTime(selItem.at)}</span>
             : sel.kind === 'dose'
             ? <span>{drugIcon[(selItem as SimConfig['doses'][number]).drug]} <b>{drugPlainName((selItem as SimConfig['doses'][number]).drug)}</b> · {doseLabel(drugById[(selItem as SimConfig['doses'][number]).drug], (selItem as SimConfig['doses'][number]).amount)} · {fmtTime(selItem.at)}</span>
-            : <span>{inputIcon[(selItem as SimConfig['events'][number]).input]} <b>{inputById[(selItem as SimConfig['events'][number]).input].name}</b> · {fmtTime(selItem.at)}</span>}
+            : <span>{inputIcon[(selItem as SimConfig['events'][number]).input]} <b>{inputById[(selItem as SimConfig['events'][number]).input].name}</b> · {fmtTime(selItem.at)}–{fmtTime(selItem.at + (selItem as SimConfig['events'][number]).duration, false)}</span>}
+          {sel.kind === 'event' && (() => {
+            const ev = selItem as SimConfig['events'][number];
+            return (
+              <span className="row dose-pick len-pick" role="group" aria-label="How long">
+                {durationOptions(ev.duration).map((m) => (
+                  <button key={m} className={`btn${m === ev.duration ? ' primary' : ''}`} aria-pressed={m === ev.duration} onClick={() => planner.setDuration(sel.index, m)}>
+                    {durationLabel(m)}
+                  </button>
+                ))}
+              </span>
+            );
+          })()}
           {sel.kind === 'dose' && (() => {
             const dz = selItem as SimConfig['doses'][number];
             return (
