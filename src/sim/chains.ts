@@ -3,7 +3,7 @@
 // At every step it follows the factor that explains most of the difference.
 import { nucleusById, poolById, receptorById } from '../data/chemistry';
 import { drugs } from '../data/drugs';
-import { inputById, profileById } from '../data/profiles';
+import { inputById, profileFor } from '../data/profiles';
 import type { Profile } from '../data/types';
 import { applyPersonality } from '../data/personality';
 import { contributions, readout } from './readouts';
@@ -373,5 +373,5 @@ export function traceFeeling(feelingId: string, a: Get, b: Get, profileA: Profil
 /** Convenience: the effective profiles for a config and its comparison. */
 export function profilesFor(profileId: string, personality: Parameters<typeof applyPersonality>[1], compareProfileId: string,
   comparePersonality: Parameters<typeof applyPersonality>[1]): [Profile, Profile] {
-  return [applyPersonality(profileById[profileId], personality), applyPersonality(profileById[compareProfileId], comparePersonality)];
+  return [applyPersonality(profileFor(profileId), personality), applyPersonality(profileFor(compareProfileId), comparePersonality)];
 }

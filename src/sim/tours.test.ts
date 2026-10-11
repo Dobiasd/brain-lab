@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 import { regionById, regions } from '../data/anatomy';
 import { areaById, areas } from '../data/areas';
 import { characters } from '../data/characters';
-import { profileById } from '../data/profiles';
+import { profileById, profileFor, profileIdFor } from '../data/profiles';
 import { compareConfig, indexAt } from '../ui/compare';
 import { feelingById, plainLabel } from '../ui/plain';
 import { seriesInfo } from '../ui/labels';
@@ -208,5 +208,26 @@ describe('supplement warnings', () => {
   });
   test('kava with alcohol gets a caution', () => {
     expect(planWarnings(plan(['kava', 'alcohol'])).some((w) => w.title.startsWith('Kava'))).toBe(true);
+  });
+});
+
+describe('combined brains', () => {
+  test('single profiles are unchanged and combinations stack', () => {
+    expect(profileFor('adhd')).toBe(profileById.adhd);
+    expect(profileFor('typical')).toBe(profileById.typical);
+    expect(profileIdFor(['autism', 'adhd'])).toBe('adhd+autism');
+    expect(profileIdFor([])).toBe('typical');
+    const c = profileFor('autism+adhd');
+    expect(c.firing).toMatchObject({ vta: 0.8, lc: 0.75, pyramidal: 1.12 });
+    expect(c.sensoryGain).toBe(1.8);
+    expect(c.clearers).toMatchObject({ dat: 1.4 });
+    expect(profileFor('anxiety+autism').firing?.bla_int).toBeCloseTo(0.9 * 0.82);
+    // background stress is not counted twice
+    expect(profileFor('depression+chronic_stress').inputs?.stress).toBe(0.5);
+  });
+  test('a combined brain runs and stays finite', () => {
+    const r = runSim({ profile: 'adhd+autism+sleep_deprived', days: 2, doses: [], events: [] });
+    const g = getterAt(r, r.t.length - 1);
+    for (const k of ['read:anxiety', 'read:focus', 'read:sleepiness']) expect(Number.isFinite(g(k)), k).toBe(true);
   });
 });

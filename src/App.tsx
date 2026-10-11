@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { regionById } from './data/anatomy';
 import { glossary } from './data/glossary';
 import { regionKeys } from './data/graph';
-import { profileById, profiles } from './data/profiles';
+import { ProfilePicker } from './ui/ProfilePicker';
 import type { SimConfig } from './sim/engine';
 import { getterAt } from './sim/engine';
 import { scenarioById } from './sim/scenarios';
@@ -205,7 +205,6 @@ function Playground({ science, cfg, setCfg, compare, setCompare, chartKeys, setC
     if (!p && compare === 'avgpers') setCompare('plain');
   };
   const baseWords = compareWords[compare] || 'a typical day with nothing added';
-  const profile = profileById[cfg.profile];
 
   // start at an interesting moment (shortly after the first thing that happens),
   // but keep the clock where it is when only details change
@@ -309,12 +308,8 @@ function Playground({ science, cfg, setCfg, compare, setCompare, chartKeys, setC
         <Warnings items={planWarnings(cfg)} />
         <DayPlanner cfg={cfg} setCfg={setCfg} planner={planner} />
         <div className="card">
-          <div className="row" style={{ alignItems: 'end' }}>
-            <label className="field" style={{ flex: '1 1 200px' }}>Whose brain?
-              <select value={cfg.profile} onChange={(e) => setCfg({ ...cfg, profile: e.target.value })}>
-                {profiles.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
-              </select>
-            </label>
+          <ProfilePicker value={cfg.profile} onChange={(id) => setCfg({ ...cfg, profile: id })} />
+          <div className="row" style={{ alignItems: 'end', marginTop: 10 }}>
             <label className="field" style={{ flex: '1 1 200px' }}>Compare with (dashed line)
               <select value={compare} onChange={(e) => setCompare(e.target.value as CompareMode)}>
                 <option value="plain">a day with nothing added</option>
@@ -325,7 +320,6 @@ function Playground({ science, cfg, setCfg, compare, setCompare, chartKeys, setC
               </select>
             </label>
           </div>
-          {cfg.profile !== 'typical' && <p className="small" style={{ color: 'var(--text-secondary)' }}><span className="badge">evidence: {profile.evidence}</span> {profile.summary}</p>}
           <PersonalityPanel value={cfg.personality} onChange={setPersonality} />
         </div>
         <div className="card sticky-time">{timeline}</div>

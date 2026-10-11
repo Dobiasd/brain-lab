@@ -4,7 +4,7 @@
 
 import { nuclei, pools, receptors } from '../data/chemistry';
 import { drugById, drugs } from '../data/drugs';
-import { profileById } from '../data/profiles';
+import { profileById, profileFor } from '../data/profiles';
 import type { Action, Drug, InputId, Personality, Profile } from '../data/types';
 import { applyPersonality } from '../data/personality';
 import { readout, readoutDefs } from './readouts';
@@ -603,7 +603,7 @@ export function seriesKeys(): string[] {
 
 export function runSim(cfg: SimConfig): SimResult {
   const refs = typicalRefs();
-  const profile = applyPersonality(profileById[cfg.profile], cfg.personality);
+  const profile = applyPersonality(profileFor(cfg.profile), cfg.personality);
   const pers = Object.entries(cfg.personality ?? {}).filter(([, v]) => v).sort(([a], [b]) => a.localeCompare(b));
   const s = warmState(profile, JSON.stringify([cfg.profile, pers]));
   const dens0 = s.density.slice();

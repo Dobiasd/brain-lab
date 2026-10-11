@@ -1,4 +1,4 @@
-import type { InputDef, Profile } from './types';
+import type { Evidence, InputDef, InputId, Profile } from './types';
 
 export const inputs: InputDef[] = [
   { id: 'stress', name: 'Psychological stress', summary: 'A deadline, conflict or threat. Drives the HPA axis (CRH → ACTH → cortisol) and the locus coeruleus.' },
@@ -35,3 +35,56 @@ export const profiles: Profile[] = [
 
 export const profileById = Object.fromEntries(profiles.map((p) => [p.id, p]));
 export const inputById = Object.fromEntries(inputs.map((i) => [i.id, i]));
+
+// Combined brains, e.g. "adhd+autism": the individual changes are stacked as if independent.
+const EVIDENCE_ORDER: Evidence[] = ['strong', 'moderate', 'mixed', 'contested'];
+export const COMBINATION_NOTE = 'Combinations simply add up the individual changes, as if they were independent. How conditions interact in the brain is not well researched.';
+
+/** The single profiles in a (possibly combined) id, in list order; typical is dropped. */
+export function profileParts(id: string): string[] {
+  const set = new Set(id.split('+'));
+  return profiles.filter((p) => p.id !== 'typical' && set.has(p.id)).map((p) => p.id);
+}
+/** The id for a set of single profiles ('typical' when empty). */
+export const profileIdFor = (ids: string[]) => profileParts(ids.join('+')).join('+') || 'typical';
+
+function mulMaps(a?: Record<string, number>, b?: Record<string, number>) {
+  if (!a || !b) return a ?? b;
+  const out = { ...a };
+  for (const [k, v] of Object.entries(b)) out[k] = (out[k] ?? 1) * v;
+  return out;
+}
+
+const combined = new Map<string, Profile>();
+/** A profile by id, including combinations such as "adhd+autism". */
+export function profileFor(id: string): Profile {
+  const parts = profileParts(id);
+  if (parts.length === 0) return profileById.typical;
+  if (parts.length === 1) return profileById[parts[0]];
+  const key = parts.join('+');
+  const hit = combined.get(key);
+  if (hit) return hit;
+  const ps = parts.map((p) => profileById[p]);
+  const p: Profile = {
+    id: key,
+    name: ps.map((x) => x.name).join(' + '),
+    evidence: EVIDENCE_ORDER[Math.max(...ps.map((x) => EVIDENCE_ORDER.indexOf(x.evidence)))],
+    summary: COMBINATION_NOTE,
+  };
+  for (const x of ps) {
+    p.firing = mulMaps(p.firing, x.firing);
+    p.clearers = mulMaps(p.clearers, x.clearers);
+    p.receptors = mulMaps(p.receptors, x.receptors);
+    p.inputGain = mulMaps(p.inputGain, x.inputGain) as Profile['inputGain'];
+    // background inputs describe the same thing (e.g. ongoing stress), so the larger one wins rather than counting it twice
+    if (x.inputs) {
+      p.inputs = { ...p.inputs };
+      for (const [k, v] of Object.entries(x.inputs) as [InputId, number][]) p.inputs[k] = Math.max(p.inputs[k] ?? 0, v);
+    }
+    if (x.sleep) p.sleep = x.sleep;
+    if (x.plasticity != null) p.plasticity = (p.plasticity ?? 1) * x.plasticity;
+    if (x.sensoryGain != null) p.sensoryGain = (p.sensoryGain ?? 1) * x.sensoryGain;
+  }
+  combined.set(key, p);
+  return p;
+}

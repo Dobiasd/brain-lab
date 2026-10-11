@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { drugById, drugs } from '../data/drugs';
-import { inputById, inputs, profileById, profiles } from '../data/profiles';
+import { inputById, inputs, profileFor } from '../data/profiles';
+import { ProfilePicker } from './ProfilePicker';
 import type { InputId } from '../data/types';
 import type { SimConfig } from '../sim/engine';
 import { scenarioById, scenarios } from '../sim/scenarios';
@@ -54,7 +55,6 @@ export function ScenarioPanel({ scenarioId, onScenario }: { scenarioId: string; 
 export function SetupPanel({ cfg, setCfg, compare, setCompare }: {
   cfg: SimConfig; setCfg: (c: SimConfig) => void; compare: CompareMode; setCompare: (m: CompareMode) => void;
 }) {
-  const p = profileById[cfg.profile];
   const [drug, setDrug] = useState('caffeine');
   const [amount, setAmount] = useState(1);
   const [dDay, setDDay] = useState(0);
@@ -78,14 +78,7 @@ export function SetupPanel({ cfg, setCfg, compare, setCompare }: {
   return (
     <div className="card">
       <h2>Brain & setup</h2>
-      <label className="field">Profile
-        <select value={cfg.profile} onChange={(e) => setCfg({ ...cfg, profile: e.target.value })}>
-          {profiles.map((pr) => <option key={pr.id} value={pr.id}>{pr.name}</option>)}
-        </select>
-      </label>
-      <p className="small" style={{ color: 'var(--text-secondary)' }}>
-        <span className="badge">evidence: {p.evidence}</span> {p.summary}
-      </p>
+      <ProfilePicker value={cfg.profile} onChange={(id) => setCfg({ ...cfg, profile: id })} label="Profile" />
       <div className="row">
         <label className="field">Length
           <select value={cfg.days} onChange={(e) => setCfg({ ...cfg, days: +e.target.value })}>
@@ -200,7 +193,7 @@ function DoseList({ cfg, setCfg }: { cfg: SimConfig; setCfg: (c: SimConfig) => v
 }
 
 function SleepEditor({ cfg, setCfg }: { cfg: SimConfig; setCfg: (c: SimConfig) => void }) {
-  const p = profileById[cfg.profile];
+  const p = profileFor(cfg.profile);
   const def = p.sleep ?? { bed: 23, wake: 31 };
   const [night, setNight] = useState(0);
   const [bed, setBed] = useState(23);

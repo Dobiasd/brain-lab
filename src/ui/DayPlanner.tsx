@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { drugById } from '../data/drugs';
-import { profileById } from '../data/profiles';
+import { profileFor } from '../data/profiles';
 import { defaultMeals, type SimConfig } from '../sim/engine';
 import { drugPlainName } from './plain';
 import { hhmm, palette, paletteByKey, paletteGroups, type Planner } from './planner';
@@ -18,7 +18,7 @@ export function DayPlanner({ cfg, setCfg, planner }: { cfg: SimConfig; setCfg: (
   const [addDay, setAddDay] = useState(0);
   const [addMin, setAddMin] = useState(8 * 60);
   const { armed, setArmed, everyDay, setEveryDay } = planner;
-  const profile = profileById[cfg.profile];
+  const profile = profileFor(cfg.profile);
   const days = cfg.days;
   const setDays = (d: number) => setCfg({ ...cfg, days: d, doses: cfg.doses.filter((x) => x.at < d * 1440), events: cfg.events.filter((x) => x.at < d * 1440), sleepOverrides: cfg.sleepOverrides?.filter((o) => o.night < d),
     meals: cfg.meals && [...cfg.meals.filter((x) => x < d * 1440), ...defaultMeals(d).filter((x) => x >= cfg.days * 1440)] });

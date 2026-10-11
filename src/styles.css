@@ -613,3 +613,4 @@ select, input[type='number'], input[type='text'] { border-radius: 10px; padding:
   .tabs { flex-wrap: wrap; border-radius: 18px; max-width: 100%; }
   .tabs button { padding: 6px 10px; }
 }
+.field-label { font-size: 12px; color: var(--text-secondary); }
