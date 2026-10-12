@@ -115,6 +115,26 @@ export function Chemicals({ onTour }: { onTour: (id: string) => void }) {
           Your brain runs on dozens of chemical messengers. These {characters.length} do most of the work you can feel.
         </p>
       </section>
+      <section className="card lockintro" aria-labelledby="lockintro-h">
+        <h2 id="lockintro-h">How locks work</h2>
+        <p className="small" style={{ margin: 0 }}>
+          A chemical messenger is a key. It only has an effect where a cell has a matching lock, called a <b>receptor</b>.
+        </p>
+        <div className="lockintro-grid small">
+          <div><b>🔑 One key, many locks.</b> Most messengers fit several kinds of lock, and these can do opposite things.
+            Serotonin calms cells through its 5-HT1A lock and excites them through 5-HT2A, the lock psychedelics use.</div>
+          <div><b>💊 How drugs use locks.</b> Some copy the key (morphine at the opioid lock, nicotine at the nicotinic lock).
+            Some jam the lock so the real key can't get in (caffeine at the adenosine lock). Some make the lock respond more
+            strongly to its own key (Valium and alcohol at GABA-A). Others leave the locks alone and change how much key is
+            around, like SSRIs, which slow the recycling of serotonin.</div>
+          <div><b>📉 Tolerance.</b> When a lock is pushed hard every day, cells remove some of those locks or make them less
+            responsive, so the same dose does less. When a lock is blocked every day, cells add more. That is one reason for
+            the tiredness when a coffee drinker skips their coffee.</div>
+          <div><b>🌡️ The cell's own "enough" signal.</b> Some locks sit on the cell that releases the messenger
+            (autoreceptors). When a lot of messenger is around, they tell the cell to release less. This brake is one reason
+            antidepressants take weeks to work.</div>
+        </div>
+      </section>
       <div className="chargrid">
         {characters.map((c) => (
           <article key={c.id} id={`chem-${c.id}`} tabIndex={-1} className="card charcard">
