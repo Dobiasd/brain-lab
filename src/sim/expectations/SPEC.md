@@ -83,6 +83,7 @@ Use these with `level` and `daily`. Each is an extracellular or blood level.
 | `propranolol` | 40 mg |
 | `guanfacine` | 1 mg immediate release |
 | `haloperidol` | 2 mg |
+| `quetiapine` | 25 mg immediate release (a low, sleep-type dose). Higher doses are multiples: amount 4 = 100 mg, 12 = 300 mg, 24 = 600 mg |
 | `semaglutide` | weekly injection, maintenance dose |
 
 Combinations are written `a+b`, for example `heroin+alcohol`.

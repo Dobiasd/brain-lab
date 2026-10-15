@@ -97,7 +97,7 @@ const drugPlain: Record<string, string> = {
   caffeine: 'Caffeine', methylphenidate: 'Ritalin', amphetamine: 'Amphetamine', cocaine: 'Cocaine', nicotine: 'Nicotine',
   alcohol: 'Alcohol', diazepam: 'Valium', sertraline: 'Antidepressant (SSRI)', bupropion: 'Bupropion', phenelzine: 'MAO inhibitor',
   mdma: 'MDMA', thc: 'Cannabis (THC)', morphine: 'Opioid painkiller', naloxone: 'Naloxone', ketamine: 'Ketamine',
-  psilocybin: 'Psilocybin', melatonin_supp: 'Melatonin pill', propranolol: 'Beta-blocker', guanfacine: 'Guanfacine', haloperidol: 'Antipsychotic',
+  psilocybin: 'Psilocybin', melatonin_supp: 'Melatonin pill', propranolol: 'Beta-blocker', guanfacine: 'Guanfacine', haloperidol: 'Haloperidol', quetiapine: 'Quetiapine',
   heroin: 'Heroin', methamphetamine: 'Meth', lsd: 'LSD', cbd: 'CBD', theanine: 'L-theanine', st_johns_wort: "St John's wort", kava: 'Kava', semaglutide: 'Ozempic',
   diphenhydramine: 'Sleep aid (antihistamine)', donepezil: 'Donepezil',
 };
@@ -116,7 +116,7 @@ export function plainLabel(key: string): string {
 // Icons for the day planner and lists.
 export const drugIcon: Record<string, string> = {
   caffeine: '☕', alcohol: '🍷', nicotine: '🚬', methylphenidate: '💊', amphetamine: '💊', sertraline: '💊', bupropion: '💊',
-  phenelzine: '💊', diazepam: '💊', guanfacine: '💊', haloperidol: '💊', propranolol: '💊', melatonin_supp: '🌙',
+  phenelzine: '💊', diazepam: '💊', guanfacine: '💊', haloperidol: '💊', quetiapine: '💊', propranolol: '💊', melatonin_supp: '🌙',
   thc: '🌿', mdma: '💜', cocaine: '❄️', morphine: '💉', naloxone: '🚑', ketamine: '⚡', psilocybin: '🍄',
   heroin: '💉', methamphetamine: '🧊', lsd: '🌈', cbd: '🧴', theanine: '🍵', st_johns_wort: '🌼', kava: '🥥', semaglutide: '💉',
   diphenhydramine: '💤', donepezil: '💊',

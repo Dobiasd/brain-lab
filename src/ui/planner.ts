@@ -31,6 +31,8 @@ export const palette: PaletteItem[] = [
   { group: 'Medication', key: 'sleepaid', icon: '💤', label: 'Sleep aid (antihistamine)', drug: 'diphenhydramine', amount: 1, hint: 'Diphenhydramine, as in ZzzQuil or Vivinox (50 mg). Drowsy, foggy next morning, stops working after a few nights.' },
   { group: 'Medication', key: 'donepezil', icon: '💊', label: 'Donepezil', drug: 'donepezil', amount: 1, hint: 'Alzheimer medication: more acetylcholine. Builds up over two weeks; does little in a healthy brain.' },
   { group: 'Medication', key: 'ozempic', icon: '💉', label: 'Ozempic', drug: 'semaglutide', amount: 1, hint: 'Weekly injection; reduces appetite. Use 7+ days.' },
+  { group: 'Medication', key: 'quetiapine', icon: '💊', label: 'Quetiapine', drug: 'quetiapine', amount: 1, hint: 'Antipsychotic (Seroquel). At 25 mg mostly a strong sleeping antihistamine; click it on the timeline for the higher doses that block dopamine.' },
+  { group: 'Medication', key: 'haloperidol', icon: '💊', label: 'Haloperidol', drug: 'haloperidol', amount: 1, hint: 'Older antipsychotic (2 mg): blocks dopamine D2 receptors. Blunts drive and pleasure.' },
   { group: 'Medication', key: 'painkiller', icon: '💉', label: 'Opioid painkiller', drug: 'morphine', amount: 1, hint: 'Morphine / oxycodone. Never combine with alcohol or sedatives.' },
   { group: 'Supplements', key: 'tea', icon: '🍵', label: 'L-theanine', drug: 'theanine', amount: 1, hint: 'From tea: maybe slightly calming.' },
   { group: 'Supplements', key: 'sjw', icon: '🌼', label: "St John's wort", drug: 'st_johns_wort', amount: 1, hint: 'Herbal mild antidepressant: one tablet, usually 3 a day. Takes weeks, so tick "every day". Never with antidepressants or MDMA; makes the pill and many medicines weaker.' },

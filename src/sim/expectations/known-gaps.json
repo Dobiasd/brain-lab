@@ -34,5 +34,13 @@
   {
     "match": "caffeine×1 [typical] sleepiness timecourse",
     "reason": "See caffeine arousal time course: rising adenosine during the day makes the model's caffeine effect last too long."
+  },
+  {
+    "match": "quetiapine×12 [chronic, typical] hunger",
+    "reason": "Quetiapine's weight gain is thought to come from H1 and 5-HT2C blockade plus metabolic effects. The model has no 5-HT2C receptor and no metabolism, so appetite does not rise."
+  },
+  {
+    "match": "quetiapine×12 [chronic, depression] mood",
+    "reason": "The antidepressant effect in bipolar depression is attributed to the metabolite norquetiapine (NET blockade, 5-HT1A partial agonism) and 5-HT2A blockade. Only part of this is modelled, and not enough to lift mood."
   }
 ]

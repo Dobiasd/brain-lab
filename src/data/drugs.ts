@@ -204,6 +204,18 @@ export const drugs: Drug[] = [
       { target: 'd2_auto', action: 'antagonist', ec50: 0.6 },
     ],
     summary: 'D2 antagonist. Calms psychosis, but blunts motivation and pleasure, and blocking the D2 autoreceptor makes dopamine neurons fire *more*. Chronic use upregulates D2.' },
+  { id: 'quetiapine', name: 'Quetiapine (Seroquel)', category: 'Antipsychotic', standardDose: '25 mg', tmax: 1.5 * H, halfLife: 7 * H, effectDelay: 30,
+    doseOptions: [{ amount: 1, label: '25 mg (low, sleep-type dose)' }, { amount: 4, label: '100 mg' }, { amount: 12, label: '300 mg (depression dose)' }, { amount: 24, label: '600 mg (psychosis dose)' }],
+    targets: [
+      { target: 'h1', action: 'antagonist', ec50: 0.5, note: 'very strong at the histamine lock: most of it is blocked even at 25 mg' },
+      { target: 'alpha1', action: 'antagonist', ec50: 2, note: 'also strong; causes dizziness on standing up' },
+      { target: 'ht2a', action: 'antagonist', ec50: 10, note: 'PET: roughly 40–75% occupied at 150–600 mg' },
+      { target: 'd2_str', action: 'antagonist', ec50: 16, note: 'PET: about 60% occupied 2–3 h after 400–600 mg, falling to ~20% by 12 h (it lets go of D2 quickly)' },
+      { target: 'd2_auto', action: 'antagonist', ec50: 16 },
+      { target: 'net', action: 'reuptake_inhibitor', ec50: 22, note: 'via its metabolite norquetiapine; PET: ~20% occupied at 150 mg, ~35% at 300 mg' },
+    ],
+    summary: 'One of the most prescribed newer antipsychotics, also used for bipolar disorder and, as an add-on, for depression. What it does depends strongly on the dose. At 25–50 mg, often given off-label for sleep, it mainly blocks the histamine wake signal, like a strong sleeping antihistamine. Only at several hundred milligrams does it block enough dopamine D2 receptors to act against psychosis, and it lets go of them quickly, so it causes fewer movement side effects than haloperidol. Weight gain and next-morning grogginess are common.',
+    notModelled: 'Psychosis and bipolar disorder themselves (the model has no profile for them), which is what the higher doses are for. Also left out: its metabolite\'s action on serotonin 5-HT1A receptors, its weaker effects on acetylcholine and other receptors, blood sugar and cholesterol changes, and low blood pressure. The model does not show its well-known weight gain (it lacks the 5-HT2C lock and the metabolic effects behind it), and it does not reproduce its modest antidepressant effect in bipolar depression. Using it for sleep is debated: guidelines advise against it because of its side effects.' },
 ];
 
 export const drugById = Object.fromEntries(drugs.map((d) => [d.id, d]));

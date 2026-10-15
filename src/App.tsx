@@ -151,6 +151,8 @@ export default function App() {
             <h3>How does this simulation work?</h3>
             <p>Each brain area has a firing rate that goes up or down depending on the signals it receives. Each chemical is released by its source area and cleared away by pumps and enzymes. Drugs are absorbed, peak and are cleared at their real-world pace, and act on specific receptors, pumps or stores.</p>
             <p>The key ingredient is <b>adaptation</b>: receptors slowly add or remove themselves when they are over- or under-stimulated for hours to weeks. Tolerance, withdrawal, the SSRI delay and the post-MDMA dip are not scripted. They emerge from that one rule.</p>
+            <h3>What is left out on purpose?</h3>
+            <p>A drug only goes into the simulation when its main actions are reasonably well understood, because otherwise modelling it would mean guessing. The best-known example is <b>lithium</b>: it is one of the most effective treatments for bipolar disorder and protects against suicide, but after more than 70 years of use it is still not known which of its many actions inside nerve cells explains the benefit. Its effects also build up over weeks inside the cells rather than through the messengers and locks this model is made of.</p>
           </div>
         </div>
       )}

@@ -41,6 +41,8 @@ export function planWarnings(cfg: SimConfig): Warning[] {
     text: 'It makes the liver break down many medicines faster, so the contraceptive pill, blood thinners, HIV and transplant drugs can stop working. Tell your doctor and pharmacist you take it.' });
   if (overlap(cfg, ['kava'], SEDATIVES, 12 * 60)) w.push({ level: 'caution', title: 'Kava + alcohol or sedatives',
     text: 'The calming effects add up, and alcohol may add to kava\'s strain on the liver. Do not drive.' });
+  if (overlap(cfg, ['quetiapine'], [...SEDATIVES, ...OPIOIDS, 'diphenhydramine', 'kava'], 12 * 60)) w.push({ level: 'caution', title: 'Quetiapine + alcohol, sedatives or opioids',
+    text: 'The drowsiness adds up, and together with opioids quetiapine is often found in overdose deaths. Do not drive, and ask the prescriber before combining.' });
   if (overlap(cfg, ['cocaine'], ['alcohol'], 6 * 60)) w.push({ level: 'caution', title: 'Cocaine + alcohol',
     text: 'Together they form cocaethylene, which strains the heart more than either drug alone.' });
   const daily = (drug: string) => cfg.doses.filter((d) => d.drug === drug).length >= 7;
